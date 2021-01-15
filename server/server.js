@@ -12,6 +12,7 @@
 | - Sets up error handling in case something goes wrong when handling a request
 | - Actually starts the webserver
 */
+require('dotenv').config()
 
 // validator runs some basic checks to make sure you've set everything up correctly
 // this is a tool provided by staff, so you don't need to worry about it
@@ -33,7 +34,7 @@ const socketManager = require("./server-socket");
 
 // Server configuration below
 // TODO change connection URL after setting up your team database
-const mongoConnectionURL = "mongodb+srv://shiyyum:<password>@kale-grater.arvck.mongodb.net/kale-grater?retryWrites=true&w=majority";
+const mongoConnectionURL = process.env.ATLAS_SRV;
 // TODO change database name to the name you chose
 const databaseName = "kale-grater";
 
@@ -57,7 +58,7 @@ app.use(express.json());
 // set up a session, which will persist login data across requests
 app.use(
   session({
-    secret: "session-secret",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
   })
