@@ -9,6 +9,7 @@ import "../utilities.css";
 import { socket } from "../client-socket.js";
 
 import { get, post } from "../utilities";
+import { HotModuleReplacementPlugin } from "webpack";
 
 /**
  * Define the "App" component as a class.
@@ -19,6 +20,7 @@ class App extends Component {
     super(props);
     this.state = {
       userId: undefined,
+      userName: undefined
     };
   }
 
@@ -35,10 +37,16 @@ class App extends Component {
     console.log(`Logged in as ${res.profileObj.name}`);
     const userToken = res.tokenObj.id_token;
     post("/api/login", { token: userToken }).then((user) => {
-      this.setState({ userId: user._id });
-      post("/api/initsocket", { socketid: socket.id });
-    });
-  };
+      this.setState({ userId: user._id }, () => {
+        if (this.state.userName !== undefined) {
+          navigate("/home")
+        } else {
+          navigate("/newuser")
+        }
+      });
+      })
+    };
+
 
   handleLogout = () => {
     this.setState({ userId: undefined });
@@ -53,10 +61,17 @@ class App extends Component {
             path="/"
             handleLogin={this.handleLogin}
             handleLogout={this.handleLogout}
+            userId={this.state.userId} />
+          <HomePage
+            path="/home"
+            userId={this.state.userId} />
+          <NewUser
+            path="/newuser"
             userId={this.state.userId}
-          />
+            userName={this.state.userName} />
           <NotFound default />
         </Router>
+
       </>
     );
   }
