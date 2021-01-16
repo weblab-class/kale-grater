@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Router, navigate } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
+import LoginPage from "./pages/LoginPage.js";
 
 import "../utilities.css";
 
