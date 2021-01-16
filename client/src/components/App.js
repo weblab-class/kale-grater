@@ -51,7 +51,7 @@ class App extends Component {
       <>
         <Router>
           <LoginPage 
-            path="/" 
+            path="/"
             handleLogin={this.handleLogin} 
             handleLogout={this.handleLogout}
             userId={this.state.userId} />
