@@ -16,8 +16,39 @@ class LoginPage extends Component {
   
     componentDidMount() {
       // remember -- api calls go here!
+      // if user Id exists, route to home page
+    //   if (userId)
     }
 
     render() {
-        
-    }}
+        return (
+            <section>
+                <div className='Login-color'></div>
+                <div className='Login-color'></div>
+                <div className='Login-color'></div>
+                <div className='Login-ornaments'>
+                    <div className='Login-circle' style='--i:0;'></div>
+                    <div className='Login-circle' style='--i:1;'></div>
+                    <div className='Login-circle' style='--i:2;'></div>
+                    <div className='Login-circle' style='--i:3;'></div>
+                    <div className='Login-circle' style='--i:4;'></div>
+                </div>
+            {this.props.userId ? (
+                <GoogleLogout
+                    clientId={GOOGLE_CLIENT_ID}
+                    buttonText="Logout"
+                    onLogoutSuccess={this.props.handleLogout}
+                    onFailure={(err) => console.log(err)}
+                />
+                ) : (
+                <GoogleLogin
+                    clientId={GOOGLE_CLIENT_ID}
+                    buttonText="Login"
+                    onSuccess={this.props.handleLogin}
+                    onFailure={(err) => console.log(err)}
+                />
+            )}
+            </section>
+        )
+    }
+}
