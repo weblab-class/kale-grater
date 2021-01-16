@@ -3,13 +3,14 @@ import { Router } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
 import LoginPage from "./pages/LoginPage.js";
+import HomePage from "./pages/HomePage.js";
+import NewUser from "./pages/NewUser.js";
 
 import "../utilities.css";
 
 import { socket } from "../client-socket.js";
 
 import { get, post } from "../utilities";
-import { HotModuleReplacementPlugin } from "webpack";
 
 /**
  * Define the "App" component as a class.
