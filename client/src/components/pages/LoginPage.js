@@ -34,23 +34,26 @@ class LoginPage extends Component {
                     <div className='Login-circle' style={{"--i":3}}></div>
                     <div className='Login-circle' style={{"--i":4}}></div>
                 </div>
+                <div className="Login-googleButton">
+                {this.props.userId ? (
+                    <GoogleLogout
+                        clientId={GOOGLE_CLIENT_ID}
+                        buttonText="Logout"
+                        onLogoutSuccess={this.props.handleLogout}
+                        onFailure={(err) => console.log(err)}
+                    />
+                    
+                    ) : (
+                    <GoogleLogin
+                        clientId={GOOGLE_CLIENT_ID}
+                        buttonText="Login"
+                        onSuccess={this.props.handleLogin}
+                        onFailure={(err) => console.log(err)}
+                    />
+                )}
+            </div>
             </section>
-
-            {this.props.userId ? (
-                <GoogleLogout
-                    clientId={GOOGLE_CLIENT_ID}
-                    buttonText="Logout"
-                    onLogoutSuccess={this.props.handleLogout}
-                    onFailure={(err) => console.log(err)}
-                />
-                ) : (
-                <GoogleLogin
-                    clientId={GOOGLE_CLIENT_ID}
-                    buttonText="Login"
-                    onSuccess={this.props.handleLogin}
-                    onFailure={(err) => console.log(err)}
-                />
-            )}
+            
             </>
         );
     }
