@@ -22,6 +22,7 @@ class LoginPage extends Component {
 
     render() {
         return (
+            <>
             <section>
                 <div className='Login-color'></div>
                 <div className='Login-color'></div>
@@ -33,6 +34,8 @@ class LoginPage extends Component {
                     <div className='Login-circle' style='--i:3;'></div>
                     <div className='Login-circle' style='--i:4;'></div>
                 </div>
+            </section>
+
             {this.props.userId ? (
                 <GoogleLogout
                     clientId={GOOGLE_CLIENT_ID}
@@ -48,7 +51,9 @@ class LoginPage extends Component {
                     onFailure={(err) => console.log(err)}
                 />
             )}
-            </section>
-        )
+            </>
+        );
     }
 }
+
+export default LoginPage;
