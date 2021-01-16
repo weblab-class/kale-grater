@@ -28,11 +28,11 @@ class LoginPage extends Component {
                 <div className='Login-color'></div>
                 <div className='Login-color'></div>
                 <div className='Login-ornaments'>
-                    <div className='Login-circle' style='--i:0;'></div>
-                    <div className='Login-circle' style='--i:1;'></div>
-                    <div className='Login-circle' style='--i:2;'></div>
-                    <div className='Login-circle' style='--i:3;'></div>
-                    <div className='Login-circle' style='--i:4;'></div>
+                    <div className='Login-circle' style={{"--i":0}}></div>
+                    <div className='Login-circle' style={{"--i":1}}></div>
+                    <div className='Login-circle' style={{"--i":2}}></div>
+                    <div className='Login-circle' style={{"--i":3}}></div>
+                    <div className='Login-circle' style={{"--i":4}}></div>
                 </div>
             </section>
 
