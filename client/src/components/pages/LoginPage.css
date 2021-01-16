@@ -20,7 +20,7 @@ section {
     background: linear-gradient(to bottom, #1e242c, #1a2329);
 }
 
-/* section .color {
+/* section .Login-color {
     animation: animate 10s linear infinite;
     z-index: 11;
 }
@@ -34,20 +34,20 @@ section {
     }
 } */
 
-section .color {
+section .Login-color {
     position: absolute;
     filter: blur(150px);
     z-index: 10;
 }
 
-section .color:nth-child(1) {
+section .Login-color:nth-child(1) {
     top: -350px;
     width: 600px;
     height: 600px;
     background: #ff359b;
 }
 
-section .color:nth-child(2) {
+section .Login-color:nth-child(2) {
     bottom: -150px;
     left: 100px;
     width: 500px;
@@ -55,7 +55,7 @@ section .color:nth-child(2) {
     background: #fffd87;
 }
 
-section .color:nth-child(3) {
+section .Login-color:nth-child(3) {
     bottom: 50px;
     right: 100px;
     width: 300px;
@@ -63,11 +63,11 @@ section .color:nth-child(3) {
     background: #00d2ff;
 }
 
-.ornaments {
+.Login-ornaments {
     position: relative;
 }
 
-.ornaments .circle {
+.Login-ornaments .Login-circle {
     position: absolute;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
@@ -95,35 +95,35 @@ section .color:nth-child(3) {
     }
 }
 
-.ornaments .circle:nth-child(1) {
+.Login-ornaments .Login-circle:nth-child(1) {
     top: -200px;
     right: -400px;
     width: 100px;
     height: 100px;
 }
 
-.ornaments .circle:nth-child(2) {
+.Login-ornaments .Login-circle:nth-child(2) {
     top: 0px;
     right: 400px;
     width: 120px;
     height: 120px;
 }
 
-.ornaments .circle:nth-child(3) {
+.Login-ornaments .Login-circle:nth-child(3) {
     top: 150px;
     right: -400px;
     width: 80px;
     height: 80px;
 }
 
-.ornaments .circle:nth-child(4) {
+.Login-ornaments .Login-circle:nth-child(4) {
     top: 250px;
     right: 130px;
     width: 50px;
     height: 50px;
 }
 
-.ornaments .circle:nth-child(5) {
+.Login-ornaments .Login-circle:nth-child(5) {
     top: -250px;
     right: 50px;
     width: 60px;

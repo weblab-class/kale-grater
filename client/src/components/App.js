@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Router } from "@reach/router";
+import { Router, navigate } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
 
@@ -35,25 +35,27 @@ class App extends Component {
     const userToken = res.tokenObj.id_token;
     post("/api/login", { token: userToken }).then((user) => {
       this.setState({ userId: user._id });
-      post("/api/initsocket", { socketid: socket.id });
-    });
-  };
+      navigate("/");
+      });
+    };
 
   handleLogout = () => {
     this.setState({ userId: undefined });
-    post("/api/logout");
+    post("/api/logout").then(() => {
+      navigate("/");
+    });
   };
 
   render() {
     return (
       <>
         <Router>
-          <Skeleton
-            path="/"
-            handleLogin={this.handleLogin}
+          <LoginPage 
+            path="/" 
+            handleLogin={this.handleLogin} 
             handleLogout={this.handleLogout}
-            userId={this.state.userId}
-          />
+            userId={this.state.userId} />
+          
           <NotFound default />
         </Router>
       </>
