@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #1e242c, #1a2329);
+}
+
+/* section .color {
+    animation: animate 10s linear infinite;
+    z-index: 11;
+}
+
+@keyframes animate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+} */
+
+section .color {
+    position: absolute;
+    filter: blur(150px);
+    z-index: 10;
+}
+
+section .color:nth-child(1) {
+    top: -350px;
+    width: 600px;
+    height: 600px;
+    background: #ff359b;
+}
+
+section .color:nth-child(2) {
+    bottom: -150px;
+    left: 100px;
+    width: 500px;
+    height: 500px;
+    background: #fffd87;
+}
+
+section .color:nth-child(3) {
+    bottom: 50px;
+    right: 100px;
+    width: 300px;
+    height: 300px;
+    background: #00d2ff;
+}
+
+.ornaments {
+    position: relative;
+}
+
+.ornaments .circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+
+    box-shadow:
+        inset 0 0 50px #fff,
+        inset 20px 0 80px #ffffff00,
+        inset -20px 0 80px #ffffff00,
+        inset 20px 0 300px #ffffff00,
+        inset -20px 0 300px #ffffff00,
+        0 0 50px #fff,
+        -10px 0 80px #ffffff00,
+        10px 0 80px #ffffff00;
+    
+    animation: animate 10s linear infinite;
+    animation-delay: calc(-2s * var(--i));
+}
+
+@keyframes animate {
+    0%,100% {
+        transform: translateY(-40px);
+    }
+    50% {
+        transform: translateY(40px);
+    }
+}
+
+.ornaments .circle:nth-child(1) {
+    top: -200px;
+    right: -400px;
+    width: 100px;
+    height: 100px;
+}
+
+.ornaments .circle:nth-child(2) {
+    top: 0px;
+    right: 400px;
+    width: 120px;
+    height: 120px;
+}
+
+.ornaments .circle:nth-child(3) {
+    top: 150px;
+    right: -400px;
+    width: 80px;
+    height: 80px;
+}
+
+.ornaments .circle:nth-child(4) {
+    top: 250px;
+    right: 130px;
+    width: 50px;
+    height: 50px;
+}
+
+.ornaments .circle:nth-child(5) {
+    top: -250px;
+    right: 50px;
+    width: 60px;
+    height: 60px;
+}
