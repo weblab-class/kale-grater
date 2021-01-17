@@ -17,6 +17,11 @@ class ShelfPage extends Component {
     }
 
     render() {
+        return (
+            <div>
+                Shelf
+            </div>
+        )
 
     };
 };
