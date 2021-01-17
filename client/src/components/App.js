@@ -6,12 +6,14 @@ import LoginPage from "./pages/LoginPage.js";
 import HomePage from "./pages/HomePage.js";
 import NavBar from "./modules/NavBar.js";
 import ShelfPage from "./pages/ShelfPage.js";
+import NewMemory from "./modules/NewMemory.js";
 import "../utilities.css";
 
 import { socket } from "../client-socket.js";
 
 import { get, post } from "../utilities";
-// import ShelfPage from "./pages/ShelfPage.js";
+
+import "./App.css";
 
 /**
  * Define the "App" component as a class.
@@ -54,38 +56,44 @@ class App extends Component {
 
   render() {
     // const Match = () => {
-    return (<Match path="/">
-        {props => 
-        props.match && !this.state.userId ? (
-          <>
-          <LoginPage
-            path="/"
-            handleLogin={this.handleLogin}
-            handleLogout={this.handleLogout}
-            userId={this.state.userId} />
+    // console.log('HI');
+    // return (<Match path="/">
+    //     {props => 
+    //     props.match && !this.state.userId ? (
+    //       <>
+    //       <LoginPage
+    //         path="/"
+    //         handleLogin={this.handleLogin}
+    //         handleLogout={this.handleLogout}
+    //         userId={this.state.userId} />
         
-          </>
-        ) : (
-            <>
-              <NavBar
-                handleLogin={this.handleLogin}
-                handleLogout={this.handleLogout}
-                userId={this.state.userId}
-              />
-              <Router>
-                <HomePage
-                  path="/home"
-                  userId={this.state.userId}  />
-                <ShelfPage
-                  path="/shelves"
-                  userId={this.state.userId} />
-      
-                <NotFound default />
-              </Router>
-      
-            </>)}
-      </Match>
-    )};
+    //       </>
+        // ) : (
+    console.log("CONFUSION");
+    return (
+      <>
+        <NavBar
+          handleLogin={this.handleLogin}
+          handleLogout={this.handleLogout}
+          userId={this.state.userId}
+        />
+        <div className="App-container">
+          <Router>
+            <LoginPage
+              path="/"
+              handleLogin={this.handleLogin}
+              handleLogout={this.handleLogout}
+              userId={this.state.userId} />
+            <HomePage path="/home" userId={this.state.userId}  />
+            <ShelfPage path="/shelves" userId={this.state.userId} />
+            <NewMemory path="/newmemory" userId={this.state.userId} />
+            <NotFound default />
+          </Router>
+        </div>
+      </>)
+      };
+      // </Match>
+    // )};
   };
     // return (
     //   <>
