@@ -1,11 +1,13 @@
 .NavBar-container {
     padding: var(--s) var(--m);
-    background-color: var(--primary);
+    background-color: lightseagreen;
+    /* fill-opacity: 0; */
   }
   
   .NavBar-title {
-    color: var(--white);
+    color: black;
     font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
   }
   
   .NavBar-linkContainer {
@@ -14,7 +16,7 @@
   
   .NavBar-link,
   .NavBar-link:visited {
-    color: var(--white);
+    color: black;
     opacity: 0.6;
     text-decoration: none;
   }

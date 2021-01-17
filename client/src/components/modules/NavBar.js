@@ -20,17 +20,16 @@ class NavBar extends Component {
       <nav className="NavBar-container">
         <div className="NavBar-title u-inlineBlock">Inside Out</div>
         <div className="NavBar-linkContainer u-inlineBlock">
-          <Link to="/" className="NavBar-link">
+          <Link to="/home" className="NavBar-link">
             Home
           </Link>
-          {this.props.userId && (
-            <Link to={`/shelf/${this.props.userId}`} className="NavBar-link">
-              Shelves
-            </Link>
-          )}
-          <Link to="/social/" className="NavBar-link">
-            Social
+
+          <Link to="/shelves" className="NavBar-link">
+            Shelves
           </Link>
+          {/* <Link to="/social/" className="NavBar-link">
+            Social
+          </Link> */}
           {this.props.userId ? (
             <GoogleLogout
               clientId={GOOGLE_CLIENT_ID}
