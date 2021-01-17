@@ -8,6 +8,7 @@ import GoogleLogin, { GoogleLogout } from "react-google-login";
 import {navigate} from "@reach/router"
 
 import "../../utilities.css";
+import { post } from "../../utilities";
 import "./NewUser.css";
 
 class NewUser extends Component {
@@ -21,26 +22,29 @@ class NewUser extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault();
-
-        let usernameTaken = true; // hardcoded for now
-
-        // need to define function usernameTaken RIP
-        if (usernameTaken) {
-
-            // how to incorporate css??
-            // <div>Sorry, username taken. Try again.</div>
+        const body = {username: event}
+        post("/api/newuser", body)
+        // usernameTaken = (name) => {
             
-            navigate("/newuser")
-        } else {
-            const newUser = {userId: this.props.userId, userName: event};
-            // redirect = "/home";
-            navigate("/home")
         }
+
+        // let usernameTaken = true; // hardcoded for now
+
+        // // need to define function usernameTaken RIP
+        // if (usernameTaken) {
+
+        //     // how to incorporate css??
+        //     // <div>Sorry, username taken. Try again.</div>
+            
+        //     navigate("/newuser")
+        // } else {
+        //     const newUser = {userId: this.props.userId, userName: event};
+        //     // redirect = "/home";
+        //     navigate("/home")
+        // }
 
         // console.log('well it got here');      
         // navigate(redirect);
-
-    }
     render() {
         return (
             <div>
