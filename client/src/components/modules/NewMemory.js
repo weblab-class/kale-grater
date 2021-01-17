@@ -25,7 +25,7 @@ class NewMemory extends React.Component {
                 <div className="NewMemory-container">
                     <div className="NewMemory-card">
                         <div className="NewMemory-imgBx">
-                            <img src="client/img/clear_orb.png"></img>
+                            <img src="../../../img/clear_orb.png"></img>
                         </div>
                         <div className="NewMemory-contentBx">
                             <h2>Memory Orb</h2>
