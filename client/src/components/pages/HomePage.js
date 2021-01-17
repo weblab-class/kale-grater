@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
 import NewMemory from "../modules/NewMemory.js";
 // import Modal from "react-bootstrap/Modal";
+import Modal from "../modules/Modal.js";
 
 import "../../utilities.css";
 import "./HomePage.css";

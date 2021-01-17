@@ -1,9 +1,9 @@
-import React from "react";
+import React, {Component} from "react";
 import { get } from "../../utilities";
 
 import "./ShelfPage.css";
 
-class Shelf extends Component {
+class ShelfPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,7 +12,7 @@ class Shelf extends Component {
     }
 
     componentDidMount() {
-        document.title = "Shelf"
+        document.title = "ShelfPage"
     }
 
     render() {
@@ -42,3 +42,5 @@ class Shelf extends Component {
         );
     };
 }
+
+export default ShelfPage;
