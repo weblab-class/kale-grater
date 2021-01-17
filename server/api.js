@@ -54,10 +54,18 @@ router.get("/shelf", (req, res) => {
 
 // this whole thing is supper iffy
 router.post("/newuser", (req, res) => {
-  const newUser = new User({
-    name: req.user._id,
-    username: req.body.username
-  });
+  User.find({userName: req.body.username}).then((users) => {
+    if (length(users) !== 0) {
+      navigate("/newuser")
+    } else {
+      const newUser = new User({
+        name: req.user._id,
+        username: req.body.username
+      });
+      newUser.save().then(navigate("/home"));
+    }
+  })
+
 });
 
 
