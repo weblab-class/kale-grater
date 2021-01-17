@@ -11,6 +11,7 @@ const express = require("express");
 
 // import models so we can interact with the database
 const User = require("./models/user");
+const Orb = require("./models/orb");
 
 // import authentication library
 const auth = require("./auth");
@@ -41,6 +42,26 @@ router.post("/initsocket", (req, res) => {
 // |------------------------------|
 // | write your API methods below!|
 // |------------------------------|
+
+
+// get request for getting orbs in shelf
+router.get("/shelf", (req, res) => {
+  Orb.find({user_id: req.query.user_id}).then((orbs) => {
+    res.send(orbs);
+  });
+});
+
+
+// this whole thing is supper iffy
+router.post("/newuser", (req, res) => {
+  const newUser = new User({
+    name: req.user._id,
+    username: req.body.username
+  });
+});
+
+
+
 
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
