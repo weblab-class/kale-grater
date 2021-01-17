@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Router, navigate } from "@reach/router";
+import { Router, navigate, Match } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
 import LoginPage from "./pages/LoginPage.js";
@@ -53,33 +53,67 @@ class App extends Component {
   };
 
   render() {
-    return (
-      <>
-        <NavBar
-          handleLogin={this.handleLogin}
-          handleLogout={this.handleLogout}
-          userId={this.state.userId}
-        />
-        <Router>
-
+    // const Match = () => {
+    return (<Match path="/">
+        {props => 
+        props.match && !this.state.userId ? (
+          <>
           <LoginPage
             path="/"
             handleLogin={this.handleLogin}
             handleLogout={this.handleLogout}
             userId={this.state.userId} />
-          <HomePage
-            path="/home"
-            userId={this.state.userId}  />
-          <ShelfPage
-            path="/shelves"
-            userId={this.state.userId} />
+        
+          </>
+        ) : (
+            <>
+              <NavBar
+                handleLogin={this.handleLogin}
+                handleLogout={this.handleLogout}
+                userId={this.state.userId}
+              />
+              <Router>
+                <HomePage
+                  path="/home"
+                  userId={this.state.userId}  />
+                <ShelfPage
+                  path="/shelves"
+                  userId={this.state.userId} />
+      
+                <NotFound default />
+              </Router>
+      
+            </>)}
+      </Match>
+    )};
+  };
+    // return (
+    //   <>
+    //     <NavBar
+    //       handleLogin={this.handleLogin}
+    //       handleLogout={this.handleLogout}
+    //       userId={this.state.userId}
+    //     />
+    //     <Router>
 
-          <NotFound default />
-        </Router>
+    //       <LoginPage
+    //         path="/"
+    //         handleLogin={this.handleLogin}
+    //         handleLogout={this.handleLogout}
+    //         userId={this.state.userId} />
+    //       <HomePage
+    //         path="/home"
+    //         userId={this.state.userId}  />
+    //       <ShelfPage
+    //         path="/shelves"
+    //         userId={this.state.userId} />
 
-      </>
-    );
-  }
-}
+    //       <NotFound default />
+    //     </Router>
+
+    //   </>
+//     );
+//   }
+// }
 
 export default App;
