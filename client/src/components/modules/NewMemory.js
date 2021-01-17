@@ -1,4 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
+
+import "../../utilities.css";
+import "./LoginPage.css";
 
 class NewMemory extends React.Component {
 
