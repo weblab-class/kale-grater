@@ -19,6 +19,18 @@ class NewMemory extends React.Component {
         // remember -- api calls go here!
       }
     
+    // to do...
+    handleSubmit = (event) => {
+        event.preventDefault();
+        addMemory = (value) => {
+            const orb = {
+                userId: this.props.userId,
+                content: value
+            }
+            post("/api/newmemory", orb).then()
+        }
+    }
+
     render() {
         return (
             <>

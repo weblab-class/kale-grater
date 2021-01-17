@@ -16,7 +16,13 @@ class ShelfPage extends Component {
     }
 
     render() {
+        // return (
+        //     <>
+        //         <div>SHELF</div>
+        //     </>
+        // );
         return (
+            <>
             <section>
                 <div class="container">
                     <div class="row">
@@ -39,6 +45,7 @@ class ShelfPage extends Component {
                     </div>
                 </div> 
             </section>
+            </>
         );
     };
 }

@@ -1,8 +1,7 @@
 import React, {Component} from "react";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
 import NewMemory from "../modules/NewMemory.js";
-// import Modal from "react-bootstrap/Modal";
-import Modal from "../modules/Modal.js";
+import {Link} from "@reach/router";
 
 import "../../utilities.css";
 import "./HomePage.css";
@@ -11,7 +10,6 @@ class HomePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            show: false
         };
 
     }
@@ -24,15 +22,9 @@ class HomePage extends Component {
 
         return (
             <>
-                <button class="Button-container" onClick={e => {
-                    this.showModal();
-                }}>
-                    Add Memory
-                </button>
-            {/* <div>
-                <NewMemory
-                    userId={this.state.userId} />
-            </div> */}
+                <Link to="/newmemory" className="NewMemory-link">
+                    Add Memory!
+                </Link>
             </>
         )
     }

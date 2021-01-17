@@ -23,13 +23,10 @@ class NavBar extends Component {
           <Link to="/home" className="NavBar-link">
             Home
           </Link>
-
           <Link to="/shelves" className="NavBar-link">
             Shelves
           </Link>
-          {/* <Link to="/social/" className="NavBar-link">
-            Social
-          </Link> */}
+
           {this.props.userId ? (
             <GoogleLogout
               clientId={GOOGLE_CLIENT_ID}
