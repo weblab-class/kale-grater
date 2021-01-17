@@ -3,6 +3,8 @@ import { Router, navigate } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
 import LoginPage from "./pages/LoginPage.js";
+import HomePage from "./pages/HomePage.js";
+import NewUser from "./pages/NewUser.js";
 
 import "../utilities.css";
 
@@ -49,18 +51,16 @@ class App extends Component {
 
   handleLogout = () => {
     this.setState({ userId: undefined });
-    post("/api/logout").then(() => {
-      navigate("/");
-    });
+    post("/api/logout");
   };
 
   render() {
     return (
       <>
         <Router>
-          <LoginPage 
+          <LoginPage
             path="/"
-            handleLogin={this.handleLogin} 
+            handleLogin={this.handleLogin}
             handleLogout={this.handleLogout}
             userId={this.state.userId} />
           <HomePage
