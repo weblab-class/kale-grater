@@ -9,7 +9,6 @@ import "../utilities.css";
 import { socket } from "../client-socket.js";
 
 import { get, post } from "../utilities";
-import { HotModuleReplacementPlugin } from "webpack";
 
 /**
  * Define the "App" component as a class.
