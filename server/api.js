@@ -46,9 +46,20 @@ router.post("/initsocket", (req, res) => {
 
 // get request for getting orbs in shelf
 router.get("/shelf", (req, res) => {
-  Orb.find({user_id: req.query.user_id}).then((orbs) => {
+  Orb.find({_id: req.user._id}).then((orbs) => {
     res.send(orbs);
   });
+});
+
+router.post("/orb/new", (req, res) => {
+  const newOrb = new Orb({
+    creator_id: req.body.creator_id,
+    emotion: req.body.emotion,
+    content: req.body.content,
+    timestamp: req.body.timestamp,
+  });
+
+  newOrb.save().then((orb) => res.send(orb))
 });
 
 
