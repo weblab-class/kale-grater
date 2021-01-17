@@ -21,8 +21,8 @@ section {
 
 .NewMemory-container .NewMemory-card {
     position: relative;
-    width: 600px;
-    height: 800px;
+    width: 42vw;
+    height: 100vh;
     background: #232323;
     border-radius: 20px;
     overflow: hidden;
@@ -61,7 +61,7 @@ section {
     transform: translateY(-50%);
     z-index: 9;
     width: 100%;
-    height: 600px;
+    height: 75vh;
     transition: 0.5s;
 }
 
@@ -82,14 +82,14 @@ section {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 100px;
+    height: 15vh;
     text-align: center;
     transition: 1s;
     z-index: 10;
 }
 
 .NewMemory-container .NewMemory-card:hover .NewMemory-contentBx {
-    height: 450px;
+    height: 50vh;
 }
 
 .NewMemory-container .NewMemory-card .NewMemory-contentBx h2 {
@@ -104,7 +104,8 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 60px 0;
+    padding-top: 3vh;
+    padding-bottom: 2vh;
     transition: 0.5s;
     opacity: 0;
     visibility: hidden;
@@ -167,7 +168,7 @@ section {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-right: 10px;
+    position: center;
     transition: 0.5s;
     opacity: 0;
     visibility: hidden;
