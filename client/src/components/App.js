@@ -39,11 +39,7 @@ class App extends Component {
     const userToken = res.tokenObj.id_token;
     post("/api/login", { token: userToken }).then((user) => {
       this.setState({ userId: user._id }, () => {
-        if (this.state.userName !== undefined) {
-          navigate("/home")
-        } else {
-          navigate("/newuser")
-        }
+        navigate("/home")
       });
       })
     };
@@ -66,10 +62,10 @@ class App extends Component {
           <HomePage
             path="/home"
             userId={this.state.userId} />
-          <NewUser
+          {/* <NewUser
             path="/newuser"
-            userId={this.state.userId}
-            userName={this.state.userName} />
+            userId={this.state.userId} />
+            // userName={this.state.userName} /> */}
           <NotFound default />
         </Router>
 
