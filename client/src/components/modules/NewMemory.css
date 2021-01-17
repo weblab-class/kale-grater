@@ -25,7 +25,8 @@ section {
     height: 100vh;
     background: #232323;
     border-radius: 20px;
-    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .NewMemory-container .NewMemory-card::before {
