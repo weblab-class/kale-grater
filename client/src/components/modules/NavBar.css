@@ -2,6 +2,7 @@
     padding: var(--s) var(--m);
     background-color: lightseagreen;
     /* fill-opacity: 0; */
+    height: 75px
   }
   
   .NavBar-title {
