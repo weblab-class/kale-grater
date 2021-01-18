@@ -73,8 +73,10 @@ class NewMemory extends React.Component {
                                     </h4>
                             </div>
                             {/* POPULATE HREF WITH LINK TO REDIRECT TO */}
-                            <a href="" onClick={() => {console.log(document.getElementById("txtArea").value)}}>Add Memory</a>
-                            <a href="/home">Cancel</a>
+                            <div className="NewMemory-buttons">
+                                <a href="/home" >Cancel</a>
+                                <a href="/home" onClick={() => {console.log(document.getElementById("txtArea").value)}}>Add Memory</a>
+                            </div>
                         </div>
                     </div>
                 </div>
