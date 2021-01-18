@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SingleOrb from "./SingleOrb.js";
+import OrbContent from "./Orbcontent.js";
 
 import "./SingleOrb.css";
 
@@ -32,3 +32,5 @@ import "./SingleOrb.css";
           );
     }
  }
+
+ export default SingleOrb;
