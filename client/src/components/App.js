@@ -70,7 +70,7 @@ class App extends Component {
     //       </>
         // ) : (
     console.log("CONFUSION");
-    return (
+    return this.state.userId ? (
       <>
         <NavBar
           handleLogin={this.handleLogin}
@@ -88,6 +88,17 @@ class App extends Component {
             <ShelfPage path="/shelves" userId={this.state.userId} />
             <NewMemory path="/newmemory" userId={this.state.userId} />
             <NotFound default />
+          </Router>
+        </div>
+      </>) : (
+      <>
+        <div className="App-container">
+          <Router>
+            <LoginPage 
+              handleLogin={this.handleLogin}
+              handleLogout={this.handleLogout}
+              userId={this.state.userId}
+              default />
           </Router>
         </div>
       </>)
