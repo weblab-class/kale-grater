@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { get } from "../../utilities";
+import SingleOrb from "../modules/SingleOrb.js";
 
 import "./ShelfPage.css";
 
