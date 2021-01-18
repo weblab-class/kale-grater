@@ -38,11 +38,10 @@ import "./SingleOrb.css";
                   content={this.props.content}
                   timestamp = {this.props.timestamp}
                   />
-                : <section className="SingleOrb-stage">
-                    <figure className="SingleOrb-ball">
-                      <span className="SingleOrb-shadow"></span>
-                    </figure>
-                  </section>
+                : <figure className="SingleOrb-ball">
+                    <span className="SingleOrb-shadow"></span>
+                  </figure>
+                  
               }
             </div>
           );
