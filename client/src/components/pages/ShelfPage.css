@@ -20,3 +20,12 @@
     display: grid;
     align-content: center;
 }
+
+.ShelfPage-row {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 300px;
+    margin: 20px;
+}
