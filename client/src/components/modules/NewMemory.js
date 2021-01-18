@@ -13,7 +13,15 @@ class NewMemory extends React.Component {
             hasEntry: false,
             hasEmotion: false
         };
-    }
+
+        // ignore rn
+        // this.state = {
+        //     creator_id=this.props.creator_id,
+        //     emotion=null,
+        //     content=this.props.content,
+        //     timestamp = this.props.timestamp
+        // };
+    };
 
     componentDidMount() {
         // remember -- api calls go here!
@@ -31,6 +39,14 @@ class NewMemory extends React.Component {
         }
     }
 
+    // setEmotion((emotion) => {
+    //     this.setState({
+    //         creator_id=this.state.creator_id,
+    //         emotion=emotion,
+    //         content=this.state.content,
+    //         timestamp = this.state.timestamp
+    //     })
+    // })
     render() {
         return (
             <>
@@ -44,11 +60,11 @@ class NewMemory extends React.Component {
                             <h2>Memory Orb</h2>
                             <div className="NewMemory-color">
                                 <h3>Emotion :</h3>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
+                                    <div onClick={() => {console.log('joy')}}></div>
+                                    <div onClick={() => {console.log('sadness')}}></div>
+                                    <div onClick={() => {console.log('anger')}}></div>
+                                    <div onClick={() => {console.log('fear')}}></div>
+                                    <div onClick={() => {console.log('disgust')}}></div>
                             </div>
                             <div className="NewMemory-box">
                                 <h3>Tell us about your memory :</h3>

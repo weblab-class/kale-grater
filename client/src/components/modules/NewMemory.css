@@ -127,7 +127,7 @@ section {
     margin-right: 10px;
 }
 
-.NewMemory-container .NewMemory-card .NewMemory-contentBx .NewMemory-color span {
+.NewMemory-container .NewMemory-card .NewMemory-contentBx .NewMemory-color div {
     width: 30px;
     height: 30px;
     background: #ff0;
@@ -143,23 +143,23 @@ section {
     pointer-events: auto;
 }
 
-.NewMemory-container .NewMemory-card .NewMemory-contentBx .NewMemory-color span:nth-child(2) {
+.NewMemory-container .NewMemory-card .NewMemory-contentBx .NewMemory-color div:nth-child(2) {
     background: #FFCA3A;
 }
 
-.NewMemory-container .NewMemory-card .NewMemory-contentBx .NewMemory-color span:nth-child(3) {
+.NewMemory-container .NewMemory-card .NewMemory-contentBx .NewMemory-color div:nth-child(3) {
     background: #1982C4;
 }
 
-.NewMemory-container .NewMemory-card .NewMemory-contentBx .NewMemory-color span:nth-child(4) {
+.NewMemory-container .NewMemory-card .NewMemory-contentBx .NewMemory-color div:nth-child(4) {
     background: #FF595E;
 }
 
-.NewMemory-container .NewMemory-card .NewMemory-contentBx .NewMemory-color span:nth-child(5) {
+.NewMemory-container .NewMemory-card .NewMemory-contentBx .NewMemory-color div:nth-child(5) {
     background: #6A4C93;
 }
 
-.NewMemory-container .NewMemory-card .NewMemory-contentBx .NewMemory-color span:nth-child(6) {
+.NewMemory-container .NewMemory-card .NewMemory-contentBx .NewMemory-color div:nth-child(6) {
     background: #8AC926;
 }
 
