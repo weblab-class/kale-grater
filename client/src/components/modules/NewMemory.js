@@ -58,6 +58,7 @@ class NewMemory extends React.Component {
                             </div>
                             {/* POPULATE HREF WITH LINK TO REDIRECT TO */}
                             <a href="#">Add Memory</a>
+                            <a href="/home">Cancel</a>
                         </div>
                     </div>
                 </div>
