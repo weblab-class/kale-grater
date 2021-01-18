@@ -48,9 +48,11 @@ class ShelfPage extends Component {
         }
         return (
             <>
-            {this.props.creator_id && <ShelfPage addNewOrb={this.addNewOrb} />}
-            {orbsList};
-          </>
+            <div className="ShelfPage-row">
+                {this.props.creator_id && <ShelfPage addNewOrb={this.addNewOrb} />}
+                {orbsList}
+            </div>
+            </>
         );
     }
 }
