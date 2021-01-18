@@ -45,7 +45,7 @@ router.post("/initsocket", (req, res) => {
 
 
 // get request for getting orbs in shelf
-router.get("/shelf", (req, res) => {
+router.get("/shelves", (req, res) => {
   Orb.find({_id: req.user._id}).then((orbs) => {
     res.send(orbs);
   });
