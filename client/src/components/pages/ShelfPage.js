@@ -23,9 +23,9 @@ class ShelfPage extends Component {
         // );
         return (
             <>
-            <section>
-                <div class="container">
-                    <div class="row">
+            <div className="ShelfPage-section">
+                {/* <div class="container"> */}
+                    {/* <div class="row"> */}
                         <div class="col-xs-4 col-md-2"><img src="http://placehold.it/150x190" class="img-responsive book"/></div>
                         <div class="col-xs-4 col-md-2"><img src="http://placehold.it/150x190" class="img-responsive book"/></div>
                         <div class="col-xs-4 col-md-2"><img src="http://placehold.it/150x190" class="img-responsive book"/></div>
@@ -42,9 +42,9 @@ class ShelfPage extends Component {
                         <div class="col-xs-4 col-md-2"><img src="http://placehold.it/150x190" class="img-responsive book"/></div>
                         <div class="col-xs-4 col-md-2"><img src="http://placehold.it/150x190" class="img-responsive book"/></div>
                         <div class="col-xs-12 shelf"></div>
-                    </div>
-                </div> 
-            </section>
+                    {/* </div> */}
+                {/* </div>  */}
+            </div>
             </>
         );
     };
