@@ -69,11 +69,11 @@ class NewMemory extends React.Component {
                             <div className="NewMemory-box">
                                 <h3>Tell us about your memory :</h3>
                                     <h4>
-                                        <textarea name="description" rows="10" cols="60"></textarea>
+                                        <textarea name="description" rows="10" cols="60" id="txtArea"></textarea>
                                     </h4>
                             </div>
                             {/* POPULATE HREF WITH LINK TO REDIRECT TO */}
-                            <a href="#">Add Memory</a>
+                            <a href="" onClick={() => {console.log(document.getElementById("txtArea").value)}}>Add Memory</a>
                             <a href="/home">Cancel</a>
                         </div>
                     </div>
