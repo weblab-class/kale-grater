@@ -5,6 +5,7 @@ import "./NewMemory.css";
 import clearOrb from "../../../img/clear_orb.png";
 
 import {post} from "../../utilities.js";
+import {navigate} from "@reach/router";
 
 class NewMemory extends React.Component {
 
@@ -31,19 +32,20 @@ class NewMemory extends React.Component {
     
     // to do...
     handleSubmit = (event) => {
-        console.log("IN FUNC");
         event.preventDefault();
         const orb = {
             userId: this.props.userId,
             content: this.state.content,
             emotion: this.state.emotion
         }
-        console.log(orb);
-        post("/api/newmemory", orb).then((result) => {
-            console.log(result);
-        })
-        }
-    
+
+        if (orb.content === "" || orb.emotion === "") {
+            return alert("Please fill out memory AND emotion!");
+        } else {
+            post("/api/newmemory", orb).then(() => {
+                navigate("/home");
+            });
+        }};
 
     handleChange = (event) => {
         this.setState({
@@ -51,14 +53,6 @@ class NewMemory extends React.Component {
         })
     }
 
-    // setEmotion((emotion) => {
-    //     this.setState({
-    //         creator_id=this.state.creator_id,
-    //         emotion=emotion,
-    //         content=this.state.content,
-    //         timestamp = this.state.timestamp
-    //     })
-    // })
     render() {
         return (
             <>
