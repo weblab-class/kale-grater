@@ -201,6 +201,26 @@ section {
     transition-delay: 0.75s;
 }
 
+.NewMemory-container .NewMemory-card .NewMemory-contentBx button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #111;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.5s;
+}
+
+.NewMemory-container .NewMemory-card:hover .NewMemory-contentBx button {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.75s;
+}
+
 .NewMemory-container .NewMemory-card:hover .NewMemory-contentBx .NewMemory-buttons {
     display: flex;
     justify-content: space-around;
