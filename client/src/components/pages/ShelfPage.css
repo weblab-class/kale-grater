@@ -7,12 +7,13 @@
     font-family: "Poppins", sans-serif;
 }
 
-section {
+.ShelfPage-section {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: #131313;
+    height: calc(100vh - 75px);
+    background-color: #131313;
 }
 
 .ShelfPage-container {

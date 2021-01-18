@@ -12,10 +12,18 @@ class ShelfPage extends Component {
     }
 
     componentDidMount() {
-        document.title = "ShelfPage"
+        document.title = "ShelfPage";
+
+        get("/shelf").then((orbObjs) => {
+            this.setState({
+                orbs: orbObjs
+            });
+        });
+
     }
 
     render() {
+<<<<<<< HEAD
         return (
             <section>
                 <div class="container">
@@ -41,6 +49,20 @@ class ShelfPage extends Component {
             </section>
         );
     };
+=======
+        // return (
+        //     <>
+        //         <div>SHELF</div>
+        //     </>
+        // );
+         
+        return (
+            <div>
+                <SingleOrb creator_id="testing" emotion="excited" content="i am excited"></SingleOrb>
+            </div>
+        )
+    }
+>>>>>>> ad325b7c1f7f44484ae9b9afc1a80d1be64f10de
 }
 
 export default ShelfPage;
