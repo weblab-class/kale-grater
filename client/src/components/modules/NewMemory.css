@@ -200,3 +200,8 @@ section {
     transform: translateY(0px);
     transition-delay: 0.75s;
 }
+
+.NewMemory-container .NewMemory-card:hover .NewMemory-contentBx .NewMemory-buttons {
+    display: flex;
+    justify-content: space-around;
+}
