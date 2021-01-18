@@ -4,14 +4,16 @@ import "../../utilities.css";
 import "./NewMemory.css";
 import clearOrb from "../../../img/clear_orb.png";
 
+import {post} from "../../utilities.js";
+
 class NewMemory extends React.Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-            hasEntry: false,
-            hasEmotion: false
+            content: "",
+            emotion: "",
         };
 
         // ignore rn
@@ -29,14 +31,24 @@ class NewMemory extends React.Component {
     
     // to do...
     handleSubmit = (event) => {
+        console.log("IN FUNC");
         event.preventDefault();
-        addMemory = (value) => {
-            const orb = {
-                userId: this.props.userId,
-                content: value
-            }
-            post("/api/newmemory", orb).then()
+        const orb = {
+            userId: this.props.userId,
+            content: this.state.content,
+            emotion: this.state.emotion
         }
+        console.log(orb);
+        post("/api/newmemory", orb).then((result) => {
+            console.log(result);
+        })
+        }
+    
+
+    handleChange = (event) => {
+        this.setState({
+            content: event.target.value
+        })
     }
 
     // setEmotion((emotion) => {
@@ -60,22 +72,22 @@ class NewMemory extends React.Component {
                             <h2>Memory Orb</h2>
                             <div className="NewMemory-color">
                                 <h3>Emotion :</h3>
-                                    <div onClick={() => {console.log('joy')}}></div>
-                                    <div onClick={() => {console.log('sadness')}}></div>
-                                    <div onClick={() => {console.log('anger')}}></div>
-                                    <div onClick={() => {console.log('fear')}}></div>
-                                    <div onClick={() => {console.log('disgust')}}></div>
+                                    <div onClick={() => {this.setState({emotion: 'joy'})}}></div>
+                                    <div onClick={() => {this.setState({emotion: 'sadness'})}}></div>
+                                    <div onClick={() => {this.setState({emotion: 'anger'})}}></div>
+                                    <div onClick={() => {this.setState({emotion: 'fear'})}}></div>
+                                    <div onClick={() => {this.setState({emotion: 'disgust'})}}></div>
                             </div>
                             <div className="NewMemory-box">
                                 <h3>Tell us about your memory :</h3>
                                     <h4>
-                                        <textarea name="description" rows="10" cols="60" id="txtArea"></textarea>
+                                        <textarea name="description" rows="10" cols="60" id="txtArea" onChange={this.handleChange}></textarea>
                                     </h4>
                             </div>
                             {/* POPULATE HREF WITH LINK TO REDIRECT TO */}
                             <div className="NewMemory-buttons">
                                 <a href="/home" >Cancel</a>
-                                <a href="/home" onClick={() => {console.log(document.getElementById("txtArea").value)}}>Add Memory</a>
+                                <button onClick={this.handleSubmit}>Add Memory</button>
                             </div>
                         </div>
                     </div>
