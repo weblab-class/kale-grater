@@ -4,6 +4,7 @@
     left: calc(50% - 150px);
     width: 300px;
     height: 300px;
+    transform: scale(0.3,0.3);
     border-radius: 50%;
 
     box-shadow:
