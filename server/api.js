@@ -51,12 +51,12 @@ router.get("/shelf", (req, res) => {
   });
 });
 
-router.post("/orb/new", (req, res) => {
+router.post("/newmemory", (req, res) => {
   const newOrb = new Orb({
-    creator_id: req.body.creator_id,
+    creator_id: req.body.userId,
     emotion: req.body.emotion,
     content: req.body.content,
-    timestamp: req.body.timestamp,
+    timestamp: Date.now()
   });
 
   newOrb.save().then((orb) => res.send(orb))
