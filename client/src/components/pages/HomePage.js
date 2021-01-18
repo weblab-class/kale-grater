@@ -15,7 +15,7 @@ class HomePage extends Component {
     }
 
     componentDidMount() {
-
+        document.title = "Inside Out";
     }
 
     render() {
