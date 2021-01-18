@@ -19,7 +19,6 @@ class HomePage extends Component {
     }
 
     render() {
-
         return (
             <>
                 <Link to="/newmemory" className="NewMemory-link">

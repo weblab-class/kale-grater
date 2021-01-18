@@ -15,9 +15,9 @@ class ShelfPage extends Component {
     }
 
     componentDidMount() {
-        document.title = "ShelfPage";
+        document.title = "Shelf | Inside Out";
 
-        get("/shelf").then((orbObjs) => {
+        get("/api/shelves").then((orbObjs) => {
             this.setState({
                 orbs: orbObjs
             });
@@ -48,9 +48,9 @@ class ShelfPage extends Component {
         }
         return (
             <>
-                <NewMemory addNewOrb={this.addNewOrb} />
-                {orbsList}
-            </>
+            {this.props.creator_id && <ShelfPage addNewOrb={this.addNewOrb} />}
+            {orbsList};
+          </>
         );
     }
 }
