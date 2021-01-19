@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import "./OrbContent.css";
+
 /*
  * Proptypes
  * @param {string} creator_id ObjectId of author
@@ -16,10 +18,22 @@ class OrbContent extends Component {
 
   render() {
     return (
-      <div>
-        <span>{this.props.creator_id}</span>
-        <p>{this.props.content}</p>
+      // <section>
+      //   <div className="NewMemory-card">
+      //     <div className="NewMemory-contentBx">
+      //       <h2>{this.props.content}</h2>
+      //       <div className="NewMemory-buttons">
+      //         <a href="/shelves">Cancel</a>
+      //       </div>
+      //     </div>
+      //   </div>
+      // </section>
+      <>
+      <div className="orbContent-container">
+        <div className="orbContent-text">{this.props.content}</div>
+        <a href="/shelves">Cancel</a>
       </div>
+      </>
     );
   }
 }
