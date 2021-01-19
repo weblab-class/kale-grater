@@ -28,20 +28,15 @@
     box-shadow: 0 0 25px 10px #fff;
 }
 
-/* .orbContent-container:after {
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    left: -2px;
-    background: #fff;
-    z-index: -2;
-    filter: blur(40px);
-} */
+.orbContent-text {
+    text-align: center;
+    margin-top: -20%;
+}
 
-.orbContent-container a {
-    display: inline-block;
-    padding: 10px 20px;
+.orbContent-container button {
+    position: absolute;
+    bottom: 10px;
+    padding: 5px 10px;
     background: #fff;
     border-radius: 4px;
     margin-top: 10px;
@@ -49,11 +44,9 @@
     font-weight: 600;
     color: #111;
     opacity: 0;
-    transform: translateY(50px);
-    transition: 0.5s;
 }
 
-.orbContent-container a {
+.orbContent-container button {
     opacity: 1;
     transform: translateY(0px);
     transition-delay: 0.75s;
