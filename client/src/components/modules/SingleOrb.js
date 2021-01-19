@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import OrbContent from "./Orbcontent.js";
+import OrbContent from "./OrbContent.js";
 
 import "./SingleOrb.css";
 
@@ -29,6 +29,7 @@ import "./SingleOrb.css";
     }
 
     render () {
+        const orbColor = "SingleOrb-" + this.props.emotion;
         return (
             <div onClick={this.handleClick}>
               {this.state.showContent
@@ -38,10 +39,9 @@ import "./SingleOrb.css";
                   content={this.props.content}
                   timestamp = {this.props.timestamp}
                   />
-                : <figure className="SingleOrb-ball">
+                : <figure className={`${orbColor} SingleOrb-ball`}>
                     <span className="SingleOrb-shadow"></span>
                   </figure>
-                  
               }
             </div>
           );
