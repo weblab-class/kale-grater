@@ -23,10 +23,16 @@ import "./SingleOrb.css";
     }
     
     handleClick = () => {
-      this.setState({
-        showContent: true,
-      });
-    }
+      if (this.state.showContent === false) {
+        this.setState({
+          showContent: true,
+        });   
+      } else {
+        this.setState({
+          showContent: false,
+        });
+      };
+    };
 
     render () {
         const orbColor = "SingleOrb-" + this.props.emotion;
@@ -38,6 +44,7 @@ import "./SingleOrb.css";
                   emotion={this.props.emotion}
                   content={this.props.content}
                   timestamp = {this.props.timestamp}
+                  handleClick={this.handleClick.bind(this)}
                   />
                 : <figure className={`${orbColor} SingleOrb-ball`}>
                     <span className="SingleOrb-shadow"></span>

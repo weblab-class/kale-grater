@@ -31,7 +31,7 @@ class OrbContent extends Component {
       <>
       <div className="orbContent-container">
         <div className="orbContent-text">{this.props.content}</div>
-        <a href="/shelves">Cancel</a>
+        <button onClick={this.props.handleClick}>Cancel</button>
       </div>
       </>
     );
