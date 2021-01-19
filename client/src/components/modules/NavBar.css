@@ -1,35 +1,44 @@
+.NavBar-inlineBlock {
+  display: inline-block;
+}
+
 .NavBar-container {
-    padding: var(--s) var(--m);
-    background-color: lightseagreen;
-    /* fill-opacity: 0; */
-    height: 75px
-  }
-  
-  .NavBar-title {
-    color: black;
-    font-size: 20px;
-    font-family:'Times New Roman', Times, serif;
-  }
-  
-  .NavBar-linkContainer {
-    margin-left: var(--l);
-  }
-  
-  .NavBar-link,
-  .NavBar-link:visited {
-    color: black;
-    opacity: 0.6;
-    text-decoration: none;
-  }
-  
-  .NavBar-link:hover {
-    opacity: 0.8;
-  }
-  
-  .NavBar-link.NavBar-login {
-    opacity: 1;
-  }
-  
-  .NavBar-link + .NavBar-link {
-    margin-left: var(--m);
-  }
+  padding: var(--s) var(--m);
+  background-color: lightseagreen;
+  height: 65px
+}
+
+.NavBar-title {
+  color: black;
+  font-size: 20px;
+  font-family:'Times New Roman', Times, serif;
+}
+
+.NavBar-linkContainer {
+  margin-left: var(--l);
+}
+
+.NavBar-link,
+.NavBar-link:visited {
+  color: black;
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+.NavBar-link:hover {
+  opacity: 0.8;
+}
+
+.NavBar-link.NavBar-login {
+  opacity: 1;
+}
+
+.NavBar-link + .NavBar-link {
+  margin-left: var(--l);
+}
+
+.NavBar-logout {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}

@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Link} from "@reach/router";
 import GoogleLogin, {GoogleLogout} from "react-google-login";
-import Logo from "../../../img/logo.png";
+import Logo from "../../../img/small_clear_orb.png";
 
 import "./NavBar.css";
 
@@ -19,20 +19,18 @@ class NavBar extends Component {
   render() {
     return (
       <nav className="NavBar-container">
-        <a className="NavBar-logo u-inlineBlock" href="/home">
-          <div className="logo-image">
-            <img src={ Logo } className="img-fluid"></img>
-          </div>
+        <a className="NavBar-logo" href="/home">
+            <img src={ Logo }></img>
         </a>
-        <div className="NavBar-title u-inlineBlock">Inside Out</div>
-        <div className="NavBar-linkContainer u-inlineBlock">
+        <div className="NavBar-linkContainer NavBar-inlineBlock">
           <Link to="/home" className="NavBar-link">
             Home
           </Link>
           <Link to="/shelves" className="NavBar-link">
             Shelves
           </Link>
-
+        </div>
+        <div className="NavBar-logout">
           {this.props.userId ? (
             <GoogleLogout
               clientId={GOOGLE_CLIENT_ID}
