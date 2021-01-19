@@ -17,9 +17,14 @@ class OrbContent extends Component {
   }
 
   render() {
+    const dateString = this.props.timestamp;
+    const currentDate = new Date(dateString);
+    const officialDate = (currentDate.getMonth() + 1) + "-" + currentDate.getDate() + "-" + currentDate.getFullYear();
+    
     return (
       <>
       <div className="orbContent-container">
+        <div className="orbDate-text">{officialDate}</div>
         <div className="orbContent-text">{this.props.content}</div>
         <button onClick={this.props.handleClick}>Cancel</button>
       </div>

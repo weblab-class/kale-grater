@@ -41,6 +41,7 @@ class ShelfPage extends Component {
                 creator_id={orbObj.creator_id} 
                 emotion={orbObj.emotion}
                 content={orbObj.content}
+                timestamp={orbObj.timestamp}
                 />
             ));
         } else {

@@ -34,6 +34,14 @@
     overflow: scroll;
 }
 
+.orbDate-text {
+    /* text-align: right; */
+    position: absolute;
+    top: 0px;
+    right: 1px;
+    font-size: 12px;
+}
+
 .orbContent-container button {
     position: absolute;
     bottom: 10px;
