@@ -18,16 +18,6 @@ class OrbContent extends Component {
 
   render() {
     return (
-      // <section>
-      //   <div className="NewMemory-card">
-      //     <div className="NewMemory-contentBx">
-      //       <h2>{this.props.content}</h2>
-      //       <div className="NewMemory-buttons">
-      //         <a href="/shelves">Cancel</a>
-      //       </div>
-      //     </div>
-      //   </div>
-      // </section>
       <>
       <div className="orbContent-container">
         <div className="orbContent-text">{this.props.content}</div>
