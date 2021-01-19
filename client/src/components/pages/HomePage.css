@@ -39,7 +39,7 @@
     opacity: 0.6;
     height: 100%;
     width: 90%;
-    -webkit-filter: blur(5px);
+    filter: blur(5px);
     z-index: 2;
 }
 .HomePage-ball:after {
@@ -56,7 +56,7 @@
     -ms-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
     -o-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
     transform: translateX(-80px) translateY(-90px) skewX(-20deg);
-    -webkit-filter: blur(10px);
+    filter: blur(10px);
 }
   
 .HomePage-ball .HomePage-shadow {
@@ -181,6 +181,8 @@
     bottom: 5px;
     right: 10px;
 }
+
+/* MAYBE CAN USE THIS FLOATING ANIMATION SOMEWHERE ELSE SOMETIME /*
 
 /* .HomePage-floating {   
     animation-name: floating; 
