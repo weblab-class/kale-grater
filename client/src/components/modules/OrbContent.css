@@ -30,16 +30,16 @@
 
 .orbContent-text {
     text-align: center;
+    margin-top: 5%;
     margin-bottom: 25%;
     overflow: scroll;
 }
 
-.orbDate-text {
-    /* text-align: right; */
+.orbContent-date {
     position: absolute;
     top: 0px;
-    right: 1px;
-    font-size: 12px;
+    right: 4px;
+    font-size: 10px;
 }
 
 .orbContent-container button {

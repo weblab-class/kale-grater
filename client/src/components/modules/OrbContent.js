@@ -24,7 +24,7 @@ class OrbContent extends Component {
     return (
       <>
       <div className="orbContent-container">
-        <div className="orbDate-text">{officialDate}</div>
+        <div className="orbContent-date">{officialDate}</div>
         <div className="orbContent-text">{this.props.content}</div>
         <button onClick={this.props.handleClick}>Cancel</button>
       </div>
