@@ -219,6 +219,7 @@ section {
     opacity: 1;
     transform: translateY(0px);
     transition-delay: 0.75s;
+    cursor: pointer;
 }
 
 .NewMemory-container .NewMemory-card:hover .NewMemory-contentBx .NewMemory-buttons {
