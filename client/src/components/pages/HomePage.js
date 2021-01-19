@@ -21,9 +21,13 @@ class HomePage extends Component {
     render() {
         return (
             <>
-                <Link to="/newmemory" className="NewMemory-link">
-                    Add Memory!
-                </Link>
+            {/* <div className="Button-container"> */}
+                <button className="NewMemory-container">
+                    <Link to="/newmemory" className="NewMemory-link">
+                        Add Memory!
+                    </Link>
+                </button>
+            {/* </div> */}
             </>
         )
     }

@@ -1,3 +1,20 @@
 .Button-container {
-    position: relative;
+    /* position: relative;
+    left: 50px; */
+    /* margin-right: auto;
+    margin-left: auto; */
+    /* margin: 0 auto; */
+    margin: 50px;
+    
+}
+
+.NewMemory-link {
+    font-size: 100px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.NewMemory-container {
+    background-color: gray;
+    text-align: center;
+    border-radius: 15%;
 }
