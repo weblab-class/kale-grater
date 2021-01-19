@@ -7,20 +7,6 @@
     font-family: "Poppins", sans-serif;
 }
 
-.ShelfPage-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 75px);
-    background-color: #131313;
-}
-
-.ShelfPage-container {
-    display: grid;
-    align-content: center;
-}
-
 .ShelfPage-row {
     display: flex;
     flex-direction: row-reverse;
