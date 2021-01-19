@@ -225,3 +225,24 @@ section {
     display: flex;
     justify-content: space-around;
 }
+
+
+.Highlightjoy-container {
+    box-shadow: none;
+}
+
+.Highlightsadness-container {
+    box-shadow: none;
+}
+
+.Highlightanger-container {
+    box-shadow: none;
+}
+
+.Highlightfear-container {
+    box-shadow: none;
+}
+
+.Highlightdisgust-container {
+    box-shadow: none;
+}

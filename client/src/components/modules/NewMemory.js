@@ -53,6 +53,30 @@ class NewMemory extends React.Component {
         })
     }
 
+    handleColorChange = (value) => {
+        this.setState({emotion: value});
+        const colorClasses = [".Highlightjoy-container", 
+        ".Highlightsadness-container",
+        ".Highlightanger-container",
+        ".Highlightfear-container",
+        ".Highlightdisgust-container"]
+        console.log('INFUNC');
+        const highlightEmotion = ".Highlight" + value + "-container";
+        console.log(highlightEmotion);
+        for (let i = 0; i < 5; i ++) {
+            if (colorClasses[i] === highlightEmotion) {  
+                const select = document.querySelector(highlightEmotion);
+                console.log('SELECT', select)
+                select.style.boxShadow = "0 0 3pt 2pt white";
+            } else {
+                const notSelect = document.querySelector(colorClasses[i]);
+                console.log('NOT SELECT', notSelect)
+                notSelect.style.boxShadow = "none";
+            }
+
+        }
+    }
+
     render() {
         return (
             <>
@@ -66,11 +90,16 @@ class NewMemory extends React.Component {
                             <h2>Memory Orb</h2>
                             <div className="NewMemory-color">
                                 <h3>Emotion :</h3>
-                                    <div onClick={() => {this.setState({emotion: 'joy'})}}></div>
-                                    <div onClick={() => {this.setState({emotion: 'sadness'})}}></div>
-                                    <div onClick={() => {this.setState({emotion: 'anger'})}}></div>
-                                    <div onClick={() => {this.setState({emotion: 'fear'})}}></div>
-                                    <div onClick={() => {this.setState({emotion: 'disgust'})}}></div>
+                                    {/* <div onClick={() => {this.setState({emotion: 'joy'})}} className="Highlightjoy-container"></div>
+                                    <div onClick={() => {this.setState({emotion: 'sadness'})}} className="Highlightsadness-container"></div>
+                                    <div onClick={() => {this.setState({emotion: 'anger'})}} className="Highlightanger-container"></div>
+                                    <div onClick={() => {this.setState({emotion: 'fear'})}} className="Highlightfear-container"></div>
+                                    <div onClick={() => {this.setState({emotion: 'disgust'})}} className="Highlightdisgust-container"></div> */}
+                                    <div onClick={() => {this.handleColorChange('joy')}} className="Highlightjoy-container"></div>
+                                    <div onClick={() => {this.handleColorChange('sadness')}} className="Highlightsadness-container"></div>
+                                    <div onClick={() => {this.handleColorChange('anger')}} className="Highlightanger-container"></div>
+                                    <div onClick={() => {this.handleColorChange('fear')}} className="Highlightfear-container"></div>
+                                    <div onClick={() => {this.handleColorChange('disgust')}} className="Highlightdisgust-container"></div>
                             </div>
                             <div className="NewMemory-box">
                                 <h3>Tell us about your memory :</h3>
