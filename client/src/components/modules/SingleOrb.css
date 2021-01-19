@@ -1,8 +1,8 @@
 .SingleOrb-ball {
-    width: 350px;
-    height: 350px;
+    width: 26vw;
+    height: 26vw;
     transform: scale(0.3,0.3);
-    margin: 0 0 -10vh -12vw;
+    margin: -12vh -4vw -15vh -8vw;
     border-radius: 50%;
 
     box-shadow:
