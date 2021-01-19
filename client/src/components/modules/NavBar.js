@@ -23,9 +23,6 @@ class NavBar extends Component {
             <img src={ Logo }></img>
         </a>
         <div className="NavBar-linkContainer NavBar-inlineBlock">
-          <Link to="/home" className="NavBar-link">
-            Home
-          </Link>
           <Link to="/shelves" className="NavBar-link">
             Shelves
           </Link>
