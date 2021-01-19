@@ -16,6 +16,7 @@
         10px 0 80px #ffffff00;
 
     transition: all 1s ease;
+    overflow: scroll;
 }
 .SingleOrb-ball:before {
     content: "";
