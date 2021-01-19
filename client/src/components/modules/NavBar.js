@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {Link} from "@reach/router";
 import GoogleLogin, {GoogleLogout} from "react-google-login";
+import Logo from "../../../img/logo.png";
 
 import "./NavBar.css";
 
@@ -18,6 +19,11 @@ class NavBar extends Component {
   render() {
     return (
       <nav className="NavBar-container">
+        <a className="NavBar-logo u-inlineBlock" href="/home">
+          <div className="logo-image">
+            <img src={ Logo } className="img-fluid"></img>
+          </div>
+        </a>
         <div className="NavBar-title u-inlineBlock">Inside Out</div>
         <div className="NavBar-linkContainer u-inlineBlock">
           <Link to="/home" className="NavBar-link">
