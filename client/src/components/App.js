@@ -77,7 +77,7 @@ class App extends Component {
           handleLogout={this.handleLogout}
           userId={this.state.userId}
         />
-        <div className="App-container">
+        <div>
           <Router>
             <LoginPage
               path="/"
@@ -92,7 +92,7 @@ class App extends Component {
         </div>
       </>) : (
       <>
-        <div className="App-container">
+        <div>
           <Router>
             <LoginPage 
               handleLogin={this.handleLogin}
