@@ -23,7 +23,7 @@ class NewUser extends Component {
     componentDidMount() {
 
     }
-    
+
     handleSubmit = (event) => {
         event.preventDefault();
         console.log('IN SUBMIT');
@@ -54,13 +54,13 @@ class NewUser extends Component {
     render() {
         return (
             <div>
-                <h1 class="Welcome-container">Welcome new user! Please make a username: </h1>
-                <div class="UsernameInput-container" value="">
+                <h1 className="Welcome-container">Welcome new user! Please make a username: </h1>
+                <div className="UsernameInput-container" value="">
                     <input value={this.state.value} onChange={this.handleChange}></input>
                     {this.state.error ? <div>{this.state.error}</div> : null}
                 </div>
-                <div class="Button-container">
-                    <button type="submit" class="submitButton-Container" onClick={this.handleSubmit}>
+                <div className="Button-container">
+                    <button type="submit" className="submitButton-Container" onClick={this.handleSubmit}>
                         Submit!
                     </button>
                 </div>
