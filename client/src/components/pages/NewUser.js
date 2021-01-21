@@ -23,6 +23,7 @@ class NewUser extends Component {
     componentDidMount() {
 
     }
+    
     handleSubmit = (event) => {
         event.preventDefault();
         console.log('IN SUBMIT');
@@ -41,10 +42,7 @@ class NewUser extends Component {
                     })
                 }
             });
-            };
-        
-        // usernameTaken = (name) => {
-            
+            };            
         };
     
     handleChange = (event) => {
@@ -53,23 +51,6 @@ class NewUser extends Component {
         });
     };
 
-        // let usernameTaken = true; // hardcoded for now
-
-        // // need to define function usernameTaken RIP
-        // if (usernameTaken) {
-
-        //     // how to incorporate css??
-        //     // <div>Sorry, username taken. Try again.</div>
-            
-        //     navigate("/newuser")
-        // } else {
-        //     const newUser = {userId: this.props.userId, userName: event};
-        //     // redirect = "/home";
-        //     navigate("/home")
-        // }
-
-        // console.log('well it got here');      
-        // navigate(redirect);
     render() {
         return (
             <div>
