@@ -8,6 +8,7 @@ import NavBar from "./modules/NavBar.js";
 import ShelfPage from "./pages/ShelfPage.js";
 import NewMemory from "./modules/NewMemory.js";
 import NewUser from "./pages/NewUser.js";
+import SocialPage from "./pages/SocialPage.js";
 import "../utilities.css";
 
 import { socket } from "../client-socket.js";
@@ -75,7 +76,6 @@ class App extends Component {
         
     //       </>
         // ) : (
-    console.log("CONFUSION");
     return this.state.userId ? (
       <>
         <NavBar
@@ -94,6 +94,7 @@ class App extends Component {
             <ShelfPage path="/shelves" userId={this.state.userId} />
             <NewMemory path="/newmemory" userId={this.state.userId} />
             <NewUser path="/newuser" userId={this.state.userId} />
+            <SocialPage path="/social" userId={this.state.userId} />
             <NotFound default />
           </Router>
         </div>
