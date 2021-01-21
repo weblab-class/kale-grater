@@ -63,21 +63,29 @@ router.post("/newmemory", (req, res) => {
 });
 
 
-// this whole thing is supper iffy
+
 router.post("/newuser", (req, res) => {
-  User.find({userName: req.body.username}).then((users) => {
-    if (length(users) !== 0) {
-      navigate("/newuser")
+  console.log('IN POST REQUEST');
+  User.find({username: req.body.username}).then((users) => {
+    if (users.length !== 0) {
+      console.log('BRUH');
+      res.send({message: "error, username taken"});
     } else {
       const newUser = new User({
-        name: req.user._id,
+        creator_id: req.user.creator_id,
+        name: req.user.name,
+        googleid: req.user.googleid,
         username: req.body.username
       });
-      newUser.save().then(navigate("/home"));
-    }
+        // req.user.username = req.body.username;
+        // console.log(user);
+        // req.user.username = req.body.username
+        newUser.save().then(() => {
+        res.send({message: "success"})
+      });
+    }});
   })
 
-});
 
 
 
