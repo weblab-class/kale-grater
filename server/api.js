@@ -78,7 +78,23 @@ router.post("/newuser", (req, res) => {
     }});
   })
 
+router.get("/friends", (req, res) => {
+  User.find({})
+})
 
+router.post("/social", (req, res) => {
+  User.findOne({username: req.body.username}).then((user) => {
+    if (user === null) {
+      res.send({message: "Sorry, we couldn't find that user"})
+    } else {
+      res.send({
+        userFriendId: user._id,
+        message: "success"
+      })
+
+    };
+  });
+});
 
 
 
