@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage.js";
 import NavBar from "./modules/NavBar.js";
 import ShelfPage from "./pages/ShelfPage.js";
 import NewMemory from "./modules/NewMemory.js";
+import NewUser from "./pages/NewUser.js";
 import "../utilities.css";
 
 import { socket } from "../client-socket.js";
@@ -42,7 +43,12 @@ class App extends Component {
     const userToken = res.tokenObj.id_token;
     post("/api/login", { token: userToken }).then((user) => {
       this.setState({ userId: user._id }, () => {
-        navigate("/home")
+        if (user.username) {
+          navigate("/home")
+        } else {
+          navigate("/newuser");
+        }
+        // navigate("/home")
       });
       })
     };
@@ -87,6 +93,7 @@ class App extends Component {
             <HomePage path="/home" userId={this.state.userId}  />
             <ShelfPage path="/shelves" userId={this.state.userId} />
             <NewMemory path="/newmemory" userId={this.state.userId} />
+            <NewUser path="/newuser" userId={this.state.userId} />
             <NotFound default />
           </Router>
         </div>
