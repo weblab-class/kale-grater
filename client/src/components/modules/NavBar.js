@@ -32,6 +32,9 @@ class NavBar extends Component {
           <Link to="/shelves" className="NavBar-link">
             Shelves
           </Link>
+          <Link to="/social" className="NavBar-link">
+            Social
+          </Link>
         </div>
         <div className="NavBar-logout">
           {this.props.userId ? (
