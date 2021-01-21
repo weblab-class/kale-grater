@@ -71,17 +71,9 @@ router.post("/newuser", (req, res) => {
       console.log('BRUH');
       res.send({message: "error, username taken"});
     } else {
-      const newUser = new User({
-        creator_id: req.user.creator_id,
-        name: req.user.name,
-        googleid: req.user.googleid,
-        username: req.body.username
-      });
-        // req.user.username = req.body.username;
-        // console.log(user);
-        // req.user.username = req.body.username
-        newUser.save().then(() => {
-        res.send({message: "success"})
+
+      User.updateOne({_id: req.user._id}, {username: req.body.username}).then(() => {
+        res.send({message: "success"});
       });
     }});
   })
