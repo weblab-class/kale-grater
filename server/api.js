@@ -63,7 +63,13 @@ router.post("/newmemory", (req, res) => {
   newOrb.save().then((orb) => res.send(orb))
 });
 
-
+router.post("/deletememory", (req, res) => {
+  User.deleteOne({_id: req.user_id, timestamp: req.body.timestamp })
+    .then((err) => {
+      if(err) return console.log("deletion error");
+      console.log("Deleted");
+    });
+});
 
 router.post("/newuser", (req, res) => {
   User.find({username: req.body.username}).then((users) => {
@@ -75,7 +81,8 @@ router.post("/newuser", (req, res) => {
         res.send({message: "success"});
       });
     }});
-  })
+  });
+
 
 router.get("/friends", (req, res) => {
   User.findOne({_id: req.user._id}).then((user) => {

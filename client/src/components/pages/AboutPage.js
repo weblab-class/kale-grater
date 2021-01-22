@@ -25,16 +25,20 @@ class AboutPage extends Component {
                 behavior: "smooth",
                 block: "nearest"
             });
+            console.log("info")
         } else if (this.divToHowTo) {
             this.divToHowTo.current.scrollIntoView({
                 behavior: "smooth",
                 block: "nearest"
             });
+            console.log("how")
         } else if (this.divToContact) {
             this.divToContact.current.scrollIntoView({
                 behavior: "smooth",
                 block: "nearest"
-        });
+        })
+        console.log("contact");
+
         }
     }
 
