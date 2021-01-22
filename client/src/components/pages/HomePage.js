@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import NewMemory from "../modules/NewMemory.js";
-import {Link} from "@reach/router";
+import { Link } from 'react-scroll';
 
 import "../../utilities.css";
 import "./HomePage.css";
@@ -21,6 +21,7 @@ class HomePage extends Component {
     handleOnClick = (event) => {
         if (this.divToNew) {
             this.divToNew.current.scrollIntoView({
+                alignToTop: true,
                 behavior: "smooth",
                 block: "nearest"
             })
@@ -47,13 +48,9 @@ class HomePage extends Component {
                     </div>
                 </div>
                     {/* <div className="HomePage-updates">Features in the works! Rolling orbs onto a memory shelf, long-term memory shelf, social component, attach images, randomized and custom-made memory collections, islands of personality, etc.</div> */}
-                <div className="HomePage-block">
-                    <div ref={this.divToNew}>
-                        <h1>Add a Memory</h1>
-                    </div>
-                    <div>
-                        <div className="HomePage-description"><NewMemory userId={this.props.userId}></NewMemory></div>
-                    </div> 
+                <div ref={this.divToNew} className="HomePage-block">
+                    <h1>Add a Memory</h1>
+                    <div className="HomePage-description"><NewMemory userId={this.props.userId}></NewMemory></div>
                 </div>
             </div>
             </>
