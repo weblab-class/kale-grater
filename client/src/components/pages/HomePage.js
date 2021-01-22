@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import NewMemory from "../modules/NewMemory.js";
-import { Link } from 'react-scroll';
 
 import "../../utilities.css";
 import "./HomePage.css";

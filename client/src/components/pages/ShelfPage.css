@@ -12,6 +12,7 @@
     flex-direction: row-reverse;
     flex-wrap: wrap;
     width: 100vw;
-    height: 300px;
-    margin: 20px;
+    height: calc(100vh - 65px);
+    /* margin: 20px; */
+    overflow-y: scroll;
 }
