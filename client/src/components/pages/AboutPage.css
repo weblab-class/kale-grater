@@ -12,6 +12,11 @@
     border-right: 3px solid white;
 }
 
+#AboutPage-wrap {
+    height: calc(100vh - 65px);
+    overflow-y: scroll;
+}
+
 .AboutPage-sections {
     color: wheat;
     display: flex;
