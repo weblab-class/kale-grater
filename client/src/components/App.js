@@ -4,6 +4,7 @@ import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
 import LoginPage from "./pages/LoginPage.js";
 import HomePage from "./pages/HomePage.js";
+import AboutPage from "./pages/AboutPage.js";
 import NavBar from "./modules/NavBar.js";
 import ShelfPage from "./pages/ShelfPage.js";
 import NewMemory from "./modules/NewMemory.js";
@@ -85,6 +86,7 @@ class App extends Component {
               handleLogout={this.handleLogout}
               userId={this.state.userId} />
             <HomePage path="/home" userId={this.state.userId}  />
+            <AboutPage path="/about" />
             <ShelfPage path="/shelves" userId={this.state.userId} />
             <NewMemory path="/newmemory" userId={this.state.userId} />
             <NotFound default />

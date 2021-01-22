@@ -1,0 +1,33 @@
+#AboutPage-sidenav {
+    float: left;
+    width: 300 px;
+    margin: 10px
+}
+
+#AboutPage-body {
+    float:left;
+    width: 620px;
+    margin: 10px
+}
+
+
+.AboutPage-block {
+    width: 960px;
+    margin: 20px;
+}
+
+.AboutPage-header {
+    color: rgb(91, 131, 169);
+    width: 900px;
+    margin-bottom: 10px;
+}
+
+.AboutPage-sections {
+    color: rgb(189, 115, 115);
+}
+
+.AboutPage-description {
+    color: white;
+    width: 33vw;
+    margin-bottom: 5px;
+}

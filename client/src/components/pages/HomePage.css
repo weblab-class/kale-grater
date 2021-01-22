@@ -142,6 +142,13 @@
     margin-top: 18vh;
 }
 
+.HomePage-block {
+    width: 90%;
+    margin-top: 80px;
+    margin-bottom: 80px;
+
+}
+
 .HomePage-header {
     width: 900px;
     margin-bottom: 10px;

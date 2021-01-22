@@ -26,8 +26,8 @@ class NavBar extends Component {
           <Link to="/home" className="NavBar-link">
             Home
           </Link>
-          <Link to="/newmemory" className="NavBar-link">
-            Add Memory
+          <Link to="/about" className="NavBar-link">
+            About
           </Link>
           <Link to="/shelves" className="NavBar-link">
             Shelves
