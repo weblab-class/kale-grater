@@ -19,28 +19,6 @@ class AboutPage extends Component {
         document.title = "About | Outside In";
     }
 
-    handleOnClick = (event) => {
-        if (this.divToInfo) {
-            this.divToInfo.current.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest"
-            });
-            console.log("info")
-        } else if (this.divToHowTo) {
-            this.divToHowTo.current.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest"
-            });
-            console.log("how")
-        } else if (this.divToContact) {
-            this.divToContact.current.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest"
-        })
-        console.log("contact");
-
-        }
-    }
 
     render() {
         return (
@@ -48,18 +26,16 @@ class AboutPage extends Component {
             <div id="AboutPage-wrap">
                 <div className="AboutPage-sidenav">
                     <div className="AboutPage-sections">
-                        <div className="AboutPage-section" onClick={this.handleOnClick}>How we Started</div>
-                        <div className="AboutPage-section" onClick={this.handleOnClick}>How to Use this Site</div>
-                        <div className="AboutPage-section" onClick={this.handleOnClick}>Contact Us!</div>
+                        <a href="#info" className="AboutPage-section">How we Started</a>
+                        <a href="#howto" className="AboutPage-section">How to Use this Site</a>
+                        <a href="#contact" className="AboutPage-section">Contact Us!</a>
                     </div>
                 </div>
 
                 <div className="AboutPage-body">
                     <div>
                         <div className="AboutPage-block">
-                            <div ref={this.divToInfo}>
-                                <h2 className="AboutPage-header">How we all started</h2>
-                            </div>
+                                <h2 id="info" className="AboutPage-header">How we all started</h2>
                             <div className="AboutPage-description">
                                 <p>Purpose of webpage, inspiration from Inside Out</p>
 
@@ -72,9 +48,7 @@ class AboutPage extends Component {
                             </div>
                         </div>
                         <div className="AboutPage-block">
-                            <div ref={this.divToHowTo}>
-                                <h2 className="AboutPage-header">How to use this site / FAQs</h2>
-                            </div>
+                                <h2 id="howto" className="AboutPage-header">How to use this site / FAQs</h2>
                             <div className="AboutPage-description">
                                 <p>For users who haven't added anything, it might look bare or confusing. Talk about adding a memory and the different features,
                                 how many memories you can add, different views on the shelf, Bing Bong feature, social feature </p>
@@ -91,9 +65,7 @@ class AboutPage extends Component {
                             </div>
                         </div>
                         <div className="AboutPage-block">
-                            <div ref={this.divToContact}>
-                                <h2 className="AboutPage-header">Contact us!</h2>
-                            </div>
+                                <h2 id="contact" className="AboutPage-header">Contact us!</h2>
                             <div className="AboutPage-description">
                                 Inquiries or comments on how to improve our site. Add a message box, our names!
                             </div>
