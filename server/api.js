@@ -12,6 +12,7 @@ const express = require("express");
 // import models so we can interact with the database
 const User = require("./models/user");
 const Orb = require("./models/orb");
+// const Friends = require("./models/friends");
 
 // import authentication library
 const auth = require("./auth");
@@ -65,10 +66,8 @@ router.post("/newmemory", (req, res) => {
 
 
 router.post("/newuser", (req, res) => {
-  console.log('IN POST REQUEST');
   User.find({username: req.body.username}).then((users) => {
     if (users.length !== 0) {
-      console.log('BRUH');
       res.send({message: "error, username taken"});
     } else {
 
@@ -79,24 +78,40 @@ router.post("/newuser", (req, res) => {
   })
 
 router.get("/friends", (req, res) => {
-  User.find({})
+  User.findOne({_id: req.user._id}).then((user) => {
+    res.send({friends: user.friends});
+  })
 })
 
 router.post("/social", (req, res) => {
   User.findOne({username: req.body.username}).then((user) => {
     if (user === null) {
-      res.send({message: "Sorry, we couldn't find that user"})
+      res.send({message: "failure"})
     } else {
       res.send({
-        userFriendId: user._id,
-        message: "success"
+        creator_id: user._id,
+        name: user.name,
+        googleid: user.googleid,
+        username: user.username,
+        // message: "success"
       })
 
     };
   });
 });
 
-
+router.post("/addfriend", auth.ensureLoggedIn, (req, res) => {
+  // console.log('hi', req.body.friend);
+  User.updateOne({_id: req.user._id}, {$push: {friends: req.body.username}}).then(() => {
+    // res.send({friends: user.friends});
+    // console.log(user);
+    User.findOne({_id: req.user._id}).then((user) => {
+      res.send({friends: user.friends});
+    }
+    )
+  });
+  // })
+});
 
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
