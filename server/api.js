@@ -88,17 +88,50 @@ router.post("/social", (req, res) => {
     if (user === null) {
       res.send({message: "failure"})
     } else {
-      res.send({
-        creator_id: user._id,
-        name: user.name,
-        googleid: user.googleid,
-        username: user.username,
-        // message: "success"
+      if (req.user.friends.includes(req.body.username)) {
+        res.send({message: "already friended"})
+      } else {
+        if (req.user.username === req.body.username) {
+          res.send({message: "self"})
+        } else {
+            res.send({
+              creator_id: user._id,
+              name: user.name,
+              googleid: user.googleid,
+              username: user.username,        
+            });
+        };
+      };
+      // User.findOne({username: {$in: req.user.friends}}).then((user) => {
+      //   if (user !== null) {
+      //     res.send({message: "already friended"})
+      //   } else {
+      //     if (req.user.username === req.body.username) {
+      //       res.send({message: "self"})
+      //     } else {
+      //           res.send({
+      //             creator_id: user._id,
+      //             name: user.name,
+      //             googleid: user.googleid,
+      //             username: user.username,
+      //             // message: "success"
+      //           })
+      //       }}
+      //     })
+        }
       })
+    }
+    )
+      // res.send({
+      //   creator_id: user._id,
+      //   name: user.name,
+      //   googleid: user.googleid,
+      //   username: user.username,
+      //   // message: "success"
+      // })
 
-    };
-  });
-});
+//   });
+// });
 
 router.post("/addfriend", auth.ensureLoggedIn, (req, res) => {
   // console.log('hi', req.body.friend);

@@ -41,10 +41,19 @@ class SocialPage extends Component {
       });
     } else {
       post("/api/social", body).then((result) => {
+        console.log('result', result);
         if (result.message === "failure") {
           this.setState({
             error: "Sorry, we couldn't find that user"
           });
+        } else if (result.message === "already friended") {
+          this.setState({
+            error: "um you're already friends with this person"
+          })
+        } else if (result.message === "self") {
+          this.setState({
+            error: "that's your own username"
+          })
         } else {
           this.setState({
             success: "We found that user!",
@@ -62,7 +71,7 @@ class SocialPage extends Component {
     const body = {
       username: this.state.friend
     }
-    console.log('BODY', body);
+    // console.log('BODY', body);
     post("/api/addfriend", body).then((result) => {
       this.setState({
         friends: result.friends,
@@ -71,9 +80,7 @@ class SocialPage extends Component {
     })
   }
 
-
   render() {
-    // console.log(this.state);
     return (
     <>
       <div>
@@ -93,9 +100,9 @@ class SocialPage extends Component {
 
       <div>
         <div className="Text-message">Your Friends:</div>
-        <div className="Text-message">{this.state.friends}</div>
-      </div>
-        
+        {this.state.friends.map(friend => (
+          <div className="Text-message">{friend}</div>))};
+      </div>  
     </>
     );
   };
