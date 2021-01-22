@@ -4,7 +4,8 @@ const UserSchema = new mongoose.Schema({
   creator_id: String, // stores ObjectId
   name: String,
   googleid: String,
-  username: String || null
+  username: String || null,
+  friends: [String]
 });
 
 // compile model from schema
