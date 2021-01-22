@@ -142,6 +142,11 @@
     margin-top: 18vh;
 }
 
+#HomePage-wrap {
+    height: calc(100vh - 65px);
+    overflow-y: scroll;
+}
+
 .HomePage-block {
     width: 90%;
     margin-top: 80px;

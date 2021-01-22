@@ -30,29 +30,31 @@ class HomePage extends Component {
     render() {
         return (
             <>
-            <div class="HomePage-block">
-                <div className="HomePage-outer">
-                    <div className="HomePage-ball">
-                        <span className="HomePage-shadow"></span>
+            <div id="HomePage-wrap">
+                <div className="HomePage-block">
+                    <div className="HomePage-outer">
+                        <div className="HomePage-ball">
+                            <span className="HomePage-shadow"></span>
+                        </div>
+                    </div>
+
+                    <div className="HomePage-textContainer">
+                        <h1 className="HomePage-header">Welcome to our Prototype!</h1>
+                        <div className="HomePage-description">We tag ourselves in photos and comments nearly everyday, but how often do we take the time to tag and reflect on our emotions?</div>
+                        <div className="HomePage-description">Joy, sadness, anger, fear, disgust... without one we wouldn't know the feeling of the others. They're all worth celebrating. </div>
+                        <div className="HomePage-description">The premise of our project allows you to tag, quantify, and archive your emotions in the form of memory orbs so you'll never forget them.</div>
+                        <button onClick={this.handleOnClick} className="HomePage-button">Get Started!</button>
                     </div>
                 </div>
-
-                <div className="HomePage-textContainer">
-                    <h1 className="HomePage-header">Welcome to our Prototype!</h1>
-                    <div className="HomePage-description">We tag ourselves in photos and comments nearly everyday, but how often do we take the time to tag and reflect on our emotions?</div>
-                    <div className="HomePage-description">Joy, sadness, anger, fear, disgust... without one we wouldn't know the feeling of the others. They're all worth celebrating. </div>
-                    <div className="HomePage-description">The premise of our project allows you to tag, quantify, and archive your emotions in the form of memory orbs so you'll never forget them.</div>
-                    <button onClick={this.handleOnClick} className="HomePage-button">Get Started!</button>
+                    {/* <div className="HomePage-updates">Features in the works! Rolling orbs onto a memory shelf, long-term memory shelf, social component, attach images, randomized and custom-made memory collections, islands of personality, etc.</div> */}
+                <div className="HomePage-block">
+                    <div ref={this.divToNew}>
+                        <h1>Add a Memory</h1>
+                    </div>
+                    <div>
+                        <div className="HomePage-description"><NewMemory userId={this.props.userId}></NewMemory></div>
+                    </div> 
                 </div>
-            </div>
-                {/* <div className="HomePage-updates">Features in the works! Rolling orbs onto a memory shelf, long-term memory shelf, social component, attach images, randomized and custom-made memory collections, islands of personality, etc.</div> */}
-            <div className="HomePage-block">
-                <div ref={this.divToNew}>
-                    <h1>Add a Memory</h1>
-                </div>
-                <div>
-                    <div className="HomePage-description"><NewMemory userId={this.props.userId}></NewMemory></div>
-                </div> 
             </div>
             </>
         )
