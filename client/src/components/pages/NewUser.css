@@ -2,13 +2,27 @@
 
 
 .Welcome-container {
-    background-color:blue
+    background-color: black;
 }
 
 .UsernameInput-container {
-    background-color:blue
+    background-color: black;
 }
+
 .Button-container {
-    background-color:blue
+    color: black;
+}
+
+.submitButton-container {
+    background-color: green;
+    font-size: 50px;
+    /* border
+    color
+    padding
+    text-align
+    text-decoration
+    font-size
+    display (by default inline-block) */
+
 }
 

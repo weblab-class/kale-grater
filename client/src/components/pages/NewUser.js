@@ -14,46 +14,53 @@ import "./NewUser.css";
 class NewUser extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            value: "",
+            error: ""
+        };
     }
 
     componentDidMount() {
 
     }
+
     handleSubmit = (event) => {
         event.preventDefault();
-        const body = {username: event}
-        post("/api/newuser", body)
-        // usernameTaken = (name) => {
-            
-        }
+        console.log('IN SUBMIT');
+        const body = {username: this.state.value};
+        if (body.username === "") {
+            alert("Please make a username!")
+        } else {
+            console.log('B4POST', body);
+            post("/api/newuser", body).then((result) => {
+                console.log(result);
+                if (result.message === "success") {
+                    navigate("/home");
+                } else {
+                    this.setState({
+                        error: result.message
+                    })
+                }
+            });
+            };            
+        };
+    
+    handleChange = (event) => {
+        this.setState({
+            value: event.target.value,
+        });
+    };
 
-        // let usernameTaken = true; // hardcoded for now
-
-        // // need to define function usernameTaken RIP
-        // if (usernameTaken) {
-
-        //     // how to incorporate css??
-        //     // <div>Sorry, username taken. Try again.</div>
-            
-        //     navigate("/newuser")
-        // } else {
-        //     const newUser = {userId: this.props.userId, userName: event};
-        //     // redirect = "/home";
-        //     navigate("/home")
-        // }
-
-        // console.log('well it got here');      
-        // navigate(redirect);
     render() {
         return (
             <div>
-                <h1 class="Welcome-container">Welcome new user! Please make a username: </h1>
-                <div class="UsernameInput-container" value="">
-                    <input ></input>
+                <h1 className="Welcome-container">Welcome new user! Please make a username: </h1>
+                <div className="UsernameInput-container" value="">
+                    <input value={this.state.value} onChange={this.handleChange}></input>
+                    {this.state.error ? <div>{this.state.error}</div> : null}
                 </div>
-                <div class="Button-container">
-                    <button type="submit" class="submitButton-Container" onClick={this.handleSubmit}>
+                <div className="Button-container">
+                    <button type="submit" className="submitButton-Container" onClick={this.handleSubmit}>
                         Submit!
                     </button>
                 </div>

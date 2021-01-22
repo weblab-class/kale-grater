@@ -8,6 +8,8 @@ import AboutPage from "./pages/AboutPage.js";
 import NavBar from "./modules/NavBar.js";
 import ShelfPage from "./pages/ShelfPage.js";
 import NewMemory from "./modules/NewMemory.js";
+import NewUser from "./pages/NewUser.js";
+import SocialPage from "./pages/SocialPage.js";
 import "../utilities.css";
 
 import { socket } from "../client-socket.js";
@@ -43,7 +45,12 @@ class App extends Component {
     const userToken = res.tokenObj.id_token;
     post("/api/login", { token: userToken }).then((user) => {
       this.setState({ userId: user._id }, () => {
-        navigate("/home")
+        if (user.username) {
+          navigate("/home")
+        } else {
+          navigate("/newuser");
+        }
+        // navigate("/home")
       });
       })
     };
@@ -70,7 +77,6 @@ class App extends Component {
         
     //       </>
         // ) : (
-    console.log("CONFUSION");
     return this.state.userId ? (
       <>
         <NavBar
@@ -89,6 +95,8 @@ class App extends Component {
             <AboutPage path="/about" />
             <ShelfPage path="/shelves" userId={this.state.userId} />
             <NewMemory path="/newmemory" userId={this.state.userId} />
+            <NewUser path="/newuser" userId={this.state.userId} />
+            <SocialPage path="/social" userId={this.state.userId} />
             <NotFound default />
           </Router>
         </div>

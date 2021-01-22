@@ -63,22 +63,38 @@ router.post("/newmemory", (req, res) => {
 });
 
 
-// this whole thing is supper iffy
+
 router.post("/newuser", (req, res) => {
-  User.find({userName: req.body.username}).then((users) => {
-    if (length(users) !== 0) {
-      navigate("/newuser")
+  console.log('IN POST REQUEST');
+  User.find({username: req.body.username}).then((users) => {
+    if (users.length !== 0) {
+      console.log('BRUH');
+      res.send({message: "error, username taken"});
     } else {
-      const newUser = new User({
-        name: req.user._id,
-        username: req.body.username
+
+      User.updateOne({_id: req.user._id}, {username: req.body.username}).then(() => {
+        res.send({message: "success"});
       });
-      newUser.save().then(navigate("/home"));
-    }
+    }});
   })
 
-});
+router.get("/friends", (req, res) => {
+  User.find({})
+})
 
+router.post("/social", (req, res) => {
+  User.findOne({username: req.body.username}).then((user) => {
+    if (user === null) {
+      res.send({message: "Sorry, we couldn't find that user"})
+    } else {
+      res.send({
+        userFriendId: user._id,
+        message: "success"
+      })
+
+    };
+  });
+});
 
 
 
