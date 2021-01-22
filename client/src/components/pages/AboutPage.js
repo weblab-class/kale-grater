@@ -41,15 +41,15 @@ class AboutPage extends Component {
     render() {
         return (
             <>
-            <div id="AboutPage-sidenav">
+            <div className="AboutPage-sidenav">
                 <div className="AboutPage-sections">
-                    <p onClick={this.handleOnClick}>How we all started</p>
-                    <p onClick={this.handleOnClick}>How to use this site</p>
-                    <p onClick={this.handleOnClick}>Contact us!</p>
+                    <div className="AboutPage-section" onClick={this.handleOnClick}>How we Started</div>
+                    <div className="AboutPage-section" onClick={this.handleOnClick}>How to Use this Site</div>
+                    <div className="AboutPage-section" onClick={this.handleOnClick}>Contact Us!</div>
                 </div>
             </div>
 
-            <div id="AboutPage-body">
+            <div className="AboutPage-body">
                 <div>
                     <div className="AboutPage-block">
                         <div ref={this.divToInfo}>
