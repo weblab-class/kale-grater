@@ -1,29 +1,49 @@
-#AboutPage-sidenav {
-    float: left;
-    width: 300 px;
-    margin: 10px
+.AboutPage-sidenav {
+    height: 100%;
+    margin-top: 65px;
+    width: 200px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:black;
+    overflow-x: hidden;
+    padding-top: 20px;
+    border-right: 3px solid white;
 }
 
-#AboutPage-body {
-    float:left;
+#AboutPage-wrap {
+    height: calc(100vh - 65px);
+    overflow-y: scroll;
+}
+
+.AboutPage-sections {
+    color: wheat;
+    display: flex;
+    flex-flow: column;
+    padding: 20px;
+}
+
+.AboutPage-section {
+    margin-top: 20px;
+}
+
+.AboutPage-body {
+    /* margin-left: 200px; */
     width: 620px;
     margin: 10px
 }
 
-
 .AboutPage-block {
     width: 960px;
     margin: 20px;
+    margin-left: 200px;
 }
 
 .AboutPage-header {
     color: rgb(91, 131, 169);
     width: 900px;
     margin-bottom: 10px;
-}
-
-.AboutPage-sections {
-    color: rgb(189, 115, 115);
 }
 
 .AboutPage-description {

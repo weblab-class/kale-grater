@@ -15,7 +15,7 @@ class HomePage extends Component {
     }
 
     componentDidMount() {
-        document.title = "Outside In";
+        document.title = "Home | Outside In";
     }
 
     handleOnClick = (event) => {

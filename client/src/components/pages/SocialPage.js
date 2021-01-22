@@ -15,6 +15,7 @@ class SocialPage extends Component {
   }
 
   componentDidMount() {
+    document.title = "Social | Outside In";
     get("/api/friends", ).then((result) => {
       // let reversedStoryObjs = plantObjs.reverse();
       // friends = result.friends
