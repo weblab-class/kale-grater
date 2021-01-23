@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { post, get } from "../../utilities";
+import ShelfPage from "./ShelfPage.js";
+import {navigate} from "@reach/router";
 
 import "./SocialPage.css";
 
@@ -15,7 +17,6 @@ class SocialPage extends Component {
   }
 
   componentDidMount() {
-    document.title = "Social | Outside In";
     get("/api/friends", ).then((result) => {
       // let reversedStoryObjs = plantObjs.reverse();
       // friends = result.friends
@@ -27,6 +28,13 @@ class SocialPage extends Component {
   };
 
   handleChange = (event) => {
+    if (this.state.error || this.state.success) {
+      this.setState({
+        error: "",
+        success: "",
+        friend: ""
+      })
+    }
     this.setState({
         friend: event.target.value,
     });
@@ -64,6 +72,14 @@ class SocialPage extends Component {
       });
     };
   };
+  handleClick = (friend) => {
+    console.log('in click');
+    const body = {username: friend}
+    post("/api/social/shelves", body).then((user) => {
+      console.log('USER', user);
+      navigate("/shelves");
+    })
+  }
 
   addFriend = () => {
     // this.setState({
@@ -81,6 +97,7 @@ class SocialPage extends Component {
     })
   }
 
+  
   render() {
     return (
     <>
@@ -102,7 +119,9 @@ class SocialPage extends Component {
       <div>
         <div className="Text-message">Your Friends:</div>
         {this.state.friends.map(friend => (
-          <div className="Text-message">{friend}</div>))};
+          <div className="Text-message">
+            <button onClick={() => {this.handleClick(friend)}}>{friend}</button>
+          </div>))};
       </div>  
     </>
     );
