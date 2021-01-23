@@ -42,6 +42,14 @@
     font-size: 10px;
 }
 
+.orbContent-delete{
+    display: inline-block;
+}
+
+.orbContent-cancel{
+    display: inline-block;
+}
+
 .orbContent-container button {
     position: absolute;
     bottom: 10px;

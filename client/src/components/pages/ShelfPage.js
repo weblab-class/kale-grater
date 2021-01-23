@@ -37,7 +37,7 @@ class ShelfPage extends Component {
         const hasOrbs = this.state.orbs.length !== 0;
         if (hasOrbs) {
             orbsList = this.state.orbs.map((orbObj) => (
-                <SingleOrb 
+                <SingleOrb className="ShelfPage-orb"
                 creator_id={orbObj.creator_id} 
                 emotion={orbObj.emotion}
                 content={orbObj.content}
@@ -50,7 +50,7 @@ class ShelfPage extends Component {
         return (
             <>
             <div className="ShelfPage-row">
-                {this.props.creator_id && <ShelfPage addNewOrb={this.addNewOrb} />}
+                {/* {this.props.creator_id && <ShelfPage addNewOrb={this.addNewOrb} />} */}
                 {orbsList}
             </div>
             </>
