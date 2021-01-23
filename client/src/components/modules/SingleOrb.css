@@ -1,16 +1,16 @@
 .SingleOrb-ball {
     width: 26vw;
     height: 26vw;
-    transform: scale(0.3,0.3);
-    margin: -12vh -4vw -15vh -8vw;
+    transform: scale(0.1,0.1);
+    margin: -16vh -10vw -50vh -10vw;
     border-radius: 50%;
 
     box-shadow:
         inset 0 0 50px #fff,
         inset 20px 0 80px #ffffff00,
         inset -20px 0 80px #ffffff00,
-        inset 20px 0 300px #ffffff00,
-        inset -20px 0 300px #ffffff00,
+        inset 20px 0 26vw #ffffff00,
+        inset -20px 0 26vw #ffffff00,
         0 0 50px #fff,
         -10px 0 80px #ffffff00,
         10px 0 80px #ffffff00;
@@ -18,6 +18,11 @@
     transition: all 1s ease;
     cursor: pointer;
 }
+
+.SingleOrb-container {
+    max-height: 48.3px;
+}
+
 .SingleOrb-ball:before {
     content: "";
     position: absolute;
@@ -51,13 +56,13 @@
     /* background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%); */
     z-index: -1;
 }
-.SingleOrb-stage {
-    width: 300px;
-    height: 300px;
+/* .SingleOrb-stage {
+    width: 26vw;
+    height: 26vw;
     display: inline-block;
     margin: 20px;
     perspective: 1200px;
-}
+} */
 
 body {
     background: black;
@@ -68,8 +73,8 @@ body {
     inset 0 0 200px #fff,
     inset 20px 0 80px #ffffff00,
     inset -20px 0 80px #ffffff00,
-    inset 20px 0 300px #ffffff00,
-    inset -20px 0 300px #ffffff00,
+    inset 20px 0 26vw #ffffff00,
+    inset -20px 0 26vw #ffffff00,
     0 0 70px #fff,
     -10px 0 80px #ffffff00,
     10px 0 80px #ffffff00;
@@ -80,8 +85,8 @@ body {
     inset 0 0 50px #fff,
     inset 20px 0 80px #ffd700,
     inset -20px 0 80px #ffd700,
-    inset 20px 0 300px #ffd700,
-    inset -20px 0 300px #ffd700,
+    inset 20px 0 26vw #ffd700,
+    inset -20px 0 26vw #ffd700,
     0 0 50px #fff,
     -10px 0 80px #ffd700,
     10px 0 80px #ffd700;
@@ -92,8 +97,8 @@ body {
     inset 0 0 200px #fff,
     inset 20px 0 80px #ffd700,
     inset -20px 0 80px #ffd700,
-    inset 20px 0 300px #ffd700,
-    inset -20px 0 300px #ffd700,
+    inset 20px 0 26vw #ffd700,
+    inset -20px 0 26vw #ffd700,
     0 0 70px #fff,
     -10px 0 80px #ffd700,
     10px 0 80px #ffd700;
@@ -104,8 +109,8 @@ body {
         inset 0 0 50px #fff,
         inset 20px 0 80px #4361EE,
         inset -20px 0 80px #4361EE,
-        inset 20px 0 300px #4361EE,
-        inset -20px 0 300px #4361EE,
+        inset 20px 0 26vw #4361EE,
+        inset -20px 0 26vw #4361EE,
         0 0 50px #fff,
         -10px 0 80px #4361EE,
         10px 0 80px #4361EE;
@@ -116,8 +121,8 @@ body {
     inset 0 0 200px #fff,
     inset 20px 0 80px #4361EE,
     inset -20px 0 80px #4361EE,
-    inset 20px 0 300px #4361EE,
-    inset -20px 0 300px #4361EE,
+    inset 20px 0 26vw #4361EE,
+    inset -20px 0 26vw #4361EE,
     0 0 70px #fff,
     -10px 0 80px #4361EE,
     10px 0 80px #4361EE;
@@ -128,8 +133,8 @@ body {
     inset 0 0 50px #fff,
     inset 20px 0 80px #8900f2,
     inset -20px 0 80px #8900f2,
-    inset 20px 0 300px #8900f2,
-    inset -20px 0 300px #8900f2,
+    inset 20px 0 26vw #8900f2,
+    inset -20px 0 26vw #8900f2,
     0 0 50px #fff,
     -10px 0 80px #8900f2,
     10px 0 80px #8900f2;
@@ -140,8 +145,8 @@ body {
     inset 0 0 200px #fff,
     inset 20px 0 80px #8900f2,
     inset -20px 0 80px #8900f2,
-    inset 20px 0 300px #8900f2,
-    inset -20px 0 300px #8900f2,
+    inset 20px 0 26vw #8900f2,
+    inset -20px 0 26vw #8900f2,
     0 0 70px #fff,
     -10px 0 80px #8900f2,
     10px 0 80px #8900f2;
@@ -152,8 +157,8 @@ body {
         inset 0 0 50px #fff,
         inset 20px 0 80px #D00000,
         inset -20px 0 80px #D00000,
-        inset 20px 0 300px #D00000,
-        inset -20px 0 300px #D00000,
+        inset 20px 0 26vw #D00000,
+        inset -20px 0 26vw #D00000,
         0 0 50px #fff,
         -10px 0 80px #D00000,
         10px 0 80px #D00000;
@@ -164,8 +169,8 @@ body {
         inset 0 0 200px #fff,
         inset 20px 0 80px #D00000,
         inset -20px 0 80px #D00000,
-        inset 20px 0 300px #D00000,
-        inset -20px 0 300px #D00000,
+        inset 20px 0 26vw #D00000,
+        inset -20px 0 26vw #D00000,
         0 0 70px #fff,
         -10px 0 80px #D00000,
         10px 0 80px #D00000;
@@ -176,8 +181,8 @@ body {
         inset 0 0 50px #fff,
         inset 20px 0 80px #80b918,
         inset -20px 0 80px #80b918,
-        inset 20px 0 300px #80b918,
-        inset -20px 0 300px #80b918,
+        inset 20px 0 26vw #80b918,
+        inset -20px 0 26vw #80b918,
         0 0 50px #fff,
         -10px 0 80px #80b918,
         10px 0 80px #80b918;
@@ -188,8 +193,8 @@ body {
     inset 0 0 200px #fff,
     inset 20px 0 80px #80b918,
     inset -20px 0 80px #80b918,
-    inset 20px 0 300px #80b918,
-    inset -20px 0 300px #80b918,
+    inset 20px 0 26vw #80b918,
+    inset -20px 0 26vw #80b918,
     0 0 70px #fff,
     -10px 0 80px #80b918,
     10px 0 80px #80b918;

@@ -23,7 +23,7 @@ class AboutPage extends Component {
     render() {
         return (
             <>
-            <div id="AboutPage-wrap">
+            <div className="AboutPage-wrap">
                 <div className="AboutPage-sidenav">
                     <div className="AboutPage-sections">
                         <a href="#info" className="AboutPage-section">How we Started</a>
