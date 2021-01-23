@@ -8,11 +8,14 @@
 }
 
 .ShelfPage-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(15,1fr);
+    grid-template-rows: repeat(4,1fr) 400px;
     flex-direction: row-reverse;
     flex-wrap: wrap;
     width: 100vw;
     height: calc(100vh - 65px);
     /* margin: 20px; */
     overflow-y: scroll;
+    row-gap: 10px;
 }
