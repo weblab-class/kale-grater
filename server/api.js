@@ -146,6 +146,12 @@ router.post("/addfriend", auth.ensureLoggedIn, (req, res) => {
   // })
 });
 
+router.post("/social/shelves", (req, res) => {
+  User.findOne({username: req.body.username}).then((user) => {
+    res.send({friend: user});
+  });
+});
+
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
   console.log(`API route not found: ${req.method} ${req.url}`);
