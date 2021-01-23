@@ -1,4 +1,6 @@
 .App-container {
     position: absolute;
-    top: 100px;
+    top: 65px;
+    width: 100vw;
+    height: calc(100vh - 65px);
 }
