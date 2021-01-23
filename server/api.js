@@ -162,6 +162,14 @@ router.post("/social/shelves", (req, res) => {
   });
 });
 
+router.get("/user", (req, res) => {
+  if (req.user._id === req.query.userId) {
+    res.send({message: "self"})
+  } else {
+    res.send({message: "friend"})
+  }
+});
+
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
   console.log(`API route not found: ${req.method} ${req.url}`);

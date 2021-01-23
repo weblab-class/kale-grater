@@ -11,20 +11,50 @@ class ShelfPage extends Component {
         super(props);
         this.state = {
             orbs: [],
+            // userId: this.props.userId,
+            // loaded: null,
+            privacy: "",
+            loaded: "",
+            userId: this.props.userId
         };
+        console.log('STATE', this.state);
     }
 
     componentDidMount() {
+        console.log('am i even in the component')
         document.title = "Shelf | Inside Out";
-
+        console.log(this.props.userId);
         get("/api/shelves", {userId: this.props.userId}).then((orbObjs) => {
             this.setState({
-                orbs: orbObjs
+                orbs: orbObjs,
+                loaded: 'yes'
             });
         });
 
+        get("/api/user", {userId: this.props.userId}).then((result) => {
+            this.setState({
+                privacy: result.message
+            })
+        })
+
     }
 
+    componentDidUpdate () {
+        if (this.props.userId !== this.state.userId) {
+        get("/api/shelves", {userId: this.props.userId}).then((orbObjs) => {
+            this.setState({
+                orbs: orbObjs,
+                loaded: 'yes'
+            });
+        });
+
+        get("/api/user", {userId: this.props.userId}).then((result) => {
+            this.setState({
+                privacy: result.message
+            })
+        })
+        }
+    }
     // called when user presses "Submit" to add new orb to shelf
     addNewOrb = (orbObj) => {
         this.setState({
@@ -33,6 +63,12 @@ class ShelfPage extends Component {
     };
 
     render() {
+        console.log('does it render??')
+        console.log(this.state)
+        console.log('ID', this.props.userId)
+        if (!this.state.privacy || !this.state.loaded) {
+            return <div>Loading!</div>;
+        }
         let orbsList = null;
         const hasOrbs = this.state.orbs.length !== 0;
         if (hasOrbs) {
