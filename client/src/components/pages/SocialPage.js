@@ -73,11 +73,14 @@ class SocialPage extends Component {
     };
   };
   handleClick = (friend) => {
-    console.log('in click');
+    // console.log('in click');
     const body = {username: friend}
+    console.log('body', body);
     post("/api/social/shelves", body).then((user) => {
       console.log('USER', user);
-      navigate("/shelves");
+      console.log(`/shelves/${user.friend._id}`);
+      navigate(`/shelves/${user.friend._id}`);
+      // return user.friend.creator_id
     })
   }
 
@@ -120,8 +123,8 @@ class SocialPage extends Component {
         <div className="Text-message">Your Friends:</div>
         {this.state.friends.map(friend => (
           <div className="Text-message">
-            {/* <button onClick={() => {this.handleClick(friend)}}>{friend}</button> */}
-            <Link to={`/shelves/${friend}`} username={friend}>{friend}</Link>
+            <button onClick={() => {this.handleClick(friend)}}>{friend}</button>
+            {/* <Link to={`/shelves/${() => {this.getUsername(friend)}}`} username={friend}>{friend}</Link> */}
           </div>))};
       </div>  
     </>
