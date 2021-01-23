@@ -17,6 +17,7 @@ class NavBar extends Component {
   }
 
   render() {
+    console.log(this.props.userId);
     return (
       <nav className="NavBar-container">
         <a className="NavBar-logo" href="/home">
@@ -29,7 +30,8 @@ class NavBar extends Component {
           <Link to="/about" className="NavBar-link">
             About
           </Link>
-          <Link to="/shelves" className="NavBar-link">
+          {/* <Link to="/shelves" className="NavBar-link"> */}
+          <Link to={`/shelves/${this.props.userId}`} className="NavBar-link">
             Shelves
           </Link>
           <Link to="/social" className="NavBar-link">

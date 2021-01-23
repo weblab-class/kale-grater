@@ -93,7 +93,8 @@ class App extends Component {
               userId={this.state.userId} />
             <HomePage path="/home" userId={this.state.userId}  />
             <AboutPage path="/about" />
-            <ShelfPage path="/shelves" userId={this.state.userId} />
+            {/* <ShelfPage path="/shelves" userId={this.state.userId} /> */}
+            <ShelfPage path="/shelves/:userId" userId={this.state.userId} />
             <NewMemory path="/newmemory" userId={this.state.userId} />
             <NewUser path="/newuser" userId={this.state.userId} />
             <SocialPage path="/social" userId={this.state.userId} />

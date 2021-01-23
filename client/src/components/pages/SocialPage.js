@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { post, get } from "../../utilities";
 import ShelfPage from "./ShelfPage.js";
-import {navigate} from "@reach/router";
+import {navigate, Link} from "@reach/router";
 
 import "./SocialPage.css";
 
@@ -120,7 +120,8 @@ class SocialPage extends Component {
         <div className="Text-message">Your Friends:</div>
         {this.state.friends.map(friend => (
           <div className="Text-message">
-            <button onClick={() => {this.handleClick(friend)}}>{friend}</button>
+            {/* <button onClick={() => {this.handleClick(friend)}}>{friend}</button> */}
+            <Link to={`/shelves/${friend}`} username={friend}>{friend}</Link>
           </div>))};
       </div>  
     </>

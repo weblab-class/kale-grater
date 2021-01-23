@@ -34,11 +34,13 @@ class OrbContent extends Component {
       <div className="orbContent-container">
         <div className="orbContent-date">{officialDate}</div>
         <div className="orbContent-text">{this.props.content}</div>
-        <div className="orbContent-delete">
-          <button onClick={this.deleteMemory}>Delete</button>
-        </div>
-        <div className="orbContent-cancel">
-          <button onClick={this.props.handleClick}>Cancel</button>
+        <div className="orbContent-buttons">
+          <div className="orbContent-delete">
+            <button onClick={this.deleteMemory}>Delete</button>
+          </div>
+          <div className="orbContent-cancel">
+            <button onClick={this.props.handleClick}>Cancel</button>
+          </div>
         </div>
       </div>
       </>
