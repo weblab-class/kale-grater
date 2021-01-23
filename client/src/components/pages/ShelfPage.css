@@ -9,7 +9,7 @@
 
 .ShelfPage-row {
     display: grid;
-    grid-template-columns: repeat(15,1fr);
+    grid-template-columns: repeat(16,1fr);
     grid-template-rows: repeat(4,1fr) 400px;
     flex-direction: row-reverse;
     flex-wrap: wrap;
