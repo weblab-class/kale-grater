@@ -84,7 +84,7 @@ class App extends Component {
           handleLogout={this.handleLogout}
           userId={this.state.userId}
         />
-        <div>
+        <div className="App-container">
           <Router>
             <LoginPage
               path="/"

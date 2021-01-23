@@ -37,7 +37,7 @@ import "./SingleOrb.css";
     render () {
         const orbColor = "SingleOrb-" + this.props.emotion;
         return (
-            <div onClick={this.handleClick}>
+            <div className="SingleOrb-container" onClick={this.handleClick}>
               {this.state.showContent
                 ? <OrbContent
                   creator_id={this.props.creator_id}
