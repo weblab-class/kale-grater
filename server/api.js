@@ -67,9 +67,9 @@ router.post("/newmemory", (req, res) => {
 });
 
 router.post("/deletememory", (req, res) => {
-  User.deleteOne({_id: req.user_id, timestamp: req.body.timestamp })
+  Orb.deleteOne({_id: req._id})
     .then((err) => {
-      if(err) return console.log("deletion error");
+      if(err) return console.log(err);
       console.log("Deleted");
     });
 });
@@ -167,6 +167,14 @@ router.get("/user", (req, res) => {
     res.send({message: "self"})
   } else {
     res.send({message: "friend"})
+  }
+});
+
+router.get("/checkusername", (req, res) => {
+  if (!req.user.username) {
+    res.send({message: "no username"})
+  } else {
+    res.send({message: "username"})
   }
 });
 
