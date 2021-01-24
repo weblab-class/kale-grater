@@ -46,7 +46,6 @@ class HomePage extends Component {
                         <button onClick={this.handleOnClick} className="HomePage-button">Get Started!</button>
                     </div>
                 </div>
-                    {/* <div className="HomePage-updates">Features in the works! Rolling orbs onto a memory shelf, long-term memory shelf, social component, attach images, randomized and custom-made memory collections, islands of personality, etc.</div> */}
                 <div ref={this.divToNew} className="HomePage-block">
                     <h1>Add a Memory</h1>
                     <div className="HomePage-description"><NewMemory userId={this.props.userId}></NewMemory></div>
