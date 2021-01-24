@@ -13,6 +13,7 @@ class SocialPage extends Component {
       error: "",
       success: "",
       friends: [],
+      loaded: "",
     }
   }
 
@@ -25,6 +26,15 @@ class SocialPage extends Component {
       //   this.setState({ friends: this.state.friends.concat([friendObj])});
       // });
     });
+
+    get("/api/checkusername").then((result) => {
+      if (result.message === "no username") {
+        navigate("/newuser")
+      }
+     this.setState({
+       loaded: "true"
+     }) 
+    })
   };
 
   handleChange = (event) => {
@@ -102,6 +112,9 @@ class SocialPage extends Component {
 
   
   render() {
+    if (!this.state.loaded) {
+      return <div>Loading!</div>
+    }
     return (
     <>
       <div>
