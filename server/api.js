@@ -67,9 +67,9 @@ router.post("/newmemory", (req, res) => {
 });
 
 router.post("/deletememory", (req, res) => {
-  User.deleteOne({_id: req.user_id, timestamp: req.body.timestamp })
+  Orb.deleteOne({_id: req._id})
     .then((err) => {
-      if(err) return console.log("deletion error");
+      if(err) return console.log(err);
       console.log("Deleted");
     });
 });

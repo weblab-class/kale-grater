@@ -1,5 +1,6 @@
 import { navigate } from "@reach/router";
 import React, { Component } from "react";
+import { post } from "../../utilities";
 
 import "./OrbContent.css";
 
@@ -18,7 +19,7 @@ class OrbContent extends Component {
   }
 
   deleteMemory = () => {
-    post("/api/deletememory", body).then(() => {
+    post("/api/deletememory", { _id: this._id}).then(() => {
       navigate("/shelves");
     });
   };
