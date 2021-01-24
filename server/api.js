@@ -170,6 +170,14 @@ router.get("/user", (req, res) => {
   }
 });
 
+router.get("/checkusername", (req, res) => {
+  if (!req.user.username) {
+    res.send({message: "no username"})
+  } else {
+    res.send({message: "username"})
+  }
+});
+
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
   console.log(`API route not found: ${req.method} ${req.url}`);
