@@ -83,9 +83,9 @@ class NewMemory extends React.Component {
             <section>
                 <div className="NewMemory-container">
                     <div className="NewMemory-card">
-                        <div className="NewMemory-imgBx">
+                        {/* <div className="NewMemory-imgBx">
                             <img src={clearOrb}></img>
-                        </div>
+                        </div> */}
                         <div className="NewMemory-contentBx">
                             <h2>Memory Orb</h2>
                             <div className="NewMemory-color">

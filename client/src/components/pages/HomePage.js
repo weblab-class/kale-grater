@@ -46,7 +46,7 @@ class HomePage extends Component {
                         <button onClick={this.handleOnClick} className="HomePage-button">Get Started!</button>
                     </div>
                 </div>
-                <div ref={this.divToNew} className="HomePage-block">
+                <div ref={this.divToNew} className="HomePage-memory">
                     <h1>Add a Memory</h1>
                     <div className="HomePage-description"><NewMemory userId={this.props.userId}></NewMemory></div>
                 </div>
