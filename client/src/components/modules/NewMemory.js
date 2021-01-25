@@ -95,7 +95,7 @@ class NewMemory extends React.Component {
                             <img src={clearOrb}></img>
                         </div> */}
                         <div className="NewMemory-contentBx">
-                            <h2>Memory Orb</h2>
+                            {/* <h2>Memory Orb</h2> */}
                             <div className="NewMemory-color">
                                 <h3>Emotion :</h3>
                                     {/* <div onClick={() => {this.setState({emotion: 'joy'})}} className="Highlightjoy-container"></div>
@@ -110,10 +110,12 @@ class NewMemory extends React.Component {
                                     <div onClick={() => {this.handleColorChange('disgust')}} className="Highlightdisgust-container"></div>
                             </div>
                             <div className="NewMemory-box">
-                                <h3>Tell us about your memory :</h3>
-                                    <h4>
-                                        <textarea name="description" rows="10" cols="60" id="txtArea" onChange={this.handleChange}></textarea>
-                                    </h4>
+                                    <textarea 
+                                    name="description"
+                                    id="txtArea"  
+                                    placeholder="Tell us about your memory!"
+                                    rows="10" cols="60" 
+                                    onChange={this.handleChange}></textarea>
                             </div>
                             <div className="dropdown">
                             <button className="dropbtn">Privacy Option</button>
