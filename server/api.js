@@ -60,7 +60,8 @@ router.post("/newmemory", (req, res) => {
     creator_id: req.body.userId,
     emotion: req.body.emotion,
     content: req.body.content,
-    timestamp: Date.now()
+    timestamp: Date.now(),
+    privacy: req.body.privacy
   });
 
   newOrb.save().then((orb) => res.send(orb))
