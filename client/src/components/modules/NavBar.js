@@ -6,7 +6,7 @@ import Logo from "../../../img/small_clear_orb.png";
 import "./NavBar.css";
 
 // This identifies your web application to Google's authentication service
-const GOOGLE_CLIENT_ID = "761480055071-mjpqo87nr30mjbf346f8b8u82v14n219.apps.googleusercontent.com";
+const GOOGLE_CLIENT_ID = "554789457623-ffsmhmjmdpqjt5lck25nb5onlqc43d8r.apps.googleusercontent.com";
 
 /**
  * The navigation bar at the top of all pages. Takes no props.

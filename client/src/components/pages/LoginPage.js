@@ -5,7 +5,7 @@ import "../../utilities.css";
 import "./LoginPage.css";
 
 //TODO: REPLACE WITH YOUR OWN CLIENT_ID
-const GOOGLE_CLIENT_ID = "761480055071-mjpqo87nr30mjbf346f8b8u82v14n219.apps.googleusercontent.com";
+const GOOGLE_CLIENT_ID = "554789457623-ffsmhmjmdpqjt5lck25nb5onlqc43d8r.apps.googleusercontent.com";
 
 class LoginPage extends Component {
     constructor(props) {
