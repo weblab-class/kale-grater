@@ -178,6 +178,12 @@ router.get("/checkusername", (req, res) => {
   }
 });
 
+router.get("/getusername", (req, res) => {
+  User.findOne({_id: req.query.userId}).then((user) => {
+    res.send({username: user.username})
+  })
+})
+
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
   console.log(`API route not found: ${req.method} ${req.url}`);
