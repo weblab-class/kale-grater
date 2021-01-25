@@ -13,7 +13,7 @@ class ShelfPage extends Component {
             orbs: [],
             // userId: this.props.userId,
             // loaded: null,
-            privacy: "",
+            view: "",
             loaded: "",
             userId: this.props.userId,
             userName: ""
@@ -22,7 +22,6 @@ class ShelfPage extends Component {
     }
 
     componentDidMount() {
-        console.log('am i even in the component')
         document.title = "Shelf | Inside Out";
         console.log(this.props.userId);
         get("/api/shelves", {userId: this.props.userId}).then((orbObjs) => {
@@ -34,13 +33,11 @@ class ShelfPage extends Component {
 
         get("/api/user", {userId: this.props.userId}).then((result) => {
             this.setState({
-                privacy: result.message,
+                view: result.message,
             })
         })
 
         get("/api/getusername", {userId: this.props.userId}).then((result) => {
-            console.log('in check');
-            console.log('result', result)
             this.setState({
                 username: result.username,
             })
@@ -59,7 +56,7 @@ class ShelfPage extends Component {
 
         get("/api/user", {userId: this.props.userId}).then((result) => {
             this.setState({
-                privacy: result.message
+                view: result.message
             })
         })
         }
@@ -72,10 +69,7 @@ class ShelfPage extends Component {
     };
 
     render() {
-        console.log('does it render??')
-        console.log(this.state)
-        console.log('ID', this.props.userId)
-        if (!this.state.privacy || !this.state.loaded || !this.state.username) {
+        if (!this.state.view || !this.state.loaded || !this.state.username) {
             return <div>Loading!</div>;
         }
         let orbsList = null;
@@ -87,6 +81,8 @@ class ShelfPage extends Component {
                 emotion={orbObj.emotion}
                 content={orbObj.content}
                 timestamp={orbObj.timestamp}
+                privacy={orbObj.privacy}
+                view={this.state.view}
                 />
             ));
         } else {
@@ -94,7 +90,7 @@ class ShelfPage extends Component {
         }
         return (
             <>
-            {this.state.privacy === "self" ? null : <h2 className="Shelf-title">{this.state.username}'s Orbs</h2>}
+            {this.state.view === "self" ? null : <h2 className="Shelf-title">{this.state.username}'s Orbs</h2>}
             <div className="ShelfPage-row">
                 {/* {this.props.creator_id && <ShelfPage addNewOrb={this.addNewOrb} />} */}
                 {orbsList}
