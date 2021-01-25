@@ -16,7 +16,8 @@ class ShelfPage extends Component {
             view: "",
             loaded: "",
             userId: this.props.userId,
-            userName: ""
+            userName: "",
+            shelfView: "all",
         };
         console.log('STATE', this.state);
     }
@@ -90,6 +91,7 @@ class ShelfPage extends Component {
         }
         return (
             <>
+            <button>Switch View</button>
             {this.state.view === "self" ? null : <h2 className="Shelf-title">{this.state.username}'s Orbs</h2>}
             <div className="ShelfPage-row">
                 {/* {this.props.creator_id && <ShelfPage addNewOrb={this.addNewOrb} />} */}
