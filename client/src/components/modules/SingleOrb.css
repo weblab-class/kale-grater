@@ -82,7 +82,7 @@ body {
 
 .SingleOrb-joy {
     box-shadow:
-    inset 0 0 50px #fff,
+    inset 0 0 75px #fff,
     inset 20px 0 80px #ffd700,
     inset -20px 0 80px #ffd700,
     inset 20px 0 26vw #ffd700,
@@ -106,7 +106,7 @@ body {
 
 .SingleOrb-sadness {
     box-shadow:
-        inset 0 0 50px #fff,
+        inset 0 0 75px #fff,
         inset 20px 0 80px #4361EE,
         inset -20px 0 80px #4361EE,
         inset 20px 0 26vw #4361EE,
@@ -130,7 +130,7 @@ body {
 
 .SingleOrb-fear {
     box-shadow:
-    inset 0 0 50px #fff,
+    inset 0 0 75px #fff,
     inset 20px 0 80px #8900f2,
     inset -20px 0 80px #8900f2,
     inset 20px 0 26vw #8900f2,
@@ -154,7 +154,7 @@ body {
 
 .SingleOrb-anger {
     box-shadow:
-        inset 0 0 50px #fff,
+        inset 0 0 75px #fff,
         inset 20px 0 80px #D00000,
         inset -20px 0 80px #D00000,
         inset 20px 0 26vw #D00000,
@@ -178,7 +178,7 @@ body {
 
 .SingleOrb-disgust {
     box-shadow:
-        inset 0 0 50px #fff,
+        inset 0 0 75px #fff,
         inset 20px 0 80px #80b918,
         inset -20px 0 80px #80b918,
         inset 20px 0 26vw #80b918,

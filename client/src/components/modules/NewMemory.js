@@ -116,6 +116,9 @@ class NewMemory extends React.Component {
                                     placeholder="Tell us about your memory!"
                                     rows="10" cols="60" 
                                     onChange={this.handleChange}></textarea>
+                                <div>                                  
+                                    <input id="fileInput" type="file" name="files[]" accept="image/*" onChange={this.uploadImage} />
+                                </div>  
                             </div>
                             <div className="dropdown">
                             <button className="dropbtn">Privacy Option</button>

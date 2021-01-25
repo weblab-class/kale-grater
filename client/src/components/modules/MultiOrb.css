@@ -1,8 +1,7 @@
-.SingleOrb-ball {
+.MultiOrb-clear {
     width: 26vw;
     height: 26vw;
-    transform: scale(0.1,0.1);
-    margin: -16vh -10vw -50vh -10vw;
+    transform: scale(0.3,0.3);
     border-radius: 50%;
 
     box-shadow:
@@ -19,11 +18,11 @@
     cursor: pointer;
 }
 
-.SingleOrb-container {
+.MultiOrb-container {
     max-height: 48.3px;
 }
 
-.SingleOrb-ball:before {
+.MultiOrb-clear:before {
     content: "";
     position: absolute;
     background: radial-gradient(circle at 50% 120%,  rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%);
@@ -36,7 +35,7 @@
     filter: blur(5px);
     z-index: 2;
 }
-.SingleOrb-ball:after {
+.MultiOrb-clear:after {
     width: 100%;
     height: 100%;
     content: "";
@@ -49,26 +48,19 @@
     filter: blur(10px);
 }
   
-.SingleOrb-ball .SingleOrb-shadow {
+.MultiOrb-clear .MultiOrb-shadow {
     position: absolute;
     width: 100%;
     height: 100%;
     /* background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%); */
     z-index: -1;
 }
-/* .SingleOrb-stage {
-    width: 26vw;
-    height: 26vw;
-    display: inline-block;
-    margin: 20px;
-    perspective: 1200px;
-} */
 
 body {
     background: black;
 }
 
-.SingleOrb-ball:hover {
+.MultiOrb-clear:hover {
     box-shadow:
     inset 0 0 200px #fff,
     inset 20px 0 80px #ffffff00,
@@ -80,19 +72,308 @@ body {
     10px 0 80px #ffffff00;
 }
 
-.SingleOrb-joy {
+.MultiOrb-joy {
     box-shadow:
-    inset 0 0 50px #fff,
+    inset 0 0 130px #fff,
     inset 20px 0 80px #ffd700,
     inset -20px 0 80px #ffd700,
-    inset 20px 0 26vw #ffd700,
-    inset -20px 0 26vw #ffd700,
+    inset 100px 0 100px #ffd700,
+    inset -20px 0 300px #ffd700,
     0 0 50px #fff,
     -10px 0 80px #ffd700,
     10px 0 80px #ffd700;
 }
 
-.SingleOrb-joy:hover {
+.MultiOrb-sadness {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #4361EE,
+    inset -20px 0 80px #4361EE,
+    inset 100px 0 100px #4361EE,
+    inset -20px 0 300px #4361EE,
+    0 0 50px #fff,
+    -10px 0 80px #4361EE,
+    10px 0 80px #4361EE;
+}
+
+.MultiOrb-anger {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #D00000,
+    inset -20px 0 80px #D00000,
+    inset 100px 0 100px #D00000,
+    inset -20px 0 300px #D00000,
+    0 0 50px #fff,
+    -10px 0 80px #D00000,
+    10px 0 80px #D00000;
+}
+
+.MultiOrb-fear {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #8900f2,
+    inset -20px 0 80px #8900f2,
+    inset 100px 0 100px #8900f2,
+    inset -20px 0 300px #8900f2,
+    0 0 50px #fff,
+    -10px 0 80px #8900f2,
+    10px 0 80px #8900f2;
+}
+
+.MultiOrb-disgust {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #80b918,
+    inset -20px 0 80px #80b918,
+    inset 100px 0 100px #80b918,
+    inset -20px 0 300px #80b918,
+    0 0 50px #fff,
+    -10px 0 80px #80b918,
+    10px 0 80px #80b918;
+}
+
+.MultiOrb-joysadness {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #ffd700,
+    inset -20px 0 80px #4361EE,
+    inset 100px 0 100px #ffd700,
+    inset -20px 0 300px #4361EE,
+    0 0 50px #fff,
+    -10px 0 80px #ffd700,
+    10px 0 80px #4361EE;
+}
+
+.MultiOrb-sadnessjoy {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #4361EE,
+    inset -20px 0 80px #ffd700,
+    inset 100px 0 100px #4361EE,
+    inset -20px 0 300px #ffd700,
+    0 0 50px #fff,
+    -10px 0 80px #4361EE,
+    10px 0 80px #ffd700;
+}
+
+.MultiOrb-joyanger {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #ffd700,
+    inset -20px 0 80px #D00000,
+    inset 100px 0 100px #ffd700,
+    inset -20px 0 300px #D00000,
+    0 0 50px #fff,
+    -10px 0 80px #ffd700,
+    10px 0 80px #D00000;
+}
+
+.MultiOrb-angerjoy {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #D00000,
+    inset -20px 0 80px #ffd700,
+    inset 100px 0 100px #D00000,
+    inset -20px 0 300px #ffd700,
+    0 0 50px #fff,
+    -10px 0 80px #D00000,
+    10px 0 80px #ffd700;
+}
+
+.MultiOrb-joyfear {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #ffd700,
+    inset -20px 0 80px #8900f2,
+    inset 100px 0 100px #ffd700,
+    inset -20px 0 300px #8900f2,
+    0 0 50px #fff,
+    -10px 0 80px #ffd700,
+    10px 0 80px #8900f2;
+}
+
+.MultiOrb-fearjoy {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #8900f2,
+    inset -20px 0 80px #ffd700,
+    inset 100px 0 100px #8900f2,
+    inset -20px 0 300px #ffd700,
+    0 0 50px #fff,
+    -10px 0 80px #8900f2,
+    10px 0 80px #ffd700;
+}
+
+.MultiOrb-joydisgust {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #ffd700,
+    inset -20px 0 80px #80b918,
+    inset 100px 0 100px #ffd700,
+    inset -20px 0 300px #80b918,
+    0 0 50px #fff,
+    -10px 0 80px #ffd700,
+    10px 0 80px #80b918;
+}
+
+.MultiOrb-disgustjoy {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #80b918,
+    inset -20px 0 80px #ffd700,
+    inset 100px 0 100px #80b918,
+    inset -20px 0 300px #ffd700,
+    0 0 50px #fff,
+    -10px 0 80px #80b918,
+    10px 0 80px #ffd700;
+}
+
+.MultiOrb-sadnessanger {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #4361EE,
+    inset -20px 0 80px #D00000,
+    inset 100px 0 100px #4361EE,
+    inset -20px 0 300px #D00000,
+    0 0 50px #fff,
+    -10px 0 80px #4361EE,
+    10px 0 80px #D00000;
+}
+
+.MultiOrb-angersadness {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #D00000,
+    inset -20px 0 80px #4361EE,
+    inset 100px 0 100px #D00000,
+    inset -20px 0 300px #4361EE,
+    0 0 50px #fff,
+    -10px 0 80px #D00000,
+    10px 0 80px #4361EE;
+}
+
+.MultiOrb-sadnessfear {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #4361EE,
+    inset -20px 0 80px #8900f2,
+    inset 100px 0 100px #4361EE,
+    inset -20px 0 300px #8900f2,
+    0 0 50px #fff,
+    -10px 0 80px #4361EE,
+    10px 0 80px #8900f2;
+}
+
+.MultiOrb-fearsadness {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #8900f2,
+    inset -20px 0 80px #4361EE,
+    inset 100px 0 100px #8900f2,
+    inset -20px 0 300px #4361EE,
+    0 0 50px #fff,
+    -10px 0 80px #8900f2,
+    10px 0 80px #4361EE;
+}
+
+.MultiOrb-sadnessdisgust {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #4361EE,
+    inset -20px 0 80px #80b918,
+    inset 100px 0 100px #4361EE,
+    inset -20px 0 300px #80b918,
+    0 0 50px #fff,
+    -10px 0 80px #4361EE,
+    10px 0 80px #80b918;
+}
+
+.MultiOrb-disgustsadness {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #80b918,
+    inset -20px 0 80px #4361EE,
+    inset 100px 0 100px #80b918,
+    inset -20px 0 300px #4361EE,
+    0 0 50px #fff,
+    -10px 0 80px #80b918,
+    10px 0 80px #4361EE;
+}
+
+.MultiOrb-angerfear {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #D00000,
+    inset -20px 0 80px #8900f2,
+    inset 100px 0 100px #D00000,
+    inset -20px 0 300px #8900f2,
+    0 0 50px #fff,
+    -10px 0 80px #D00000,
+    10px 0 80px #8900f2;
+}
+
+.MultiOrb-fearanger {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #8900f2,
+    inset -20px 0 80px #D00000,
+    inset 100px 0 100px #8900f2,
+    inset -20px 0 300px #D00000,
+    0 0 50px #fff,
+    -10px 0 80px #8900f2,
+    10px 0 80px #D00000;
+}
+
+.MultiOrb-angerdisgust {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #D00000,
+    inset -20px 0 80px #80b918,
+    inset 100px 0 100px #D00000,
+    inset -20px 0 300px #80b918,
+    0 0 50px #fff,
+    -10px 0 80px #D00000,
+    10px 0 80px #80b918;
+}
+
+.MultiOrb-disgustanger {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #80b918,
+    inset -20px 0 80px #D00000,
+    inset 100px 0 100px #80b918,
+    inset -20px 0 300px #D00000,
+    0 0 50px #fff,
+    -10px 0 80px #80b918,
+    10px 0 80px #D00000;
+}
+
+.MultiOrb-feardisgust {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #8900f2,
+    inset -20px 0 80px #80b918,
+    inset 100px 0 100px #8900f2,
+    inset -20px 0 300px #80b918,
+    0 0 50px #fff,
+    -10px 0 80px #8900f2,
+    10px 0 80px #80b918;
+}
+
+.MultiOrb-disgustfear {
+    box-shadow:
+    inset 0 0 130px #fff,
+    inset 20px 0 80px #80b918,
+    inset -20px 0 80px #8900f2,
+    inset 100px 0 100px #80b918,
+    inset -20px 0 300px #8900f2,
+    0 0 50px #fff,
+    -10px 0 80px #80b918,
+    10px 0 80px #8900f2;
+}
+
+
+/* .MultiOrb-joy:hover {
     box-shadow:
     inset 0 0 200px #fff,
     inset 20px 0 80px #ffd700,
@@ -104,7 +385,7 @@ body {
     10px 0 80px #ffd700;
 }
 
-.SingleOrb-sadness {
+.MultiOrb-sadness {
     box-shadow:
         inset 0 0 50px #fff,
         inset 20px 0 80px #4361EE,
@@ -116,7 +397,7 @@ body {
         10px 0 80px #4361EE;
 }
 
-.SingleOrb-sadness:hover {
+.MultiOrb-sadness:hover {
     box-shadow:
     inset 0 0 200px #fff,
     inset 20px 0 80px #4361EE,
@@ -128,7 +409,7 @@ body {
     10px 0 80px #4361EE;
 }
 
-.SingleOrb-fear {
+.MultiOrb-fear {
     box-shadow:
     inset 0 0 50px #fff,
     inset 20px 0 80px #8900f2,
@@ -140,7 +421,7 @@ body {
     10px 0 80px #8900f2;
 }
 
-.SingleOrb-fear:hover {
+.MultiOrb-fear:hover {
     box-shadow:
     inset 0 0 200px #fff,
     inset 20px 0 80px #8900f2,
@@ -152,7 +433,7 @@ body {
     10px 0 80px #8900f2;
 }
 
-.SingleOrb-anger {
+.MultiOrb-anger {
     box-shadow:
         inset 0 0 50px #fff,
         inset 20px 0 80px #D00000,
@@ -164,7 +445,7 @@ body {
         10px 0 80px #D00000;
 }
 
-.SingleOrb-anger:hover {
+.MultiOrb-anger:hover {
     box-shadow:
         inset 0 0 200px #fff,
         inset 20px 0 80px #D00000,
@@ -176,7 +457,7 @@ body {
         10px 0 80px #D00000;
 }
 
-.SingleOrb-disgust {
+.MultiOrb-disgust {
     box-shadow:
         inset 0 0 50px #fff,
         inset 20px 0 80px #80b918,
@@ -188,7 +469,7 @@ body {
         10px 0 80px #80b918;
 }
 
-.SingleOrb-disgust:hover {
+.MultiOrb-disgust:hover {
     box-shadow:
     inset 0 0 200px #fff,
     inset 20px 0 80px #80b918,
@@ -198,4 +479,4 @@ body {
     0 0 70px #fff,
     -10px 0 80px #80b918,
     10px 0 80px #80b918;
-}
+} */
