@@ -45,7 +45,7 @@ class NewMemory extends React.Component {
             return alert("Please fill out memory, emotion, AND privacy!");
         } else {
             post("/api/newmemory", orb).then(() => {
-                navigate("/home");
+                navigate(`/shelves/${this.props.userId}`);
             });
         }};
 
