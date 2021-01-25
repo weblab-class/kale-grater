@@ -19,6 +19,7 @@ import "./SingleOrb.css";
         super(props);
         this.state = {
           showContent: false,
+          privacy: this.props.privacy
         }
     }
     
@@ -37,21 +38,26 @@ import "./SingleOrb.css";
     render () {
         const orbColor = "SingleOrb-" + this.props.emotion;
         return (
+          <>
+          {this.props.privacy === "private" && this.props.view !== "self" ? null :
+        // return (
             <div className="SingleOrb-container" onClick={this.handleClick}>
-              {this.state.showContent
+              {this.state.showContent && (this.state.privacy === "public" || !this.state.privacy || this.props.view === "self")
                 ? <OrbContent
                   creator_id={this.props.creator_id}
                   emotion={this.props.emotion}
                   content={this.props.content}
                   timestamp = {this.props.timestamp}
+                  privacy={this.props.privacy}
                   handleClick={this.handleClick.bind(this)}
                   />
                 : <figure className={`${orbColor} SingleOrb-ball`}>
                     <span className="SingleOrb-shadow"></span>
                   </figure>
               }
-            </div>
-          );
+            </div>}
+            </>)
+          // );
     }
  }
 
