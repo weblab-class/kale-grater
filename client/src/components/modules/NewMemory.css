@@ -13,6 +13,7 @@ section {
     align-items: center;
     min-height: 100vh;
     background: #131313;
+    margin-top: 10vh;
 }
 
 .NewMemory-container:active {
@@ -21,10 +22,11 @@ section {
 
 .NewMemory-container .NewMemory-card {
     position: relative;
-    width: 42vw;
+    width: 100vw;
     height: 100vh;
     background: #232323;
-    border-radius: 20px;
+    /* border-radius: 20px; */
+    margin-left: 67vw;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -36,16 +38,12 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.04);
+    background: yellow;
     clip-path: circle(200px at 80% 20%);
     transition: 0.5s ease-in-out;
 }
 
-.NewMemory-container .NewMemory-card:hover::before {
-    clip-path: circle(550px at 80% -20%);
-}
-
-.NewMemory-container .NewMemory-card::after {
+/* .NewMemory-container .NewMemory-card::after {
     content: "Entry";
     position: absolute;
     top: 50%;
@@ -54,28 +52,28 @@ section {
     font-weight: 800;
     font-style: italic;
     color: rgba(255, 255, 255, 0.04);
-}
+} */
 
 .NewMemory-container .NewMemory-card .NewMemory-imgBx {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 9;
-    width: 100%;
-    height: 75vh;
+    /* width: 100vw; */
+    /* height: 75vh; */
     transition: 0.5s;
 }
 
 .NewMemory-container .NewMemory-card:hover .NewMemory-imgBx {
-    top: 2%;
+    /* top: 2%; */
     transform: translateY(0%);
 }
 
 .NewMemory-container .NewMemory-card .NewMemory-imgBx img {
     position: absolute;
     top: 9%;
-    left: 50%;
-    transform: translate(-50%, -20%) rotate(-25deg);
+    /* left: 50%; */
+    /* transform: translate(-50%, -20%) rotate(-25deg); */
     width: 330px;
 }
 

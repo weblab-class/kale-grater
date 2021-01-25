@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const OrbSchema = new mongoose.Schema({
-    creator_id: String, // stores ObjectId
+    creator_id: String, // stores user's ObjectId
     emotion: String,
     content: String,
     timestamp: Date // correct constructor?
