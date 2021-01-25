@@ -18,13 +18,12 @@ class ShelfPage extends Component {
             userId: this.props.userId,
             userName: "",
             shelfView: "all",
+            weekOrbs: null
         };
-        console.log('STATE', this.state);
     }
 
     componentDidMount() {
         document.title = "Shelf | Inside Out";
-        console.log(this.props.userId);
         get("/api/shelves", {userId: this.props.userId}).then((orbObjs) => {
             this.setState({
                 orbs: orbObjs,
@@ -69,6 +68,24 @@ class ShelfPage extends Component {
         });
     };
 
+    handleSwitch = () => {
+        if (this.state.shelfView === "all") {
+            this.setState({
+                shelfView: "week"
+            })
+        } else {
+                this.setState({
+                    shelfView: "all"
+                })
+            }
+        }
+
+    // filterDay = (orb) => {
+    //     console.log('TS', orb.timestamp)
+    //     console.log('RD', resultDate)
+    //     return orb.timestamp.startsWith(resultDate)
+    // }
+
     render() {
         if (!this.state.view || !this.state.loaded || !this.state.username) {
             return <div>Loading!</div>;
@@ -89,14 +106,50 @@ class ShelfPage extends Component {
         } else {
             orbsList = <div>No stories!</div>
         }
+
+        var prevSunday = new Date();
+        prevSunday.setDate(prevSunday.getDate() - (prevSunday.getDay() + 7) % 7);
+        var month;
+        if (prevSunday.getMonth() + 1 < 10) {
+          month = "0" + (prevSunday.getMonth() + 1)
+        } else {
+          month = prevSunday.getMonth() + 1
+        }
+        const prevSundayDate = prevSunday.getFullYear() + "-" + month + "-" + prevSunday.getDate();
+        // var weekOrbs = {}
+        var allDayOrbs = []
+        for (let i = 0; i < 7; i++) {
+            var result = new Date(prevSundayDate);
+            result.setDate(result.getDate() + i);
+                var resultMonth;
+            if (result.getMonth() + 1 < 10) {
+                resultMonth = "0" + (result.getMonth() + 1)
+            } else {
+                resultMonth = result.getMonth() + 1
+            }
+          
+            const resultDate = result.getFullYear() + "-" + resultMonth + "-" + result.getDate()
+
+            function filterDay(orb) {
+                return orb.timestamp.startsWith(resultDate)
+            }
+            
+            const dayOrbs = this.state.orbs.filter(filterDay)
+
+            allDayOrbs = [dayOrbs].concat(allDayOrbs)
+            // weekOrbs[i] = dayOrbs
+        }
+
         return (
             <>
-            <button>Switch View</button>
+            <button onClick={this.handleSwitch}>Switch View</button>
             {this.state.view === "self" ? null : <h2 className="Shelf-title">{this.state.username}'s Orbs</h2>}
+            {this.state.shelfView === "all" ? 
             <div className="ShelfPage-row">
                 {/* {this.props.creator_id && <ShelfPage addNewOrb={this.addNewOrb} />} */}
                 {orbsList}
-            </div>
+            </div> :
+            <div className="Shelf-title">WEEK</div>}
             </>
         );
     }
