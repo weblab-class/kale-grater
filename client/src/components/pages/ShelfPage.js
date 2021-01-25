@@ -15,7 +15,8 @@ class ShelfPage extends Component {
             // loaded: null,
             privacy: "",
             loaded: "",
-            userId: this.props.userId
+            userId: this.props.userId,
+            userName: ""
         };
         console.log('STATE', this.state);
     }
@@ -33,7 +34,15 @@ class ShelfPage extends Component {
 
         get("/api/user", {userId: this.props.userId}).then((result) => {
             this.setState({
-                privacy: result.message
+                privacy: result.message,
+            })
+        })
+
+        get("/api/getusername", {userId: this.props.userId}).then((result) => {
+            console.log('in check');
+            console.log('result', result)
+            this.setState({
+                username: result.username,
             })
         })
 
@@ -66,7 +75,7 @@ class ShelfPage extends Component {
         console.log('does it render??')
         console.log(this.state)
         console.log('ID', this.props.userId)
-        if (!this.state.privacy || !this.state.loaded) {
+        if (!this.state.privacy || !this.state.loaded || !this.state.username) {
             return <div>Loading!</div>;
         }
         let orbsList = null;
@@ -85,6 +94,7 @@ class ShelfPage extends Component {
         }
         return (
             <>
+            {this.state.privacy === "self" ? null : <div className="Shelf-title">{this.state.username}'s orbs</div>}
             <div className="ShelfPage-row">
                 {/* {this.props.creator_id && <ShelfPage addNewOrb={this.addNewOrb} />} */}
                 {orbsList}
