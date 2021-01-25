@@ -15,6 +15,7 @@ class NewMemory extends React.Component {
         this.state = {
             content: "",
             emotion: "",
+            privacy: ""
         };
 
         // ignore rn
@@ -36,14 +37,15 @@ class NewMemory extends React.Component {
         const orb = {
             userId: this.props.userId,
             content: this.state.content,
-            emotion: this.state.emotion
+            emotion: this.state.emotion,
+            privacy: this.state.privacy
         }
 
-        if (orb.content === "" || orb.emotion === "") {
-            return alert("Please fill out memory AND emotion!");
+        if (orb.content === "" || orb.emotion === "" || orb.privacy === "") {
+            return alert("Please fill out memory, emotion, AND privacy!");
         } else {
             post("/api/newmemory", orb).then(() => {
-                navigate("/home");
+                navigate(`/shelves/${this.props.userId}`);
             });
         }};
 
@@ -75,6 +77,12 @@ class NewMemory extends React.Component {
             }
 
         }
+    }
+
+    setPrivacy = (value) => {
+        this.setState({
+            privacy: value
+        })
     }
 
     render() {
@@ -111,6 +119,15 @@ class NewMemory extends React.Component {
                                 <div>                                  
                                     <input id="fileInput" type="file" name="files[]" accept="image/*" onChange={this.uploadImage} />
                                 </div>  
+                            </div>
+                            <div className="dropdown">
+                            <button className="dropbtn">Privacy Option</button>
+                            <div className="dropdown-content">
+                                <a href="#" onClick={() => this.setPrivacy('public')}>Public</a>
+                                <a href="#" onClick={() => this.setPrivacy('semi-private')}>Semi-private: content hidden, orb color shown</a>
+                                <a href="#" onClick={() => this.setPrivacy('private')}>Private: completely hidden</a>
+                            </div>
+                            <div className="NewMemory-box">{this.state.privacy}</div>
                             </div>
                             {/* POPULATE HREF WITH LINK TO REDIRECT TO */}
                             <div className="NewMemory-buttons">
