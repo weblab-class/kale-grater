@@ -55,6 +55,27 @@ router.get("/shelves", (req, res) => {
   });
 });
 
+router.get("/weekshelves", (req, res) => {
+  var prevSunday = new Date();
+  prevSunday.setDate(prevSunday.getDate() - (prevSunday.getDay() + 7) % 7);
+  var month;
+  if (prevSunday.getMonth() + 1 < 10) {
+    month = "0" + (prevSunday.getMonth() + 1)
+  } else {
+    month = prevSunday.getMonth() + 1
+  }
+  const prevSundayDate = prevSunday.getFullYear() + "-" + month + "-" + prevSunday.getDate();
+  var weekOrbs = {}
+  for (let i = 0; i < 7; i++) {
+    var result = new Date(prevSundayDate);
+    result.setDate(result.getDate() + i);
+    Orb.find({timestamp: startsWith(result)}).then((orbs) => {
+      weekOrbs[i] = orbs
+    })
+  }
+  res.send(weekOrbs)
+})
+
 router.post("/newmemory", (req, res) => {
   const newOrb = new Orb({
     creator_id: req.body.userId,
