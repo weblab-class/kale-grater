@@ -94,7 +94,7 @@ class ShelfPage extends Component {
         }
         return (
             <>
-            {this.state.privacy === "self" ? null : <div className="Shelf-title">{this.state.username}'s orbs</div>}
+            {this.state.privacy === "self" ? null : <h2 className="Shelf-title">{this.state.username}'s Orbs</h2>}
             <div className="ShelfPage-row">
                 {/* {this.props.creator_id && <ShelfPage addNewOrb={this.addNewOrb} />} */}
                 {orbsList}
