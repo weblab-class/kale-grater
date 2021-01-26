@@ -1,8 +1,16 @@
 .SocialPage-body {
     margin-top: 6vh;
     margin-left: 6vw;
+    height: calc(100vh - 65px);
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
+.SocialPage-wrap {
+    height: calc(100vh - 65px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 .Search-message {
     color: white;
 }

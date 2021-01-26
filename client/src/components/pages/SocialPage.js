@@ -101,7 +101,8 @@ class SocialPage extends Component {
     post("/api/addfriend", body).then((result) => {
       this.setState({
         friends: result.friends,
-        friend: ""
+        friend: "",
+        success: ""
       })
     })
   }

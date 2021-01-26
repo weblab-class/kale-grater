@@ -42,9 +42,10 @@ class OrbContent extends Component {
           </div>
         </div> */}
         <div className="orbContent-buttons">
+          {this.props.view === "self" ?
           <div className="orbContent-delete">
             <button onClick={() => this.props.deleteMemory(this.props.object)}>Delete</button>
-          </div>
+          </div> : null}
           <div className="orbContent-cancel">
             <button onClick={this.props.handleClick}>Cancel</button>
           </div>
