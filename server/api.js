@@ -157,10 +157,10 @@ router.post("/newmemory", (req, res) => {
 });
 
 router.post("/deletememory", (req, res) => {
-  Orb.deleteOne({_id: req._id})
-    .then((err) => {
-      if(err) return console.log(err);
-      console.log("Deleted");
+  Orb.deleteOne({_id: req.body._id})
+    .then((orb) => {
+      res.send(orb)
+    
     });
 });
 

@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-import { get } from "../../utilities";
+import { get, post } from "../../utilities";
+import { navigate } from "@reach/router";
 
 import SingleOrb from "../modules/SingleOrb.js";
 import { NewMemory } from "../modules/NewMemory.js";
@@ -68,6 +69,18 @@ class ShelfPage extends Component {
         });
     };
 
+    deleteMemory = (orbObj) => {
+        this.setState({
+            orbs: this.state.orbs.filter(orb => orb !== orbObj),
+        });
+
+        console.log("deleted")
+        
+        post("/api/deletememory", { _id: orbObj._id}).then(() => {
+          navigate(`/shelves/${orbObj.creator_id}`);
+        });
+      };
+
     handleSwitch = () => {
         if (this.state.shelfView === "all") {
             this.setState({
@@ -95,12 +108,15 @@ class ShelfPage extends Component {
         if (hasOrbs) {
             orbsList = this.state.orbs.map((orbObj) => (
                 <SingleOrb className="ShelfPage-orb"
+                _id={orbObj._id}
                 creator_id={orbObj.creator_id} 
                 emotion={orbObj.emotion}
                 content={orbObj.content}
                 timestamp={orbObj.timestamp}
                 privacy={orbObj.privacy}
                 view={this.state.view}
+                delete={this.deleteMemory}
+                object={orbObj}
                 />
             ));
         } else {

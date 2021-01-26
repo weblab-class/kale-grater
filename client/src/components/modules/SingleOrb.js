@@ -53,12 +53,15 @@ import "./SingleOrb.css";
                 transitionAppearTimeout={200}
                 >
                 <OrbContent
+                  _id={this.props._id}
                   creator_id={this.props.creator_id}
                   emotion={this.props.emotion}
                   content={this.props.content}
                   timestamp = {this.props.timestamp}
                   privacy={this.props.privacy}
                   handleClick={this.handleClick.bind(this)}
+                  deleteMemory={this.props.delete}
+                  object={this.props.object}
                   />
                   </ReactCSSTransitionGroup>
                 : <figure className={`${orbColor} SingleOrb-ball`}>

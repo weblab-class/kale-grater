@@ -10,6 +10,7 @@ import "./OrbContent.css";
  * @param {string} emotion of memory
  * @param {string} content of memory
  * @param {date} timestamp of memory
+ * @param {function} delete memory function 
  */
 
 
@@ -17,12 +18,6 @@ class OrbContent extends Component {
   constructor(props) {
     super(props);
   }
-
-  deleteMemory = () => {
-    post("/api/deletememory", { _id: this._id}).then(() => {
-      navigate("/shelves");
-    });
-  };
   
 
   render() {
@@ -37,7 +32,7 @@ class OrbContent extends Component {
         <div className="orbContent-text">{this.props.content}</div>
         <div className="orbContent-buttons">
           <div className="orbContent-delete">
-            <button onClick={this.deleteMemory}>Delete</button>
+            <button onClick={() => this.props.deleteMemory(this.props.object)}>Delete</button>
           </div>
           <div className="orbContent-cancel">
             <button onClick={this.props.handleClick}>Cancel</button>
