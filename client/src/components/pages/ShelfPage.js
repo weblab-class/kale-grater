@@ -24,7 +24,7 @@ class ShelfPage extends Component {
     }
 
     componentDidMount() {
-        document.title = "Shelf | Inside Out";
+        document.title = "Shelf | Memorble";
         get("/api/shelves", {userId: this.props.userId}).then((orbObjs) => {
             this.setState({
                 orbs: orbObjs,

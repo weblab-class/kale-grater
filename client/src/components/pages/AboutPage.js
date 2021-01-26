@@ -16,7 +16,7 @@ class AboutPage extends Component {
     }
 
     componentDidMount() {
-        document.title = "About | Outside In";
+        document.title = "About | Memorble";
     }
 
 

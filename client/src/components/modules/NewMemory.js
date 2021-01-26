@@ -16,7 +16,7 @@ class NewMemory extends React.Component {
             content: "",
             emotion: "",
             privacy: "",
-            images: [],
+            image: "",
         };
 
         // ignore rn
@@ -41,7 +41,7 @@ class NewMemory extends React.Component {
     console.log(fileInput);
     this.readImage(fileInput.files[0]).then(image => {
       fileInput.value = null;
-      return post("/api/uploadImage", { image: image }).then(this.loadImages);
+      return post("/api/uploadImage", { image: image }).then(this.loadImages); // take out load??
     }).catch(err => {
       console.log(err);
     });
@@ -62,6 +62,9 @@ class NewMemory extends React.Component {
             reject("not an image!");
             return;
             } else {
+                // this.setState({  * can you access name here?
+                //     image: 
+                // })
             resolve(r.result);
             }
         };
@@ -79,7 +82,7 @@ class NewMemory extends React.Component {
             content: this.state.content,
             emotion: this.state.emotion,
             privacy: this.state.privacy,
-            images: this.state.images, 
+            imageFileName: this.state.image, 
         }
 
         if (orb.content === "" || orb.emotion === "" || orb.privacy === "") {
@@ -159,7 +162,7 @@ class NewMemory extends React.Component {
                                     onChange={this.handleChange}></textarea>
 
                                 <div>                                  
-                                    <input id="fileInput" type="file" name="files[]" accept="image/*" onChange={this.uploadImage} />
+                                    <input id="fileInput" type="file" name="files[]" accept="image/*" onChange={this.readImage} />
                                 </div>  
 
                             </div>
@@ -175,7 +178,7 @@ class NewMemory extends React.Component {
                             {/* POPULATE HREF WITH LINK TO REDIRECT TO */}
                             <div className="NewMemory-buttons">
                                 <a href="/home" >Cancel</a>
-                                <button onClick={this.handleSubmit}>Add Memory</button>
+                                <button onClick={ this.uploadImage, this.handleSubmit}>Add Memory</button>
                             </div>
                         </div>
                     </div>
