@@ -34,13 +34,18 @@ class AboutPage extends Component {
             <div className="AboutPage-text">
                 <h2 className="AboutPage-header">How we all started</h2>
                 <div className="AboutPage-description">
-                    <p>Purpose of webpage, inspiration from Inside Out</p>
+                    <p>On the eve of our Milestone 1 submission, our team member Derek Shen, frantic to get something submittable, closed his
+                        eyes and pointed to one of the bullet-pointed ideas on our Google Document. And thus our website was born...
+                    </p>
 
                     <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum  
+                    <strong>Just kidding! </strong> We (Kailey, Grace, Derek) made Memorble with the hopes of providing users a 
+                    unique and effective way of visualizing their emotions. Inspired by the Pixar film 
+                    <em><a href="https://www.imdb.com/title/tt2096673/"> Inside Out</a></em>, each memory entry is enclosed in a vibrant, glowing, 
+                    snowball-like orb to house the words and images that define the moment they wish to save. Memorble is an expression of the 
+                    experiencing and the remembering self: one can use the site to look back on the most defining moments of their lives, or, on another day,
+                    they can zoom out into our long-term view to see the shapes and turns over the days, weeks, and years. 
+                    
                     </p>
                 </div>
 
