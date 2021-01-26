@@ -44,7 +44,7 @@ import "./MultiOrb.css";
               <div className="MultiOrb-week">{this.props.day}</div>
               <div className="MultiOrb-date">{this.props.date}</div>
             </div> 
-            {this.state.showContent ?
+            {this.state.showContent && this.props.view === "self" ?
             <MultiOrbContent 
               content={this.props.content}
               emotions={this.props.emotions}
