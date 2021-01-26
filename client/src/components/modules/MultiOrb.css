@@ -19,7 +19,12 @@
 }
 
 .MultiOrb-week {
+    display: flex;
+    flex-flow: row;
+    text-align: center;
     color: white;
+    height: 20px;
+    width: 80px;
 }
 
 .MultiOrb-orb {
@@ -46,37 +51,44 @@
 }
 
 .MultiOrb-orb:nth-child(1) {
-    /* margin-left: -6vw; */
+    flex-basis: 0;
+    flex-grow: 1;
     animation-delay: 0.5s;
 }
 
 .MultiOrb-orb:nth-child(2) {
-    /* margin-left: -12vw; */
+    flex-basis: 0;
+    flex-grow: 1;
     animation-delay: 1s;
 }
 
 .MultiOrb-orb:nth-child(3) {
-    /* margin-left: -12vw; */
+    flex-basis: 0;
+    flex-grow: 1;
     animation-delay: 1.5s;
 }
 
 .MultiOrb-orb:nth-child(4) {
-    /* margin-left: -12vw; */
+    flex-basis: 0;
+    flex-grow: 1;
     animation-delay: 2s;
 }
 
 .MultiOrb-orb:nth-child(5) {
-    /* margin-left: -12vw; */
+    flex-basis: 0;
+    flex-grow: 1;
     animation-delay: 2.5s;
 }
 
 .MultiOrb-orb:nth-child(6) {
-    /* margin-left: -12vw; */
+    flex-basis: 0;
+    flex-grow: 1;
     animation-delay: 3s;
 }
 
 .MultiOrb-orb:nth-child(7) {
-    /* margin-left: -14vw; */
+    flex-basis: 0;
+    flex-grow: 1;
     animation-delay: 3.5s;
 }
 

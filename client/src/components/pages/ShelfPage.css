@@ -28,7 +28,7 @@
 
 .ShelfPage-week {
     display: flex;
-    flex-flow: row;
+    flex-flow: row-reverse;
     width: 100vw;
     flex-wrap: wrap;
 }
