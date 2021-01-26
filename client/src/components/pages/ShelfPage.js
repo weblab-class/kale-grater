@@ -125,9 +125,9 @@ class ShelfPage extends Component {
         }
 
         var prevSunday = new Date();
-        console.log('B5', prevSunday)
+        // console.log('B5', prevSunday)
         prevSunday.setDate(prevSunday.getDate() - (prevSunday.getDay() + 6) % 7);
-        console.log('AFTER', prevSunday)
+        // console.log('AFTER', prevSunday)
         // console.
         var month;
         if (prevSunday.getMonth() + 1 < 10) {
@@ -136,8 +136,8 @@ class ShelfPage extends Component {
           month = prevSunday.getMonth() + 1
         }
         const prevSundayDate = prevSunday.getFullYear() + "-" + month + "-" + prevSunday.getDate();
-        console.log('OIDSJFA', prevSundayDate)
-        console.log('bruh', Date(prevSundayDate))
+        // console.log('OIDSJFA', prevSundayDate)
+        // console.log('bruh', Date(prevSundayDate))
         // var weekOrbs = {}
         var allDayOrbs = []
         var weekOrbs = []
@@ -154,26 +154,33 @@ class ShelfPage extends Component {
             }
           
             const resultDate = current_result.getFullYear() + "-" + resultMonth + "-" + current_result.getDate()
-            console.log(resultDate)
+            // console.log(resultDate)
             function filterDay(orb) {
                 return orb.timestamp.startsWith(resultDate)
             }
+
+            const properResultDate = resultMonth + "-" + current_result.getDate() + "-" + current_result.getFullYear();
             
             const dayOrbs = this.state.orbs.filter(filterDay)
             var dayEmotions = ""
-            var numEmotions = 0
+            var dayEmotionsList = []
             var orbClass = "MultiOrb-"
+            var contentList = []
             for (let i = 0; i < dayOrbs.length; i++) {
                 const currentOrb = dayOrbs[i]
                 const currentEmotion = currentOrb.emotion
-                if (!dayEmotions.startsWith(currentEmotion)) {
+                // if (!dayEmotions.startsWith(currentEmotion)) {
+                if (!dayEmotionsList.includes(currentEmotion)) {
                     dayEmotions = dayEmotions + currentEmotion
-                    numEmotions += 1
+                    // numEmotions += 1
+                    
                 }
+                contentList = [currentOrb.content].concat(contentList)
+                dayEmotionsList = [currentEmotion].concat(dayEmotionsList)
             }
-            if (numEmotions === 0) {
+            if (dayEmotionsList.length === 0) {
                 orbClass += "clear";
-            } else if (numEmotions > 2) {
+            } else if (dayEmotionsList.length > 2) {
                 orbClass += "mixed";
             } else {
                 orbClass += dayEmotions;
@@ -190,6 +197,9 @@ class ShelfPage extends Component {
             // timestamp={orbObj.timestamp}
             // privacy={orbObj.privacy}
             // view={this.state.view}
+            emotions={dayEmotionsList}
+            content={contentList}
+            date={properResultDate}
             day={weekDayNames[i]}
             />].concat(weekOrbs)
             // allDayOrbs = [dayOrbs].concat(allDayOrbs)
