@@ -14,7 +14,7 @@ class HomePage extends Component {
     }
 
     componentDidMount() {
-        document.title = "Home | Outside In";
+        document.title = "Home | Memorble";
         
         get("/api/getusername", {userId: this.props.userId}).then((result) => {
             this.setState({
