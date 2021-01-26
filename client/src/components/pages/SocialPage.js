@@ -19,12 +19,7 @@ class SocialPage extends Component {
 
   componentDidMount() {
     get("/api/friends", ).then((result) => {
-      // let reversedStoryObjs = plantObjs.reverse();
-      // friends = result.friends
       this.setState({friends: result.friends})
-      // friendObjs.map((friendObj) => {
-      //   this.setState({ friends: this.state.friends.concat([friendObj])});
-      // });
     });
 
     get("/api/checkusername").then((result) => {
@@ -63,15 +58,15 @@ class SocialPage extends Component {
         console.log('result', result);
         if (result.message === "failure") {
           this.setState({
-            error: "Sorry, we couldn't find that user"
+            error: "Sorry, we couldn't find that user!"
           });
         } else if (result.message === "already friended") {
           this.setState({
-            error: "um you're already friends with this person"
+            error: "You're already friends with this person!"
           })
         } else if (result.message === "self") {
           this.setState({
-            error: "that's your own username"
+            error: "That's your own username!"
           })
         } else {
           this.setState({
@@ -82,6 +77,7 @@ class SocialPage extends Component {
       });
     };
   };
+
   handleClick = (friend) => {
     // console.log('in click');
     const body = {username: friend}
@@ -117,29 +113,30 @@ class SocialPage extends Component {
     }
     return (
     <>
+    <div className="SocialPage-body">
       <div>
-        <div className="Search-message">Search for a user here:</div>   
+        <h1 className="Search-message">Search for a user here:</h1>   
         <input className="Search-container" value={this.state.friend} onChange={this.handleChange}></input>
-        <button onClick={this.handleSubmit}>Search</button>
+        <button className="Search-popup" onClick={this.handleSubmit}>Search</button>
         {this.state.error ? <div className="Text-message">{this.state.error}</div> : null}
       </div>
       <div>
         {this.state.success ? 
         <>
           <div className="Text-message">{this.state.success}</div>
-          <button onClick={this.addFriend}>Add {this.state.friend}</button>
+          <button className="Search-popup" onClick={this.addFriend}>Add {this.state.friend}</button>
         </>
          : null}
       </div>
 
       <div>
-        <div className="Text-message">Your Friends:</div>
+        <h2 className="Text-message">Your Friends:</h2>
         {this.state.friends.map(friend => (
           <div className="Text-message">
-            <button onClick={() => {this.handleClick(friend)}}>{friend}</button>
-            {/* <Link to={`/shelves/${() => {this.getUsername(friend)}}`} username={friend}>{friend}</Link> */}
+            <button className="SocialPage-friends" onClick={() => {this.handleClick(friend)}}>{friend}</button>
           </div>))};
       </div>  
+    </div>
     </>
     );
   };

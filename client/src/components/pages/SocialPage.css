@@ -1,11 +1,30 @@
+.SocialPage-body {
+    margin-top: 6vh;
+    margin-left: 6vw;
+}
+
 .Search-message {
     color: white;
 }
 
 .Search-container {
     color: gray;
+    padding: 3px;
+}
+
+.Search-popup {
+    padding: 3px;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .Text-message {
     color: white;
+}
+
+.SocialPage-friends {
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 10px;
+    cursor: pointer;
 }

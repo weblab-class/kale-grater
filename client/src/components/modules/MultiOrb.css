@@ -72,6 +72,18 @@ body {
     10px 0 80px #ffffff00;
 }
 
+.MultiOrb-mixed {
+    box-shadow:
+        inset 0 0 50px #fff,
+        inset 20px 0 80px #ffd700,
+        inset -20px 0 80px #022ae0,
+        inset 20px 0 300px #D00000,
+        inset -20px 0 300px #D00000,
+        0 0 50px #fff,
+        -10px 0 80px #ffd700,
+        10px 0 80px #022ae0;
+}
+
 .MultiOrb-joy {
     box-shadow:
     inset 0 0 130px #fff,

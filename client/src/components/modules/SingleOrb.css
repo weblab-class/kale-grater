@@ -199,3 +199,28 @@ body {
     -10px 0 80px #80b918,
     10px 0 80px #80b918;
 }
+
+
+/* transitions for clicking on orb */
+
+.fade-enter{
+    animation: keyframes-fade-enter 0.4s ease-out
+}
+
+@keyframes keyframes-fade-enter {
+    0% {
+        opacity: 0.01;
+    }
+    100% {
+        opacity: 1;
+    }
+ }
+  
+ .fade-leave {
+    opacity: 1;
+ }
+  
+ .fade-leave.fade-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+ }

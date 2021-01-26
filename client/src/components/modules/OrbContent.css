@@ -8,12 +8,18 @@
 }
 
 .orbContent-container {
-    position: relative;
-    width: 200px;
-    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 60vw;
+    min-width: 400px;
+    height: 30vh;
+    padding: 10px;
     background: #fff;
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
+    text-align: center;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -29,9 +35,6 @@
 }
 
 .orbContent-text {
-    text-align: center;
-    margin-top: 5%;
-    margin-bottom: 25%;
     overflow: scroll;
 }
 
