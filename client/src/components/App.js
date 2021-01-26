@@ -80,7 +80,7 @@ class App extends Component {
     //       </>
         // ) : (
     console.log(this.state)
-    return this.state.userId && this.state.userName ? (
+    return this.state.userId ? (
       <>
         <NavBar
           handleLogin={this.handleLogin}
