@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import OrbContent from "./OrbContent.js";
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+// import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import "./SingleOrb.css";
 
@@ -44,14 +44,14 @@ import "./SingleOrb.css";
         // return (
             <div className="SingleOrb-container" onClick={this.handleClick}>
               {this.state.showContent && (this.state.privacy === "public" || !this.state.privacy || this.props.view === "self") ? 
-              <ReactCSSTransitionGroup
-                transitionName="fade"
-                transitionAppear={true}
-                transitionLeave={true}
-                transitionEnterTimeout={500}
-                transitionLeaveTimeout={300}
-                transitionAppearTimeout={200}
-                >
+              // <ReactCSSTransitionGroup
+              //   transitionName="fade"
+              //   transitionAppear={true}
+              //   transitionLeave={true}
+              //   transitionEnterTimeout={500}
+              //   transitionLeaveTimeout={300}
+              //   transitionAppearTimeout={200}
+              //   >
                 <OrbContent
                   creator_id={this.props.creator_id}
                   emotion={this.props.emotion}
@@ -60,7 +60,7 @@ import "./SingleOrb.css";
                   privacy={this.props.privacy}
                   handleClick={this.handleClick.bind(this)}
                   />
-                  </ReactCSSTransitionGroup>
+                  // </ReactCSSTransitionGroup>
                 : <figure className={`${orbColor} SingleOrb-ball`}>
                     <span className="SingleOrb-shadow"></span>
                   </figure>
