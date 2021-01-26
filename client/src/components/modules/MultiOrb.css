@@ -18,24 +18,28 @@
     cursor: pointer; */
 }
 
+.MultiOrb-week {
+    color: white;
+}
+
 .MultiOrb-orb {
     width: 26vw;
     height: 26vw;
     transform: scale(0.4,0.4);
     margin-top: 15vh;
-    margin-left: -6vw;
-    margin-right: -5.8vw;
+    margin-left: -9vw;
+    margin-right: -9vw;
     border-radius: 50%;
     transition: all 1s ease;
     cursor: pointer;
 
-    animation-name: floating; 
+    animation-name: MultiOrb-floating; 
     animation-duration: 3s; 
     animation-iteration-count: infinite; 
     animation-timing-function: ease-in-out; 
 } 
   
-@keyframes floating { 
+@keyframes MultiOrb-floating { 
     0% { transform: translate(0,  0px) scale(0.4,0.4); } 
     50%  { transform: translate(0, 2px) scale(0.4,0.4); } 
     100%   { transform: translate(0, 0px) scale(0.4,0.4); }     

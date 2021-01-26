@@ -38,7 +38,7 @@ import "./MultiOrb.css";
         console.log('classname', this.props.className)
         return (
             <>
-            <div>{this.props.day}</div>
+            <div className="MultiOrb-week">{this.props.day}</div>
               <figure className={this.props.className}>
                 <span className="MultiOrb-shadow"></span>
               </figure>
