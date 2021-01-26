@@ -42,37 +42,37 @@
 }
 
 .MultiOrb-orb:nth-child(1) {
-    /* left: 0vw; */
+    /* margin-left: -6vw; */
     animation-delay: 0.5s;
 }
 
 .MultiOrb-orb:nth-child(2) {
-    /* left: 20vw; */
+    /* margin-left: -12vw; */
     animation-delay: 1s;
 }
 
 .MultiOrb-orb:nth-child(3) {
-    /* left: 40vw; */
+    /* margin-left: -12vw; */
     animation-delay: 1.5s;
 }
 
 .MultiOrb-orb:nth-child(4) {
-    /* left: 60vw; */
+    /* margin-left: -12vw; */
     animation-delay: 2s;
 }
 
 .MultiOrb-orb:nth-child(5) {
-    /* left: 80vw; */
+    /* margin-left: -12vw; */
     animation-delay: 2.5s;
 }
 
 .MultiOrb-orb:nth-child(6) {
-    /* left: 80vw; */
+    /* margin-left: -12vw; */
     animation-delay: 3s;
 }
 
 .MultiOrb-orb:nth-child(7) {
-    /* left: 80vw; */
+    /* margin-left: -14vw; */
     animation-delay: 3.5s;
 }
 
