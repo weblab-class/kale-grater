@@ -125,7 +125,10 @@ class ShelfPage extends Component {
         }
 
         var prevSunday = new Date();
-        prevSunday.setDate(prevSunday.getDate() - (prevSunday.getDay() + 7) % 7);
+        console.log('B5', prevSunday)
+        prevSunday.setDate(prevSunday.getDate() - (prevSunday.getDay() + 6) % 7);
+        console.log('AFTER', prevSunday)
+        // console.
         var month;
         if (prevSunday.getMonth() + 1 < 10) {
           month = "0" + (prevSunday.getMonth() + 1)
@@ -133,22 +136,25 @@ class ShelfPage extends Component {
           month = prevSunday.getMonth() + 1
         }
         const prevSundayDate = prevSunday.getFullYear() + "-" + month + "-" + prevSunday.getDate();
+        console.log('OIDSJFA', prevSundayDate)
+        console.log('bruh', Date(prevSundayDate))
         // var weekOrbs = {}
         var allDayOrbs = []
         var weekOrbs = []
         const weekDayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
         for (let i = 0; i < 7; i++) {
-            var result = new Date(prevSundayDate);
-            result.setDate(result.getDate() + i);
-                var resultMonth;
-            if (result.getMonth() + 1 < 10) {
-                resultMonth = "0" + (result.getMonth() + 1)
+            // var current_result = new Date(prevSundayDate);
+            var current_result = new Date(prevSunday.getFullYear(), month - 1, prevSunday.getDate())
+            current_result.setDate(current_result.getDate() + i);
+            var resultMonth;
+            if (current_result.getMonth() + 1 < 10) {
+                resultMonth = "0" + (current_result.getMonth() + 1)
             } else {
                 resultMonth = result.getMonth() + 1
             }
           
-            const resultDate = result.getFullYear() + "-" + resultMonth + "-" + result.getDate()
-
+            const resultDate = current_result.getFullYear() + "-" + resultMonth + "-" + current_result.getDate()
+            console.log(resultDate)
             function filterDay(orb) {
                 return orb.timestamp.startsWith(resultDate)
             }
@@ -174,7 +180,7 @@ class ShelfPage extends Component {
             }
             
             // console.log(numEmotions)
-            console.log('ORBCLASS', orbClass)
+            // console.log('ORBCLASS', orbClass)
             
             // weekOrbs = 
             weekOrbs = [<MultiOrb className={`MultiOrb-orb ${orbClass}`}
@@ -190,7 +196,7 @@ class ShelfPage extends Component {
             // weekOrbs[i] = dayOrbs
         }
 
-        console.log('WHOLE WEEK', weekOrbs)
+        // console.log('WHOLE WEEK', weekOrbs)
 
         return (
             <>
