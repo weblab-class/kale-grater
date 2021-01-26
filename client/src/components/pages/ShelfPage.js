@@ -156,11 +156,11 @@ class ShelfPage extends Component {
                 orbClass += dayEmotions;
             }
             
-            console.log(numEmotions)
+            // console.log(numEmotions)
             console.log('ORBCLASS', orbClass)
             
             // weekOrbs = 
-            weekOrbs = [<MultiOrb className={orbClass}
+            weekOrbs = [<MultiOrb className={`MultiOrb-orb ${orbClass}`}
             // creator_id={.creator_id} 
             // emotion={orbObj.emotion}
             // content={orbObj.content}
@@ -172,7 +172,7 @@ class ShelfPage extends Component {
             // weekOrbs[i] = dayOrbs
         }
 
-        console.log(weekOrbs)
+        console.log('WHOLE WEEK', weekOrbs)
 
         return (
             <>
@@ -183,7 +183,9 @@ class ShelfPage extends Component {
                 {/* {this.props.creator_id && <ShelfPage addNewOrb={this.addNewOrb} />} */}
                 {orbsList}
             </div> :
-            <div className="ShelfPage-row">{weekOrbs}</div>}
+            <div className="ShelfPage-row">
+                {weekOrbs}
+            </div>}
             </>
         );
     }
