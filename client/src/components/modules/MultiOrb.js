@@ -36,6 +36,7 @@ import "./MultiOrb.css";
 
     render () {
         // const orbColor = "SingleOrb-" + this.props.emotion;
+        console.log('classname', this.props.className)
         return (
             // <div className="SingleOrb-container" onClick={this.handleClick}>
             //   {this.state.showContent
@@ -53,7 +54,7 @@ import "./MultiOrb.css";
             // </div>
             <>
               <figure className={this.props.className}>
-                <span className="SingleOrb-shadow"></span>
+                <span className="MultiOrb-shadow"></span>
               </figure>
             </>
           );
