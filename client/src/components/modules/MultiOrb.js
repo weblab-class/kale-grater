@@ -35,23 +35,8 @@ import "./MultiOrb.css";
     };
 
     render () {
-        // const orbColor = "SingleOrb-" + this.props.emotion;
         console.log('classname', this.props.className)
         return (
-            // <div className="SingleOrb-container" onClick={this.handleClick}>
-            //   {this.state.showContent
-            //     ? <OrbContent
-            //       creator_id={this.props.creator_id}
-            //       emotion={this.props.emotion}
-            //       content={this.props.content}
-            //       timestamp = {this.props.timestamp}
-            //       handleClick={this.handleClick.bind(this)}
-            //       />
-            //     : <figure className={`${orbColor} SingleOrb-ball`}>
-            //         <span className="SingleOrb-shadow"></span>
-            //       </figure>
-            //   }
-            // </div>
             <>
             <div>{this.props.day}</div>
               <figure className={this.props.className}>

@@ -185,8 +185,8 @@ class ShelfPage extends Component {
                 {/* {this.props.creator_id && <ShelfPage addNewOrb={this.addNewOrb} />} */}
                 {orbsList}
             </div> :
-            <div className="ShelfPage-row">
-                {weekOrbs.reverse()}
+            <div className="ShelfPage-week">
+                {weekOrbs}
             </div>}
             </>
         );
