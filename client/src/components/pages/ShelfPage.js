@@ -120,6 +120,7 @@ class ShelfPage extends Component {
         // var weekOrbs = {}
         var allDayOrbs = []
         var weekOrbs = []
+        const weekDayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
         for (let i = 0; i < 7; i++) {
             var result = new Date(prevSundayDate);
             result.setDate(result.getDate() + i);
@@ -167,6 +168,7 @@ class ShelfPage extends Component {
             // timestamp={orbObj.timestamp}
             // privacy={orbObj.privacy}
             // view={this.state.view}
+            day={weekDayNames[i]}
             />].concat(weekOrbs)
             // allDayOrbs = [dayOrbs].concat(allDayOrbs)
             // weekOrbs[i] = dayOrbs
@@ -184,7 +186,7 @@ class ShelfPage extends Component {
                 {orbsList}
             </div> :
             <div className="ShelfPage-row">
-                {weekOrbs}
+                {weekOrbs.reverse()}
             </div>}
             </>
         );
