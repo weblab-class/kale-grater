@@ -4,7 +4,6 @@ import { navigate } from "@reach/router";
 
 import SingleOrb from "../modules/SingleOrb.js";
 import MultiOrb from "../modules/MultiOrb.js";
-import { NewMemory } from "../modules/NewMemory.js";
 
 import "./ShelfPage.css";
 
@@ -74,8 +73,6 @@ class ShelfPage extends Component {
         this.setState({
             orbs: this.state.orbs.filter(orb => orb !== orbObj),
         });
-
-        console.log("deleted")
         
         post("/api/deletememory", { _id: orbObj._id}).then(() => {
           navigate(`/shelves/${orbObj.creator_id}`);
