@@ -1,3 +1,9 @@
+.AboutPage-body {
+    top: 65px;
+    width: 100vw;
+    height: calc(100vh - 65px);
+}
+
 .AboutPage-header {
     color: rgb(91, 131, 169);
     width: 900px;

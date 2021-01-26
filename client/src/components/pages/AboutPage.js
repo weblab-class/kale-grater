@@ -23,6 +23,7 @@ class AboutPage extends Component {
     render() {
         return (
             <>
+            <div className="AboutPage-body">
             <div className="AboutPage-orbContainer">
                 <figure className="AboutPage-anger AboutPage-Orb AboutPage-shadow"></figure>
                 <figure className="AboutPage-fear AboutPage-Orb AboutPage-shadow"></figure>
@@ -69,6 +70,7 @@ class AboutPage extends Component {
                 <div className="AboutPage-description">
                     Inquiries or comments on how to improve our site. Add a message box, our names!
                 </div>
+            </div>
             </div>
             </>
         )
