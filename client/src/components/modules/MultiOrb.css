@@ -20,6 +20,11 @@
 
 .MultiOrb-week {
     color: white;
+    width: 70px;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    padding: 20px;
 }
 
 .MultiOrb-orb {
