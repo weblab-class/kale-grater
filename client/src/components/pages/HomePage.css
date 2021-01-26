@@ -159,8 +159,9 @@
     margin-top: 15px;
     box-sizing: border-box;
     text-transform:uppercase;
-    font-weight:400;
-    color: black;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #313131;
     text-align:center;
     transition: all 0.15s;
     box-shadow: 0 0 15px 5px #fff;
