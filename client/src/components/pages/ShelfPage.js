@@ -3,6 +3,7 @@ import { get, post } from "../../utilities";
 import { navigate } from "@reach/router";
 
 import SingleOrb from "../modules/SingleOrb.js";
+import MultiOrb from "../modules/MultiOrb.js";
 import { NewMemory } from "../modules/NewMemory.js";
 
 import "./ShelfPage.css";
@@ -134,6 +135,8 @@ class ShelfPage extends Component {
         const prevSundayDate = prevSunday.getFullYear() + "-" + month + "-" + prevSunday.getDate();
         // var weekOrbs = {}
         var allDayOrbs = []
+        var weekOrbs = []
+        const weekDayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
         for (let i = 0; i < 7; i++) {
             var result = new Date(prevSundayDate);
             result.setDate(result.getDate() + i);
@@ -151,10 +154,43 @@ class ShelfPage extends Component {
             }
             
             const dayOrbs = this.state.orbs.filter(filterDay)
-
-            allDayOrbs = [dayOrbs].concat(allDayOrbs)
+            var dayEmotions = ""
+            var numEmotions = 0
+            var orbClass = "MultiOrb-"
+            for (let i = 0; i < dayOrbs.length; i++) {
+                const currentOrb = dayOrbs[i]
+                const currentEmotion = currentOrb.emotion
+                if (!dayEmotions.startsWith(currentEmotion)) {
+                    dayEmotions = dayEmotions + currentEmotion
+                    numEmotions += 1
+                }
+            }
+            if (numEmotions === 0) {
+                orbClass += "clear";
+            } else if (numEmotions > 2) {
+                orbClass += "mixed";
+            } else {
+                orbClass += dayEmotions;
+            }
+            
+            // console.log(numEmotions)
+            console.log('ORBCLASS', orbClass)
+            
+            // weekOrbs = 
+            weekOrbs = [<MultiOrb className={`MultiOrb-orb ${orbClass}`}
+            // creator_id={.creator_id} 
+            // emotion={orbObj.emotion}
+            // content={orbObj.content}
+            // timestamp={orbObj.timestamp}
+            // privacy={orbObj.privacy}
+            // view={this.state.view}
+            day={weekDayNames[i]}
+            />].concat(weekOrbs)
+            // allDayOrbs = [dayOrbs].concat(allDayOrbs)
             // weekOrbs[i] = dayOrbs
         }
+
+        console.log('WHOLE WEEK', weekOrbs)
 
         return (
             <>
@@ -165,7 +201,9 @@ class ShelfPage extends Component {
                 {/* {this.props.creator_id && <ShelfPage addNewOrb={this.addNewOrb} />} */}
                 {orbsList}
             </div> :
-            <div className="Shelf-title">WEEK</div>}
+            <div className="ShelfPage-week">
+                {weekOrbs}
+            </div>}
             </>
         );
     }

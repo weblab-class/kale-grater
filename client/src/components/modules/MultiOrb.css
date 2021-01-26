@@ -1,8 +1,8 @@
 .MultiOrb-clear {
-    width: 26vw;
+    /* width: 26vw;
     height: 26vw;
     transform: scale(0.3,0.3);
-    border-radius: 50%;
+    border-radius: 50%; */
 
     box-shadow:
         inset 0 0 50px #fff,
@@ -14,15 +14,73 @@
         -10px 0 80px #ffffff00,
         10px 0 80px #ffffff00;
 
+    /* transition: all 1s ease;
+    cursor: pointer; */
+}
+
+.MultiOrb-orb {
+    width: 26vw;
+    height: 26vw;
+    transform: scale(0.4,0.4);
+    margin-top: 15vh;
+    margin-left: -6vw;
+    margin-right: -5.8vw;
+    border-radius: 50%;
     transition: all 1s ease;
     cursor: pointer;
+
+    animation-name: floating; 
+    animation-duration: 3s; 
+    animation-iteration-count: infinite; 
+    animation-timing-function: ease-in-out; 
+} 
+  
+@keyframes floating { 
+    0% { transform: translate(0,  0px) scale(0.4,0.4); } 
+    50%  { transform: translate(0, 2px) scale(0.4,0.4); } 
+    100%   { transform: translate(0, 0px) scale(0.4,0.4); }     
+}
+
+.MultiOrb-orb:nth-child(1) {
+    /* left: 0vw; */
+    animation-delay: 0.5s;
+}
+
+.MultiOrb-orb:nth-child(2) {
+    /* left: 20vw; */
+    animation-delay: 1s;
+}
+
+.MultiOrb-orb:nth-child(3) {
+    /* left: 40vw; */
+    animation-delay: 1.5s;
+}
+
+.MultiOrb-orb:nth-child(4) {
+    /* left: 60vw; */
+    animation-delay: 2s;
+}
+
+.MultiOrb-orb:nth-child(5) {
+    /* left: 80vw; */
+    animation-delay: 2.5s;
+}
+
+.MultiOrb-orb:nth-child(6) {
+    /* left: 80vw; */
+    animation-delay: 3s;
+}
+
+.MultiOrb-orb:nth-child(7) {
+    /* left: 80vw; */
+    animation-delay: 3.5s;
 }
 
 .MultiOrb-container {
     max-height: 48.3px;
 }
 
-.MultiOrb-clear:before {
+.MultiOrb-orb:before {
     content: "";
     position: absolute;
     background: radial-gradient(circle at 50% 120%,  rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%);
@@ -35,7 +93,7 @@
     filter: blur(5px);
     z-index: 2;
 }
-.MultiOrb-clear:after {
+.MultiOrb-orb:after {
     width: 100%;
     height: 100%;
     content: "";
@@ -48,7 +106,7 @@
     filter: blur(10px);
 }
   
-.MultiOrb-clear .MultiOrb-shadow {
+.MultiOrb-orb .MultiOrb-shadow {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -60,7 +118,7 @@ body {
     background: black;
 }
 
-.MultiOrb-clear:hover {
+.MultiOrb-orb:hover {
     box-shadow:
     inset 0 0 200px #fff,
     inset 20px 0 80px #ffffff00,
@@ -70,6 +128,18 @@ body {
     0 0 70px #fff,
     -10px 0 80px #ffffff00,
     10px 0 80px #ffffff00;
+}
+
+.MultiOrb-mixed {
+    box-shadow:
+        inset 0 0 50px #fff,
+        inset 20px 0 80px #ffd700,
+        inset -20px 0 80px #022ae0,
+        inset 20px 0 300px #D00000,
+        inset -20px 0 300px #D00000,
+        0 0 50px #fff,
+        -10px 0 80px #ffd700,
+        10px 0 80px #022ae0;
 }
 
 .MultiOrb-joy {
