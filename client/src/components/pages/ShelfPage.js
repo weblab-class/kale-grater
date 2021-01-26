@@ -18,7 +18,7 @@ class ShelfPage extends Component {
             loaded: "",
             userId: this.props.userId,
             userName: "",
-            shelfView: "all",
+            shelfView: "week",
             weekOrbs: null
         };
     }

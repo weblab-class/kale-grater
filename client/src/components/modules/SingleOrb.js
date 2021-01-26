@@ -89,6 +89,7 @@ import "./SingleOrb.css";
                   loadImage={this.props.loadImage}
                   image={this.props.image}
                   object={this.props.object}
+                  view={this.props.view}
                   />
                   // </ReactCSSTransitionGroup>
                 : <figure className={`${orbColor} SingleOrb-ball`}>
