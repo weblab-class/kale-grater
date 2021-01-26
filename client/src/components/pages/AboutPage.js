@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import "../../utilities.css";
 import "./AboutPage.css";
+import {get} from "../../utilities.js";
 
 
 class AboutPage extends Component {
@@ -17,12 +18,23 @@ class AboutPage extends Component {
 
     componentDidMount() {
         document.title = "About | Memorble";
+
+        // get("/api/getusername", {userId: this.props.userId}).then((result) => {
+        //     this.setState({
+        //         username: result.username,
+        //     })
+        // })
     }
 
 
     render() {
-        if (!this.props.username) {
-            navigate("/newuser")
+        // console.log('USERNAME', this.props.username)
+        // console.log('hi')
+        // if (!this.state.userId) {
+        //     return <div>Loading!</div>
+    // }
+         if (!this.props.username) {
+            navigate("/newuser");
         }
         return (
             <>

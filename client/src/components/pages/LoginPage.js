@@ -22,9 +22,9 @@ class LoginPage extends Component {
     }
 
     render() {
-        if (!this.props.username) {
-            navigate("/newuser")
-        }
+        // if (!this.props.username) {
+        //     navigate("/newuser")
+        // }
         return (
             <>
             <section>
