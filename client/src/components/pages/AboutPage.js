@@ -16,11 +16,14 @@ class AboutPage extends Component {
     }
 
     componentDidMount() {
-        document.title = "About | Outside In";
+        document.title = "About | Memorble";
     }
 
 
     render() {
+        if (!this.props.username) {
+            navigate("/newuser")
+        }
         return (
             <>
             <div className="AboutPage-body">

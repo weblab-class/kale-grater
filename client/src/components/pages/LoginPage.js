@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {navigate} from "@reach/router";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
 
 import "../../utilities.css";
@@ -21,6 +22,9 @@ class LoginPage extends Component {
     }
 
     render() {
+        if (!this.props.username) {
+            navigate("/newuser")
+        }
         return (
             <>
             <section>

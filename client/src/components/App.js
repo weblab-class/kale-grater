@@ -44,7 +44,9 @@ class App extends Component {
     console.log(`Logged in as ${res.profileObj.name}`);
     const userToken = res.tokenObj.id_token;
     post("/api/login", { token: userToken }).then((user) => {
-      this.setState({ userId: user._id }, () => {
+      this.setState({ 
+        userId: user._id,
+        userName: user.username }, () => {
         if (user.username) {
           navigate("/home")
         } else {
@@ -57,7 +59,7 @@ class App extends Component {
 
 
   handleLogout = () => {
-    this.setState({ userId: undefined });
+    this.setState({ userId: undefined, userName: undefined });
     navigate("/")
     post("/api/logout");
   };
@@ -77,12 +79,14 @@ class App extends Component {
         
     //       </>
         // ) : (
-    return this.state.userId ? (
+    console.log(this.state)
+    return this.state.userId && this.state.userName ? (
       <>
         <NavBar
           handleLogin={this.handleLogin}
           handleLogout={this.handleLogout}
           userId={this.state.userId}
+          username={this.state.userName}
         />
         <div className="App-container">
           <Router>
@@ -90,15 +94,16 @@ class App extends Component {
               path="/"
               handleLogin={this.handleLogin}
               handleLogout={this.handleLogout}
-              userId={this.state.userId} />
-            <HomePage path="/home" userId={this.state.userId}  />
-            <AboutPage path="/about" />
+              userId={this.state.userId}
+              username={this.state.userName} />
+            <HomePage path="/home" userId={this.state.userId} username={this.state.userName}  />
+            <AboutPage path="/about" username={this.state.userName} />
             {/* <ShelfPage path="/shelves" userId={this.state.userId} /> */}
-            <ShelfPage path="/shelves/:userId" userId={this.state.userId} />
-            <NewMemory path="/newmemory" userId={this.state.userId} />
-            <NewUser path="/newuser" userId={this.state.userId} />
-            <SocialPage path="/social" userId={this.state.userId} />
-            <NotFound default />
+            <ShelfPage path="/shelves/:userId" userId={this.state.userId} username={this.state.userName}/>
+            <NewMemory path="/newmemory" userId={this.state.userId} username={this.state.userName} />
+            <NewUser path="/newuser" userId={this.state.userId} username={this.state.userName}/>
+            <SocialPage path="/social" userId={this.state.userId} username={this.state.userName} />
+            <NotFound username={this.state.userName} default />
           </Router>
         </div>
       </>) : (
