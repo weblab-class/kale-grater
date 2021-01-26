@@ -62,6 +62,7 @@ import "./SingleOrb.css";
                   handleClick={this.handleClick.bind(this)}
                   deleteMemory={this.props.delete}
                   object={this.props.object}
+                  view={this.props.view}
                   />
                   // </ReactCSSTransitionGroup>
                 : <figure className={`${orbColor} SingleOrb-ball`}>
