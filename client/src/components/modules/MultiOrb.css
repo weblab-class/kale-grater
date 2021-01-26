@@ -27,6 +27,20 @@
     padding: 20px;
 }
 
+.MultiOrb-date {
+    color: white;
+    width: 70px;
+    position: relative;
+    left: 50%;
+    top: 0px;
+    font-size: 12px; 
+}
+
+.MultiOrb-weekContainer {
+    height: 30px;
+    width: 180px;
+    left: 30px;
+}
 .MultiOrb-orb {
     width: 26vw;
     height: 26vw;
