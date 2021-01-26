@@ -208,7 +208,7 @@ class ShelfPage extends Component {
                 {orbsList}
             </div> :
             <div className="ShelfPage-week">
-                {weekOrbs}
+                {weekOrbs.reverse()}
             </div>}
             </>
         );
