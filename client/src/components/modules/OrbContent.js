@@ -11,6 +11,7 @@ import "./OrbContent.css";
  * @param {string} content of memory
  * @param {date} timestamp of memory
  * @param {function} delete memory function 
+ * @param {} entire orb object lol 
  */
 
 
@@ -19,6 +20,7 @@ class OrbContent extends Component {
     super(props);
   }
   
+
 
   render() {
     const dateString = this.props.timestamp;
@@ -30,6 +32,15 @@ class OrbContent extends Component {
       <div className="orbContent-container">
         <div className="orbContent-date">{officialDate}</div>
         <div className="orbContent-text">{this.props.content}</div>
+        {/* <div> {this.props.loadImage}
+          <div className="orbContent-images">
+            {
+              this.state.images.map((image, index) => (
+                <img src={image} key={index} />
+              ))
+            }
+          </div>
+        </div> */}
         <div className="orbContent-buttons">
           <div className="orbContent-delete">
             <button onClick={() => this.props.deleteMemory(this.props.object)}>Delete</button>

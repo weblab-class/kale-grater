@@ -15,7 +15,8 @@ class NewMemory extends React.Component {
         this.state = {
             content: "",
             emotion: "",
-            privacy: ""
+            privacy: "",
+            images: [],
         };
 
         // ignore rn
@@ -29,16 +30,56 @@ class NewMemory extends React.Component {
 
     componentDidMount() {
         // remember -- api calls go here!
+
       }
     
-    // to do...
+    // image handling
+    
+
+    uploadImage = (event) => {
+    const fileInput = event.target;
+    console.log(fileInput);
+    this.readImage(fileInput.files[0]).then(image => {
+      fileInput.value = null;
+      return post("/api/uploadImage", { image: image }).then(this.loadImages);
+    }).catch(err => {
+      console.log(err);
+    });
+  };
+
+    readImage = (blob) => {
+        return new Promise((resolve, reject) => {
+        const r = new FileReader();
+        r.onloadend = () => {
+            if (r.error) {
+            reject(r.error.message);
+            return;
+            } else if (r.result.length < 50) {
+            // too short. probably just failed to read, or ridiculously small image
+            reject("small image? or truncated response");
+            return;
+            } else if (!r.result.startsWith("data:image/")) {
+            reject("not an image!");
+            return;
+            } else {
+            resolve(r.result);
+            }
+        };
+        r.readAsDataURL(blob);
+        });
+    };
+
+    
+    // memory submission 
+
     handleSubmit = (event) => {
         event.preventDefault();
         const orb = {
             userId: this.props.userId,
             content: this.state.content,
             emotion: this.state.emotion,
-            privacy: this.state.privacy
+            privacy: this.state.privacy,
+            images: this.state.images, 
         }
 
         if (orb.content === "" || orb.emotion === "" || orb.privacy === "") {
@@ -116,9 +157,11 @@ class NewMemory extends React.Component {
                                     placeholder="Tell us about your memory!"
                                     rows="10" cols="60" 
                                     onChange={this.handleChange}></textarea>
+
                                 <div>                                  
                                     <input id="fileInput" type="file" name="files[]" accept="image/*" onChange={this.uploadImage} />
                                 </div>  
+
                             </div>
                             <div className="dropdown">
                             <button className="dropbtn">Privacy Option</button>

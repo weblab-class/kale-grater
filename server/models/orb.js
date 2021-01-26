@@ -5,7 +5,8 @@ const OrbSchema = new mongoose.Schema({
     emotion: String,
     content: String,
     timestamp: Date, // correct constructor?,
-    privacy: null || String
+    privacy: null || String,
+    imageFileName: String,
 });
 
 // compile model from schema

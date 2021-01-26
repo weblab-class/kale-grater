@@ -20,6 +20,8 @@ const auth = require("./auth");
 // api endpoints: all these paths will be prefixed with "/api/"
 const router = express.Router();
 
+const { uploadImagePromise, deleteImagePromise, downloadImagePromise } = require("./storageTalk");
+
 //initialize socket
 const socketManager = require("./server-socket");
 
@@ -39,6 +41,9 @@ router.post("/initsocket", (req, res) => {
   if (req.user) socketManager.addUser(req.user, socketManager.getSocketFromSocketID(req.body.socketid));
   res.send({});
 });
+
+
+/* images */
 
 router.post("/uploadImage", auth.ensureLoggedIn, (req, res) => {
   if (typeof (req.body.image) !== 'string') {
@@ -68,43 +73,43 @@ router.post("/uploadImage", auth.ensureLoggedIn, (req, res) => {
   })
 });
 
-router.get("/getImages", auth.ensureLoggedIn, (req, res) => {
-  User.findById(req.user._id).then(user => {
-    Promise.all(
-      user.imageNames.map(imageName => downloadImagePromise(imageName)
-        .catch(err => "Err: could not find image"))
-    ).then(images => {
-      res.send(images);
-    }).catch(err => {
-      console.log("ERR getImages this shouldn't happen");
-      res.status(500).send({
-        message: "unknown error"
-      });
-    });
-  });
-});
+// router.get("/getImages", auth.ensureLoggedIn, (req, res) => {
+//   User.findById(req.user._id).then(user => {
+//     Promise.all(
+//       user.imageNames.map(imageName => downloadImagePromise(imageName)
+//         .catch(err => "Err: could not find image"))
+//     ).then(images => {
+//       res.send(images);
+//     }).catch(err => {
+//       console.log("ERR getImages this shouldn't happen");
+//       res.status(500).send({
+//         message: "unknown error"
+//       });
+//     });
+//   });
+// });
 
-router.post("/deleteImages", auth.ensureLoggedIn, (req, res) => {
-  User.findById(req.user._id).then(user => {
-    return Promise.all(user.imageNames.map(imageName => {
-      return Promise.all([deleteImagePromise(imageName), Promise.resolve(imageName)])
-    }));
-  }).then(successesAndNames => {
-    // get names of removed images
-    return successesAndNames.filter(
-      successAndName => successAndName[0]).map(
-        successAndName => successAndName[1]);
-  }).then((removedNames) => {
-    return User.findOneAndUpdate({ _id: req.user._id },
-      { $pullAll: { imageNames: removedNames } }); // remove those names from the document
-  }).then(user => {
-    // success!
-    res.send({});
-  }).catch(err => {
-    console.log("ERR: failed to delete image: " + err);
-    res.status(500).send()
-  });
-});
+// router.post("/deleteImages", auth.ensureLoggedIn, (req, res) => {
+//   User.findById(req.user._id).then(user => {
+//     return Promise.all(user.imageNames.map(imageName => {
+//       return Promise.all([deleteImagePromise(imageName), Promise.resolve(imageName)])
+//     }));
+//   }).then(successesAndNames => {
+//     // get names of removed images
+//     return successesAndNames.filter(
+//       successAndName => successAndName[0]).map(
+//         successAndName => successAndName[1]);
+//   }).then((removedNames) => {
+//     return User.findOneAndUpdate({ _id: req.user._id },
+//       { $pullAll: { imageNames: removedNames } }); // remove those names from the document
+//   }).then(user => {
+//     // success!
+//     res.send({});
+//   }).catch(err => {
+//     console.log("ERR: failed to delete image: " + err);
+//     res.status(500).send()
+//   });
+// });
 
 
 
@@ -122,6 +127,7 @@ router.get("/shelves", (req, res) => {
     res.send(orbs);
   });
 });
+
 
 router.get("/weekshelves", (req, res) => {
   var prevSunday = new Date();
@@ -144,16 +150,25 @@ router.get("/weekshelves", (req, res) => {
   res.send(weekOrbs)
 })
 
+router.get("/image", (req, res) => {
+  downloadImagePromise(req.query.imageName).then(image=> {
+    res.send({image: image});
+  }).catch(err => console.log(err)
+  )
+});
+
 router.post("/newmemory", (req, res) => {
+  uploadImagePromise(req.body.image).then(imageName => {
   const newOrb = new Orb({
     creator_id: req.body.userId,
     emotion: req.body.emotion,
     content: req.body.content,
     timestamp: Date.now(),
-    privacy: req.body.privacy
+    privacy: req.body.privacy,
+    imageFileName: imageName,
   });
-
-  newOrb.save().then((orb) => res.send(orb))
+    newOrb.save();
+  }).then((orb) => res.send(orb));
 });
 
 router.post("/deletememory", (req, res) => {

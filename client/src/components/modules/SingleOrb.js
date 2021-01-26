@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import OrbContent from "./OrbContent.js";
+import { get } from "../../utilities";
 // import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import "./SingleOrb.css";
@@ -13,6 +14,7 @@ import "./SingleOrb.css";
  * @param {string} emotion of memory
  * @param {string} content of memory
  * @param {date} timestamp of memory
+ * @param {string} image of memory 
  */
 
  class SingleOrb extends Component {
@@ -21,9 +23,26 @@ import "./SingleOrb.css";
         this.state = {
           showContent: false,
           privacy: this.props.privacy
+          
         }
     }
     
+    componentDidMount() {
+      // remember -- api calls go here!
+      if (this.props.userId) {
+          this.loadImages();
+      }
+    }
+  
+    // image handling
+  
+    componentDidUpdate(prevProps) {
+        if (prevProps.userId !== this.props.userId && this.props.userId) {
+          // just logged in. reload images
+          this.loadImages();
+        }
+      }
+
     handleClick = () => {
       if (this.state.showContent === false) {
         this.setState({
@@ -35,6 +54,12 @@ import "./SingleOrb.css";
         });
       };
     };
+
+    loadImages = () => {
+      get("/api/image").then(images => {
+          this.setState({ images: images });
+      });
+      };
 
     render () {
         const orbColor = "SingleOrb-" + this.props.emotion;
@@ -61,6 +86,8 @@ import "./SingleOrb.css";
                   privacy={this.props.privacy}
                   handleClick={this.handleClick.bind(this)}
                   deleteMemory={this.props.delete}
+                  loadImage={this.props.loadImage}
+                  image={this.props.image}
                   object={this.props.object}
                   />
                   // </ReactCSSTransitionGroup>
