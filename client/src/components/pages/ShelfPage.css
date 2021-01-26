@@ -25,3 +25,10 @@
     text-align: center;
     color: white
 }
+
+.ShelfPage-week {
+    display: flex;
+    flex-flow: row;
+    width: 100vw;
+    flex-wrap: wrap;
+}

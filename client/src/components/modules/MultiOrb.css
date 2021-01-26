@@ -21,10 +21,59 @@
 .MultiOrb-orb {
     width: 26vw;
     height: 26vw;
-    transform: scale(0.3,0.3);
+    transform: scale(0.4,0.4);
+    margin-top: 15vh;
+    margin-left: -6vw;
+    margin-right: -5.8vw;
     border-radius: 50%;
     transition: all 1s ease;
     cursor: pointer;
+
+    animation-name: floating; 
+    animation-duration: 3s; 
+    animation-iteration-count: infinite; 
+    animation-timing-function: ease-in-out; 
+} 
+  
+@keyframes floating { 
+    0% { transform: translate(0,  0px) scale(0.4,0.4); } 
+    50%  { transform: translate(0, 2px) scale(0.4,0.4); } 
+    100%   { transform: translate(0, 0px) scale(0.4,0.4); }     
+}
+
+.MultiOrb-orb:nth-child(1) {
+    /* left: 0vw; */
+    animation-delay: 0.5s;
+}
+
+.MultiOrb-orb:nth-child(2) {
+    /* left: 20vw; */
+    animation-delay: 1s;
+}
+
+.MultiOrb-orb:nth-child(3) {
+    /* left: 40vw; */
+    animation-delay: 1.5s;
+}
+
+.MultiOrb-orb:nth-child(4) {
+    /* left: 60vw; */
+    animation-delay: 2s;
+}
+
+.MultiOrb-orb:nth-child(5) {
+    /* left: 80vw; */
+    animation-delay: 2.5s;
+}
+
+.MultiOrb-orb:nth-child(6) {
+    /* left: 80vw; */
+    animation-delay: 3s;
+}
+
+.MultiOrb-orb:nth-child(7) {
+    /* left: 80vw; */
+    animation-delay: 3.5s;
 }
 
 .MultiOrb-container {

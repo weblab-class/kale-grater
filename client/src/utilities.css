@@ -16,6 +16,7 @@
 
 /* TODO: REPLACE WITH YOUR OWN FONT! */
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@font-face { font-family: Village; src: "Village-wLn3.ttf" format("truetype"); }
 
 :root {
   --primary: #396dff;
