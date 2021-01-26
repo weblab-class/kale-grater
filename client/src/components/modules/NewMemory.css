@@ -24,35 +24,13 @@ section {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: #232323;
+    background: #000000; /*old color is #232323 if you need */
     /* border-radius: 20px; */
     margin-left: 67vw;
     overflow-y: scroll;
     overflow-x: hidden;
 }
 
-.NewMemory-container .NewMemory-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: yellow;
-    clip-path: circle(200px at 80% 20%);
-    transition: 0.5s ease-in-out;
-}
-
-/* .NewMemory-container .NewMemory-card::after {
-    content: "Entry";
-    position: absolute;
-    top: 50%;
-    left: 26%;
-    font-size: 12em;
-    font-weight: 800;
-    font-style: italic;
-    color: rgba(255, 255, 255, 0.04);
-} */
 
 .NewMemory-container .NewMemory-card .NewMemory-imgBx {
     position: absolute;
@@ -79,6 +57,7 @@ section {
 
 .NewMemory-container .NewMemory-card .NewMemory-contentBx {
     position: absolute;
+    top: 10vh;
     bottom: 0;
     width: 100%;
     height: 15vh;

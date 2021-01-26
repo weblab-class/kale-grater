@@ -169,5 +169,6 @@
 
 .HomePage-memory {
     text-align: center;
-    margin-top: 20vh;
+    padding-top: 10vh;
+    /* margin-top: 20vh; */
 }
