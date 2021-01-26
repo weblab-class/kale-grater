@@ -16,15 +16,11 @@ class HomePage extends Component {
     componentDidMount() {
         document.title = "Home | Outside In";
         
-        get("/api/username").then((result) => {
+        get("/api/getusername", {userId: this.props.userId}).then((result) => {
             this.setState({
-                uesrname: result.username
+                username: result.username
             })
         })
-
-        // })
-
-        // })
     }
 
     handleOnClick = (event) => {
@@ -38,6 +34,9 @@ class HomePage extends Component {
     }
 
     render() {
+        if (!this.state.username) {
+            return <div>Loading!</div>
+        }
         return (
             <>
             <div id="HomePage-wrap">
@@ -49,7 +48,7 @@ class HomePage extends Component {
                     </div>
 
                     <div className="HomePage-textContainer">
-                        <h1 className="HomePage-header">Welcome {this.state.username}</h1>
+                        <h1 className="HomePage-header">Welcome {this.state.username}!</h1>
                         <div className="HomePage-description">We tag ourselves in photos and comments nearly everyday, but how often do we take the time to tag and reflect on our emotions?</div>
                         <div className="HomePage-description">Joy, sadness, anger, fear, disgust... without one we wouldn't know the feeling of the others. They're all worth celebrating. </div>
                         <div className="HomePage-description">The premise of our project allows you to tag, quantify, and archive your emotions in the form of memory orbs so you'll never forget them.</div>
