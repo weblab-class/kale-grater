@@ -5,7 +5,9 @@
 
 import React, {Component} from "react";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
-import {navigate} from "@reach/router"
+import {navigate} from "@reach/router";
+import NotFound from "./NotFound.js";
+
 
 import "../../utilities.css";
 import { post } from "../../utilities";
@@ -21,7 +23,7 @@ class NewUser extends Component {
     }
 
     componentDidMount() {
-
+        
     }
 
     handleSubmit = (event) => {
@@ -52,6 +54,10 @@ class NewUser extends Component {
     };
 
     render() {
+        // console.log(this.props.username)
+        if (this.props.username) {
+            return <NotFound username={this.state.userName}/>
+        }
         return (
             <div>
                 <h1 className="Welcome-container">Welcome new user! Please make a username: </h1>
