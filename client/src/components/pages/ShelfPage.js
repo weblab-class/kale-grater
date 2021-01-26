@@ -198,6 +198,7 @@ class ShelfPage extends Component {
             content={contentList}
             date={properResultDate}
             day={weekDayNames[i]}
+            view={this.state.view}
             />].concat(weekOrbs)
             // allDayOrbs = [dayOrbs].concat(allDayOrbs)
             // weekOrbs[i] = dayOrbs
