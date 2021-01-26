@@ -53,6 +53,7 @@ import "./MultiOrb.css";
             //   }
             // </div>
             <>
+            <div>{this.props.day}</div>
               <figure className={this.props.className}>
                 <span className="MultiOrb-shadow"></span>
               </figure>
