@@ -21,6 +21,9 @@ class AboutPage extends Component {
 
 
     render() {
+        if (!this.props.username) {
+            navigate("/newuser")
+        }
         return (
             <>
             <div className="AboutPage-body">

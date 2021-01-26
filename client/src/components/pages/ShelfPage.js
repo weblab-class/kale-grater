@@ -38,11 +38,11 @@ class ShelfPage extends Component {
             })
         })
 
-        get("/api/getusername", {userId: this.props.userId}).then((result) => {
-            this.setState({
-                username: result.username,
-            })
-        })
+        // get("/api/getusername", {userId: this.props.userId}).then((result) => {
+        //     this.setState({
+        //         username: result.username,
+        //     })
+        // })
 
     }
 
@@ -98,7 +98,10 @@ class ShelfPage extends Component {
     // }
 
     render() {
-        if (!this.state.view || !this.state.loaded || !this.state.username) {
+        if (!this.props.username) {
+            navigate("/newuser")
+        }
+        if (!this.state.view || !this.state.loaded || !this.props.username) {
             return <div>Loading!</div>;
         }
         let orbsList = null;
@@ -209,7 +212,7 @@ class ShelfPage extends Component {
         return (
             <>
             <button onClick={this.handleSwitch}>Switch View</button>
-            {this.state.view === "self" ? null : <h2 className="Shelf-title">{this.state.username}'s Orbs</h2>}
+            {this.state.view === "self" ? null : <h2 className="Shelf-title">{this.props.username}'s Orbs</h2>}
             {this.state.shelfView === "all" ? 
             <div className="ShelfPage-row">
                 {/* {this.props.creator_id && <ShelfPage addNewOrb={this.addNewOrb} />} */}
