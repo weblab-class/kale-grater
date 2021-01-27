@@ -29,9 +29,12 @@ class OrbContent extends Component {
     // const officialDate = (currentDate.getMonth() + 1) + "-" + currentDate.getDate() + "-" + currentDate.getFullYear();
     // const officialDate = resultMonth + "-" + current_result.getDate() + "-" + current_result.getFullYear();
     
+<<<<<<< HEAD
     const currentDate = new Date(dateString);
     // const officialDate = (currentDate.getMonth() + 1) + "-" + currentDate.getDate() + "-" + currentDate.getFullYear();
 
+=======
+>>>>>>> d5d54a83229135865f471833d132e9d490b7b4b1
     return (
       <>
       <div className="orbContent-container">
