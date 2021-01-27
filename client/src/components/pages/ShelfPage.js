@@ -118,9 +118,12 @@ class ShelfPage extends Component {
         currentStart.setDate(currentStart.getDate() + change)
         console.log('currstart', currentStart, 'PREV', prevMonday)
 
-        var dateToCheck = new Date()
-        dateToCheck.setDate(currentStart.getDate() + 1)
-        if (dateToCheck >= prevMonday) {
+        // var dateToCheck = new Date()
+        // dateToCheck.setDate(currentStart.getDate() + 1)
+        var dateToCheck = new Date(currentStart.getFullYear(), currentStart.getMonth(), currentStart.getDate())
+        var prevDateToCheck = new Date(prevMonday.getFullYear(), prevMonday.getMonth(), prevMonday.getDate())
+        // if (dateToCheck >= prevMonday) {
+        if (dateToCheck >= prevDateToCheck) {
     
             this.setState({
                 currentWeekOrbs: null,
