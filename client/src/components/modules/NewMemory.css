@@ -84,7 +84,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 3vh;
+    padding-top: 0.5vh;
     padding-bottom: 2vh;
     transition: 0.5s;
     opacity: 0;
