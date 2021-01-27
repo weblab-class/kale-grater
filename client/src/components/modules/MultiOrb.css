@@ -21,18 +21,18 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     position: absolute;
-    margin-top: 15vh;
+    margin-top: 20vh;
 }
 
 .MultiOrb-Container {
-    height: 30vw;
-
+    height: 35vw;
 }
+
 .MultiOrb-orb {
     width: 26vw;
     height: 26vw;
     transform: scale(0.4,0.4);
-    margin-top: 15vh;
+    margin-top: 20vh;
     margin-left: -5.5vw;
     margin-right: -6.25vw;
     border-radius: 50%;
