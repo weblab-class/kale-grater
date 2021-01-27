@@ -139,7 +139,7 @@ class SocialPage extends Component {
         {this.state.friends.map(friend => (
           <div className="Text-message">
             <button className="SocialPage-friends" onClick={() => {this.handleClick(friend)}}>{friend}</button>
-          </div>))};
+          </div>))}
       </div>  
       </div>
     
