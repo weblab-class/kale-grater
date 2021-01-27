@@ -31,6 +31,7 @@ import "./SingleOrb.css";
     componentDidMount() {
       // remember -- api calls go here!
       if (this.props.userId) {
+        console.log("did mount")
           this.loadImages();
       }
     }
@@ -38,7 +39,9 @@ import "./SingleOrb.css";
     // image handling
   
     componentDidUpdate(prevProps) {
+      console.log("did update1");
         if (prevProps.userId !== this.props.userId && this.props.userId) {
+          console.log("did update2")
           // just logged in. reload images
           this.loadImages();
         }
@@ -57,6 +60,7 @@ import "./SingleOrb.css";
     };
 
     loadImages = () => {
+      console.log("test loadImages");
       get("/api/image").then(image => {
           this.setState({ image: image });
       });
@@ -87,7 +91,7 @@ import "./SingleOrb.css";
                   privacy={this.props.privacy}
                   handleClick={this.handleClick.bind(this)}
                   deleteMemory={this.props.delete}
-                  image={this.props.image}
+                  image={this.state.image}
                   object={this.props.object}
                   view={this.props.view}
                   />

@@ -26,6 +26,7 @@ class OrbContent extends Component {
     const dateString = this.props.timestamp;
     const currentDate = new Date(dateString);
     const officialDate = (currentDate.getMonth() + 1) + "-" + currentDate.getDate() + "-" + currentDate.getFullYear();
+    console.log(this.props.image);
     
     return (
       <>
@@ -38,7 +39,7 @@ class OrbContent extends Component {
               this.props.image.map((image, index) => (
                 <img src={image} key={index} />
               ))
-            : undefined 
+            : <img src={"client/img/logo.png"} />
             }
           </div>
        
