@@ -1,29 +1,27 @@
 .MultiOrb-week {
     color: white;
-    width: 70px;
+    width: 7.5vw;
     position: relative;
-    justify-self: center;
-    /* left: 0px;
-    top: 0px; */
-    /* padding: 20px; */
+    left: .75vw;
 }
 
 .MultiOrb-date {
     color: white;
-    width: 70px;
+    width: 7.5vw;
     position: relative;
     justify-self: center;
-    /* left: 50%;
-    top: 0px; */
-    font-size: 12px; 
+    font-size: 12px;
+    left: .5vw;
 }
 
 .MultiOrb-weekContainer {
     display: grid;
-    margin-left: 2vw;
+    margin-left: 4.75vw;
     margin-right: 4vw;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+    position: absolute;
+    margin-top: 15vh;
 }
 
 .MultiOrb-orb {

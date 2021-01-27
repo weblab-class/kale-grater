@@ -41,8 +41,8 @@ import "./MultiOrb.css";
             // <>
             <div onClick={this.handleClick}>
             <div className="MultiOrb-weekContainer">
-              <div className="MultiOrb-week">{this.props.day}</div>
-              <div className="MultiOrb-date">{this.props.date}</div>
+              <h2 className="MultiOrb-week">{this.props.day}</h2>
+              <h3 className="MultiOrb-date">{this.props.date}</h3>
             </div> 
             {this.state.showContent && this.props.view === "self" ?
             <MultiOrbContent 

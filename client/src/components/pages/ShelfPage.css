@@ -30,7 +30,5 @@
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: 1fr 1fr;
-    max-width: 50%;
-    /* flex-wrap: wrap; */
-    /* margin-left: 6vw; */
+    margin-top: 5vh;
 }
