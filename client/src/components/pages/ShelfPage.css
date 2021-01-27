@@ -13,7 +13,7 @@
     border-radius: 1em;
     padding: 5px;
     position: absolute;
-    margin-top: 0.5vh;
+    margin-top: 1vh;
     margin-left: 46.5vw;
     cursor: pointer;
     margin-bottom: 5vh;
@@ -73,9 +73,8 @@
     transform: rotate(45deg);
     cursor: pointer;
     display: inline-block;
-    margin-left: 28vh;
+    margin-right: -35vh;
     position: absolute;
-
 }
 
 .ShelfPage-arrow {
