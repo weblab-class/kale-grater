@@ -16,6 +16,7 @@ class NewMemory extends React.Component {
             content: "",
             emotion: "",
             privacy: "",
+            toUpload: "",
             image: "",
         };
 
@@ -47,12 +48,13 @@ class NewMemory extends React.Component {
     });
   };
 
-    readImage = (blob) => {
+    readImage = (event) => {
+        const blob = event.target.files[0];
         return new Promise((resolve, reject) => {
         const r = new FileReader();
         r.onloadend = () => {
             if (r.error) {
-            reject(r.error.message);
+            reject(r.error.message);s
             return;
             } else if (r.result.length < 50) {
             // too short. probably just failed to read, or ridiculously small image
@@ -62,14 +64,13 @@ class NewMemory extends React.Component {
             reject("not an image!");
             return;
             } else {
-                // this.setState({  * can you access name here?
-                //     image: 
-                // })
             resolve(r.result);
             }
         };
         r.readAsDataURL(blob);
-        });
+        }).then((image) => this.setState({  
+            toUpload: image
+            }));
     };
 
     
@@ -82,7 +83,7 @@ class NewMemory extends React.Component {
             content: this.state.content,
             emotion: this.state.emotion,
             privacy: this.state.privacy,
-            imageFileName: this.state.image, 
+            image: this.state.toUpload, 
         }
 
         if (orb.content === "" || orb.emotion === "" || orb.privacy === "") {
@@ -178,7 +179,7 @@ class NewMemory extends React.Component {
                             {/* POPULATE HREF WITH LINK TO REDIRECT TO */}
                             <div className="NewMemory-buttons">
                                 <a href="/home" >Cancel</a>
-                                <button onClick={ this.uploadImage, this.handleSubmit}>Add Memory</button>
+                                <button onClick={this.handleSubmit}>Add Memory</button> 
                             </div>
                         </div>
                     </div>

@@ -107,7 +107,10 @@ class ShelfPage extends Component {
 
         currentStart.setDate(currentStart.getDate() + change)
         console.log('currstart', currentStart, 'PREV', prevMonday)
-        if (currentStart.setDate(currentStart.getDate() + 1) >= prevMonday) {
+
+        var dateToCheck = new Date()
+        dateToCheck.setDate(currentStart.getDate() + 1)
+        if (dateToCheck >= prevMonday) {
     
             this.setState({
                 currentWeekOrbs: null,
@@ -213,6 +216,7 @@ class ShelfPage extends Component {
                 privacy={orbObj.privacy}
                 view={this.state.view}
                 delete={this.deleteMemory}
+                imageName={orbObj.imageFileName}
                 object={orbObj}
                 />
             ));
@@ -314,10 +318,6 @@ class ShelfPage extends Component {
                 {orbsList}
             </div> :
             <>
-                <button onClick={() => {this.handleClick(-7)}}>LAST WEEK</button>
-                {this.state.mostRecentWeek ? null : <button onClick={() => {this.handleClick(7)}}>NEXT WEEK</button>}
-                {/* <button onClick={() => {this.handleClick(7)}}>NEXT WEEK</button> */}
-            
             <div className="ShelfPage-week">
                 {this.state.currentWeekOrbs ? this.state.currentWeekOrbs.reverse() : weekOrbs.reverse()}
                 <div className="prev" onClick={() => {this.handleClick(-7)}}>
