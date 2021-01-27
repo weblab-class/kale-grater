@@ -204,7 +204,7 @@ router.post("/newuser", (req, res) => {
     } else {
 
       User.updateOne({_id: req.user._id}, {username: req.body.username}).then(() => {
-        res.send({message: "success"});
+        res.send({message: "success", username: req.body.username});
       });
     }});
   });
