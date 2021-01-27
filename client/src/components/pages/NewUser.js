@@ -37,7 +37,7 @@ class NewUser extends Component {
             post("/api/newuser", body).then((result) => {
                 console.log(result);
                 if (result.message === "success") {
-                    navigate("/home");
+                    navigate("/home", {username: result.username});
                 } else {
                     this.setState({
                         error: result.message
