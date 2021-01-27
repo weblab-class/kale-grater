@@ -18,7 +18,7 @@ class ShelfPage extends Component {
             loaded: "",
             userId: this.props.userId,
             userName: "",
-            shelfView: "week",
+            shelfView: "Week",
             currentWeekOrbs: null,
             currentWeekStart: null,
             mostRecentWeek: true,
@@ -92,13 +92,13 @@ class ShelfPage extends Component {
       };
 
     handleSwitch = () => {
-        if (this.state.shelfView === "all") {
+        if (this.state.shelfView === "All") {
             this.setState({
-                shelfView: "week"
+                shelfView: "Week"
             })
         } else {
                 this.setState({
-                    shelfView: "all"
+                    shelfView: "All"
                 })
             }
         }
@@ -302,9 +302,9 @@ class ShelfPage extends Component {
 
         return (
             <>
-            <button className="ShelfPage-toggle" onClick={this.handleSwitch}>Switch View</button>
+            <button className="ShelfPage-toggle" onClick={this.handleSwitch}>Current View: {this.state.shelfView} Orbs</button>
             {this.state.view === "self" ? null : <h2 className="Shelf-title">{this.state.userName}'s Orbs</h2>}
-            {this.state.shelfView === "all" ? 
+            {this.state.shelfView === "All" ? 
             <div className="ShelfPage-row">
                 {/* {this.props.creator_id && <ShelfPage addNewOrb={this.addNewOrb} />} */}
                 {orbsList}
