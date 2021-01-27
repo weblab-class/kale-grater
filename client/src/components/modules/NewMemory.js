@@ -168,9 +168,14 @@ class NewMemory extends React.Component {
                                     placeholder="Tell us about your memory!"
                                     rows="5" cols="50" 
                                     onChange={this.handleChange}></textarea>
+                                    <hr className="NewMemory-line"></hr>
 
-                                <div>                                  
-                                    <input id="fileInput" type="file" name="files[]" accept="image/*" onChange={this.readImage} />
+                                <div className="image-upload">
+                                    <label for="fileInput">
+                                        <img src="https://img.icons8.com/plasticine/50/000000/image.png"/>
+                                    </label>        
+
+                                        <input className="NewMemory-attach" id="fileInput" type="file" name="files[]" accept="image/*" onChange={this.readImage} />
                                     {this.state.message ? <div>{this.state.message}</div> : null}
                                 </div>  
 
@@ -186,10 +191,10 @@ class NewMemory extends React.Component {
                                 <p className="dropdown-description"> *completely hidden</p>
                             </div>
                             <div className="NewMemory-box">{this.state.privacy}</div>
-                            </div>
-                            {/* POPULATE HREF WITH LINK TO REDIRECT TO */}
+                            </div>    
+                            <a className="cancel-memory" id="cancelMemory" href="/home" >X</a>
+
                             <div className="NewMemory-buttons">
-                                <a href="/home" >Cancel</a>
                                 <button onClick={this.handleSubmit}>Add Memory</button> 
                             </div>
                         </div>

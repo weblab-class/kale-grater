@@ -175,6 +175,7 @@ textarea {
     background: black;
     border-color: black;
     opacity: .8;
+    margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 20px;
     padding: 10px;
@@ -185,6 +186,29 @@ textarea {
     position: absolute;
     top: 10px;
     left: 15px;
+}
+
+.image-upload > input {
+    display: none;
+}
+
+.image-upload img {
+    margin-left: -62vw;
+    cursor: pointer;
+}
+
+.cancel-memory {
+    position: absolute;
+    border-radius: 50%;
+    background: transparent;
+    background-color: transparent;
+    top: -27px;
+    right: 17px;
+    cursor: pointer;
+}
+
+.NewMemory-attach {
+    margin-top: 10px;
 }
 
 .NewMemory-container .NewMemory-card .NewMemory-contentBx a {
