@@ -27,15 +27,15 @@ class NavBar extends Component {
           <Link to="/home" className="NavBar-link">
             Home
           </Link>
-          <Link to="/about" className="NavBar-link">
-            About
-          </Link>
           {/* <Link to="/shelves" className="NavBar-link"> */}
           <Link to={`/shelves/${this.props.userId}`} className="NavBar-link">
             Shelves
           </Link>
           <Link to="/social" className="NavBar-link">
             Social
+          </Link>
+          <Link to="/about" className="NavBar-link">
+            About
           </Link>
         </div>
         <div className="NavBar-logout">

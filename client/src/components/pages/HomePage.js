@@ -74,11 +74,12 @@ class HomePage extends Component {
                     <div className="HomePage-buttonbox">
                         <button onClick={this.handleOnClick} className="HomePage-button">Get Started!</button>
                     </div>
+                    <div className="downArrow bounce">  <img width="40" height="40" alt="" src="https://img.icons8.com/android/48/ffffff/expand-arrow.png"/></div>
                     {/* </div> */}
                 </div>
                 
                 <div ref={this.divToNew} className="HomePage-memory">
-                    <h1>Add a Memory</h1>
+                    <p className="HomePage-AddMemory">Add a Memory</p>
                     <div className="HomePage-description"><NewMemory userId={this.props.userId}></NewMemory></div>
                 </div>
             </div>

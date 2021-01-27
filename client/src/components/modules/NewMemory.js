@@ -162,15 +162,20 @@ class NewMemory extends React.Component {
                                     <div onClick={() => {this.handleColorChange('disgust')}} className="Highlightdisgust-container"></div>
                             </div>
                             <div className="NewMemory-box">
+                                    <hr className="NewMemory-line"></hr>
                                     <textarea 
-                                    name="description"
-                                    id="txtArea"  
+                                    className="NewMemory-textArea"  
                                     placeholder="Tell us about your memory!"
-                                    rows="10" cols="60" 
+                                    rows="5" cols="50" 
                                     onChange={this.handleChange}></textarea>
+                                    <hr className="NewMemory-line"></hr>
 
-                                <div>                                  
-                                    <input id="fileInput" type="file" name="files[]" accept="image/*" onChange={this.readImage} />
+                                <div className="image-upload">
+                                    <label for="fileInput">
+                                        <img src="https://img.icons8.com/plasticine/50/000000/image.png"/>
+                                    </label>        
+
+                                        <input className="NewMemory-attach" id="fileInput" type="file" name="files[]" accept="image/*" onChange={this.readImage} />
                                     {this.state.message ? <div>{this.state.message}</div> : null}
                                 </div>  
 
@@ -178,15 +183,18 @@ class NewMemory extends React.Component {
                             <div className="dropdown">
                             <button className="dropbtn">Privacy Option</button>
                             <div className="dropdown-content">
-                                <a href="#" onClick={() => this.setPrivacy('public')}>Public</a>
-                                <a href="#" onClick={() => this.setPrivacy('semi-private')}>Semi-private: content hidden, orb color shown</a>
-                                <a href="#" onClick={() => this.setPrivacy('private')}>Private: completely hidden</a>
+                                <a href="#" className="dropdown-setting" onClick={() => this.setPrivacy('public')}>Public</a>
+                                <p className="dropdown-description"> *orb and content visible to others</p>
+                                <a href="#" className="dropdown-setting" onClick={() => this.setPrivacy('semi-private')}>Semi-Private:</a>
+                                <p className="dropdown-description"> *only orb visible to others</p>
+                                <a href="#" className="dropdown-setting" onClick={() => this.setPrivacy('private')}>Private:</a>
+                                <p className="dropdown-description"> *completely hidden</p>
                             </div>
                             <div className="NewMemory-box">{this.state.privacy}</div>
-                            </div>
-                            {/* POPULATE HREF WITH LINK TO REDIRECT TO */}
+                            </div>    
+                            <a className="cancel-memory" id="cancelMemory" href="/home" >X</a>
+
                             <div className="NewMemory-buttons">
-                                <a href="/home" >Cancel</a>
                                 <button onClick={this.handleSubmit}>Add Memory</button> 
                             </div>
                         </div>

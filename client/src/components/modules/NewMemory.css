@@ -12,7 +12,8 @@ section {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #131313;
+    background: #000000;
+    border-radius: 10px;
 }
 
 .NewMemory-container:active {
@@ -21,15 +22,16 @@ section {
 
 .NewMemory-container .NewMemory-card {
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 80vw;
+    height: 98vh;
     background: #000000; /*old color is #232323 if you need */
     /* border-radius: 20px; */
     margin-left: 67vw;
     overflow-y: scroll;
     overflow-x: hidden;
+    border: 3px solid white;
+    border-radius: 15px;
 }
-
 
 .NewMemory-container .NewMemory-card .NewMemory-imgBx {
     position: absolute;
@@ -41,7 +43,7 @@ section {
     transition: 0.5s;
 }
 
-.NewMemory-container .NewMemory-card:hover .NewMemory-imgBx {
+.NewMemory-container .NewMemory-card .NewMemory-imgBx {
     /* top: 2%; */
     transform: translateY(0%);
 }
@@ -65,7 +67,7 @@ section {
     z-index: 10;
 }
 
-.NewMemory-container .NewMemory-card:hover .NewMemory-contentBx {
+.NewMemory-container .NewMemory-card .NewMemory-contentBx {
     height: 50vh;
 }
 
@@ -88,7 +90,7 @@ section {
     visibility: hidden;
 }
 
-.NewMemory-container .NewMemory-card:hover .NewMemory-contentBx .NewMemory-color {
+.NewMemory-container .NewMemory-card .NewMemory-contentBx .NewMemory-color {
     opacity: 1;
     visibility: visible;
     transition-delay: 0.5s;
@@ -146,15 +148,21 @@ section {
     text-transform: uppercase;
     letter-spacing: 2px;
     position: center;
+    margin-top: 15px;
     transition: 0.5s;
     opacity: 0;
     visibility: hidden;
 }
 
-.NewMemory-container .NewMemory-card:hover .NewMemory-contentBx .NewMemory-box {
+.NewMemory-container .NewMemory-card .NewMemory-contentBx .NewMemory-box {
     opacity: 1;
     visibility: visible;
     transition-delay: 0.6s;
+}
+
+.NewMemory-line {
+    width: 850px; 
+    margin: auto;
 }
 
 textarea {
@@ -164,9 +172,43 @@ textarea {
     height: 240px;
     padding: 5px;
     font-size: 21px;
-    background: rgb(144, 140, 140);
-    border-color: gray;
-    opacity: .6;
+    background: black;
+    border-color: black;
+    opacity: .8;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+}
+
+.NewMemory-textarea {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+}
+
+.image-upload > input {
+    display: none;
+}
+
+.image-upload img {
+    margin-left: -62vw;
+    cursor: pointer;
+}
+
+.cancel-memory {
+    position: absolute;
+    border-radius: 50%;
+    background: transparent;
+    background-color: transparent;
+    top: -27px;
+    right: 17px;
+    cursor: pointer;
+}
+
+.NewMemory-attach {
+    margin-top: 10px;
 }
 
 .NewMemory-container .NewMemory-card .NewMemory-contentBx a {
@@ -183,7 +225,7 @@ textarea {
     transition: 0.5s;
 }
 
-.NewMemory-container .NewMemory-card:hover .NewMemory-contentBx a {
+.NewMemory-container .NewMemory-card .NewMemory-contentBx a {
     opacity: 1;
     transform: translateY(0px);
     transition-delay: 0.75s;
@@ -203,14 +245,14 @@ textarea {
     transition: 0.5s;
 }
 
-.NewMemory-container .NewMemory-card:hover .NewMemory-contentBx button {
+.NewMemory-container .NewMemory-card .NewMemory-contentBx button {
     opacity: 1;
     transform: translateY(0px);
     transition-delay: 0.75s;
     cursor: pointer;
 }
 
-.NewMemory-container .NewMemory-card:hover .NewMemory-contentBx .NewMemory-buttons {
+.NewMemory-container .NewMemory-card .NewMemory-contentBx .NewMemory-buttons {
     display: flex;
     justify-content: space-around;
 }
@@ -243,12 +285,13 @@ textarea {
     font-size: 16px;
     border: none;
     cursor: pointer;
-  }
+}
   
   /* The container <div> - needed to position the dropdown content */
   .dropdown {
     position: relative;
     display: inline-block;
+    margin-top: 15px;
   }
   
   /* Dropdown Content (Hidden by Default) */
@@ -268,9 +311,27 @@ textarea {
     text-decoration: none;
     display: block;
   }
+
+  .dropdown-setting {
+      float: left;
+      justify-content: center;
+      width: 160px;
+      height: 40px;
+      border-radius: 10px;
+  }
+
+.dropdown-setting:hover {
+    background-color: #969696
+}
+
+  .dropdown-description {
+      color: grey;
+      font-size: 10px;
+      text-align: center;
+  }
   
   /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #f1f1f1}
+  .dropdown-content a:hover {background-color: #969696}
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {

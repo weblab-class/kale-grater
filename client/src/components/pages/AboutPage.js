@@ -59,35 +59,7 @@ class AboutPage extends Component {
                 </div>
             </div> 
 
-                <div className="AboutPage-orbContainer">
-                <figure className="AboutPage-anger AboutPage-Orb AboutPage-shadow"></figure>
-                <figure className="AboutPage-fear AboutPage-Orb AboutPage-shadow"></figure>
-                <figure className="AboutPage-joy AboutPage-Orb AboutPage-shadow"></figure>
-                <figure className="AboutPage-disgust AboutPage-Orb AboutPage-shadow"></figure>
-                <figure className="AboutPage-sadness AboutPage-Orb AboutPage-shadow"></figure>
-                </div>
-
             <div className="AboutPage-text">
-                <h2 className="AboutPage-header">How to use this site / FAQs</h2>
-                <div>
-                    <div className="AboutPage-description">For users who haven't added any memories yet, the site might look a little bare. To start
-                    populating your shelf, go to the Memorble home page and scroll down to the entry box.
-
-                    Each memory contains several features: a space to log a <strong>text description</strong>, an <strong>emotion</strong> to assign
-                    to the memory, as well as an option to upload an <strong>image</strong>. Each of the five emotions corresponds to those in <em>Inside Out</em>
-                    </div>
-
-                    <div className="AboutPage-description">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
-                    quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas 
-                    sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro 
-                    quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt 
-                    ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit 
-                    laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil 
-                    molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur
-                    </div>
-                </div>
-
                 <h2 className="AboutPage-header">Contact us!</h2>
                 <div className="AboutPage-description">
                     Inquiries or comments on how to improve our site. Add a message box, our names!
