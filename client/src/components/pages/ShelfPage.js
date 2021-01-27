@@ -234,7 +234,9 @@ class ShelfPage extends Component {
                 />
             ));
         } else {
-            orbsList = <div>No stories!</div>
+            return <div className="Error-text">Oh no, you don't have any orbs yet! 
+            Create your first memory orb by going to the home page.
+            </div>
         }
 
         var prevSunday = new Date();

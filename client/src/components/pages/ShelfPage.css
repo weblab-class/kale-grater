@@ -63,3 +63,9 @@
     color: white;
     margin-left: 0px;
 }
+
+.Error-text {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
