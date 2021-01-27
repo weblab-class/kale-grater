@@ -47,16 +47,22 @@
 
 .orbContent-delete {
     display: inline-block;
+    cursor: pointer;
 }
 
 .orbContent-cancel {
     display: inline-block;
+    cursor: pointer;
 }
 
 .orbContent-buttons {
     display: flex;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
     font-size: 8px;
     width: 100%;
+    cursor: pointer;
 }
 
 .orbContent-container button {
@@ -83,16 +89,11 @@
 }
 
 .Resize-image {
-    /* position: absolute; */
-    /* margin-left: -10%;
-    display: inline-block; */
-    /* vertical-align: middle; */
-
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     padding: 5px;
-    margin-top: -14px;
+    margin-top: -30px;
     margin-left: -50px;
     width: 120px;
     text-align: center;
