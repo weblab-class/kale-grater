@@ -155,24 +155,27 @@ class NewMemory extends React.Component {
                                     <div onClick={() => {this.handleColorChange('disgust')}} className="Highlightdisgust-container"></div>
                             </div>
                             <div className="NewMemory-box">
+                                    <hr className="NewMemory-line"></hr>
                                     <textarea 
-                                    name="description"
-                                    id="txtArea"  
+                                    className="NewMemory-textArea"  
                                     placeholder="Tell us about your memory!"
-                                    rows="10" cols="60" 
+                                    rows="5" cols="50" 
                                     onChange={this.handleChange}></textarea>
 
                                 <div>                                  
-                                    <input id="fileInput" type="file" name="files[]" accept="image/*" onChange={this.readImage} />
+                                    <input id="fileInput" type="file" name="files[]" accept="image/*" onChange={this.readImage}/>
                                 </div>  
 
                             </div>
                             <div className="dropdown">
                             <button className="dropbtn">Privacy Option</button>
                             <div className="dropdown-content">
-                                <a href="#" onClick={() => this.setPrivacy('public')}>Public</a>
-                                <a href="#" onClick={() => this.setPrivacy('semi-private')}>Semi-private: content hidden, orb color shown</a>
-                                <a href="#" onClick={() => this.setPrivacy('private')}>Private: completely hidden</a>
+                                <a href="#" className="dropdown-setting" onClick={() => this.setPrivacy('public')}>Public</a>
+                                <p className="dropdown-description"> *orb and content visible to others</p>
+                                <a href="#" className="dropdown-setting" onClick={() => this.setPrivacy('semi-private')}>Semi-Private:</a>
+                                <p className="dropdown-description"> *only orb visible to others</p>
+                                <a href="#" className="dropdown-setting" onClick={() => this.setPrivacy('private')}>Private:</a>
+                                <p className="dropdown-description"> *completely hidden</p>
                             </div>
                             <div className="NewMemory-box">{this.state.privacy}</div>
                             </div>
