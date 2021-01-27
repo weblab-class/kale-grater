@@ -34,9 +34,8 @@
     box-shadow: 0 0 25px 10px #fff;
 }
 
-.orbContent-text {
-    overflow: scroll;
-}
+/* .orbContent-text {
+} */
 
 .orbContent-date {
     position: absolute;
