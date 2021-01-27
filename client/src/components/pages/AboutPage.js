@@ -57,6 +57,7 @@ class AboutPage extends Component {
                     
                     </div>
                 </div>
+            </div> 
 
                 <div className="AboutPage-orbContainer">
                 <figure className="AboutPage-anger AboutPage-Orb AboutPage-shadow"></figure>
@@ -66,6 +67,7 @@ class AboutPage extends Component {
                 <figure className="AboutPage-sadness AboutPage-Orb AboutPage-shadow"></figure>
                 </div>
 
+            <div className="AboutPage-text">
                 <h2 className="AboutPage-header">How to use this site / FAQs</h2>
                 <div>
                     <div className="AboutPage-description">For users who haven't added anything, it might look bare or confusing. Talk about adding a memory and the different features,
