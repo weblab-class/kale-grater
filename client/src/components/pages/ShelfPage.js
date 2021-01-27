@@ -21,7 +21,8 @@ class ShelfPage extends Component {
             shelfView: "week",
             currentWeekOrbs: null,
             currentWeekStart: null,
-            mostRecentWeek: true
+            mostRecentWeek: true,
+            updated: "",
         };
     }
 
@@ -40,6 +41,12 @@ class ShelfPage extends Component {
             })
         })
 
+        get("/api/getusername", {userId: this.props.userId}).then((user) => {
+            this.setState({
+                userName: user.username
+            })
+        })
+
         // get("/api/getusername", {userId: this.props.userId}).then((result) => {
         //     this.setState({
         //         username: result.username,
@@ -49,11 +56,13 @@ class ShelfPage extends Component {
     }
 
     componentDidUpdate () {
-        if (this.props.userId !== this.state.userId) {
+        if (this.props.userId !== this.state.userId && !this.state.updated) {
         get("/api/shelves", {userId: this.props.userId}).then((orbObjs) => {
             this.setState({
                 orbs: orbObjs,
-                loaded: 'yes'
+                loaded: 'yes',
+                updated: true,
+                shelfView: "week"
             });
         });
 
@@ -63,6 +72,7 @@ class ShelfPage extends Component {
             })
         })
         }
+        // return;
     }
     // called when user presses "Submit" to add new orb to shelf
     addNewOrb = (orbObj) => {
@@ -200,7 +210,7 @@ class ShelfPage extends Component {
         if (!this.props.username) {
             navigate("/newuser")
         }
-        if (!this.state.view || !this.state.loaded || !this.props.username) {
+        if (!this.state.view || !this.state.loaded || !this.state.userName) {
             return <div>Loading!</div>;
         }
         let orbsList = null;
@@ -306,11 +316,10 @@ class ShelfPage extends Component {
             // weekOrbs[i] = dayOrbs
         }
 
-        console.log(this.state.currentWeekOrbs)
         return (
             <>
             <button onClick={this.handleSwitch}>Switch View</button>
-            {this.state.view === "self" ? null : <h2 className="Shelf-title">{this.props.username}'s Orbs</h2>}
+            {this.state.view === "self" ? null : <h2 className="Shelf-title">{this.state.userName}'s Orbs</h2>}
             {this.state.shelfView === "all" ? 
             <div className="ShelfPage-row">
                 {/* {this.props.creator_id && <ShelfPage addNewOrb={this.addNewOrb} />} */}
