@@ -41,16 +41,16 @@ class AboutPage extends Component {
             <div className="AboutPage-body">
 
             <div className="AboutPage-text">
-                <h2 className="AboutPage-header">How we all started</h2>
+                <h2 className="AboutPage-header AboutPage-top">How we all started</h2>
                 <div>
                     <div className="AboutPage-description">On the eve of our Milestone 1 submission, our team member Derek Shen, frantic to get something submittable, closed his
                         eyes and pointed to one of the bullet-pointed ideas on our Google Document. And thus our website was born...
                     </div>
 
                     <div className="AboutPage-description">
-                    <strong>Just kidding! </strong> We (Kailey, Grace, Derek) made Memorble with the hopes of providing users a 
-                    unique and effective way of visualizing their emotions. Inspired by the Pixar film 
-                    <em><a href="https://www.imdb.com/title/tt2096673/"> Inside Out</a></em>, each memory entry is enclosed in a vibrant, glowing, 
+                    <strong>Just kidding! </strong> Team Kale Grater (Kailey, Grace, Derek) made Memorble with the hopes of providing users a 
+                    unique and effective way of visualizing their emotions. Inspired by the Pixar film&nbsp;
+                    <em><a href="https://www.imdb.com/title/tt2096673/">Inside Out</a></em>, each memory entry is enclosed in a vibrant, glowing, 
                     snowball-like orb to house the words and images that define the moment they wish to save. Memorble is an expression of the 
                     experiencing and the remembering self: one can use the site to look back on the most defining moments of their lives, or, on another day,
                     they can zoom out into our long-term view to see the shapes and turns over the days, weeks, and years. 
@@ -63,7 +63,7 @@ class AboutPage extends Component {
                 <h2 className="AboutPage-header">Contact us!</h2>
                 <div className="AboutPage-description">
                     Please feel free to contact us about any inquiries or comments you have on how to improve our site! You can
-                    reach us at dshen01@mit.edu (Derek Shen), gysong@mit.edu (Grace Song), or kaileyy@mit.edu (Kailey Yang).
+                    reach us at&nbsp; <a className="email" href="mailto: dshen01@mit.edu">dshen01@mit.edu</a>&nbsp;(Derek Shen), <a className="email" href="mailto: gysong@mit.edu">gysong@mit.edu</a>&nbsp;(Grace Song), or <a className="email" href="mailto: kaileyy@mit.edu">kaileyy@mit.edu</a>&nbsp;(Kailey Yang).
                 </div>
             </div>
             </div>

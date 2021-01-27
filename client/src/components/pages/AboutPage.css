@@ -1,8 +1,13 @@
 .AboutPage-body {
+    font-family: "Poppins";
     top: 65px;
     width: 100vw;
     height: calc(100vh - 65px);
     overflow-y: scroll;
+}
+
+.AboutPage-text {
+    margin-top: 3vh;
 }
 
 .AboutPage-header {
@@ -27,6 +32,10 @@
 }
 
 a:link {
+    color: rgb(91, 131, 169),
+}
+
+a:visited {
     color: rgb(91, 131, 169),
 }
 
@@ -240,4 +249,8 @@ a:link {
     0 0 70px #fff,
     -10px 0 80px #80b918,
     10px 0 80px #80b918;
+}
+
+.email:link {
+    color: rgb(91, 131, 169);
 }

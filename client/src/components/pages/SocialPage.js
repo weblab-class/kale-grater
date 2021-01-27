@@ -166,14 +166,14 @@ class SocialPage extends Component {
 	}}/>
     </div>
       <div className="SocialPage-body">
-        <div className="Social-Page-search">
+        <div className="SocialPage-search">
             <p className="Search-message">Search for a User Here:</p>   
             <input className="Search-container" value={this.state.friend} onChange={this.handleChange}></input>
             <button className="Search-popup" onClick={this.handleSubmit}>Search</button>
             {this.state.error ? <div className="Text-message">{this.state.error}</div> : null}
         </div>
 
-      <div>
+      <div className="SocialPage-columns">
           <div className="SocialPage-column1">
             {this.state.success ? 
             <>
@@ -192,13 +192,14 @@ class SocialPage extends Component {
           </div>
           
           <div className="SocialPage-column2">
-            Welcome to the social page! Here, you can search for users by their username
-          and add them to your list of friends seen on the left. Click on a friend's name to visit their shelves and see
-          their orbs. Enjoy!
+            <p className="Socialage-welcome">Welcome to Memorble's&nbsp;</p>
+            <p className="SocialPage-highlight">Social Network!</p>
+            <br></br>
+            <hr className="SocialPage-line"></hr>
+            <p>Add users to your friends list, and explore their universe of memories.</p>
+            <p>Enjoy!</p>
           </div>
       </div>
-    
-    
     </div>
     </div>
     </>
