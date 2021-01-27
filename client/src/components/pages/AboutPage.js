@@ -62,7 +62,8 @@ class AboutPage extends Component {
             <div className="AboutPage-text">
                 <h2 className="AboutPage-header">Contact us!</h2>
                 <div className="AboutPage-description">
-                    Inquiries or comments on how to improve our site. Add a message box, our names!
+                    Please feel free to contact us about any inquiries or comments you have on how to improve our site! You can
+                    reach us at dshen01@mit.edu (Derek Shen), gysong@mit.edu (Grace Song), or kaileyy@mit.edu (Kailey Yang).
                 </div>
             </div>
             </div>
