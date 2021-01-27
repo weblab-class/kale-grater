@@ -49,6 +49,9 @@ class NewMemory extends React.Component {
   };
 
     readImage = (event) => {
+        this.setState({
+            message: ""
+        })
         const blob = event.target.files[0];
         return new Promise((resolve, reject) => {
         const r = new FileReader();
@@ -89,10 +92,10 @@ class NewMemory extends React.Component {
         if (orb.content === "" || orb.emotion === "" || orb.privacy === "") {
             return alert("Please fill out memory, emotion, AND privacy!");
         } else {
+            this.setState({
+                message: ""
+            })
             post("/api/newmemory", orb).then((result) => {
-                this.setState({
-                    message: ""
-                })
                 navigate(`/shelves/${this.props.userId}`);
             }).catch((err) => {
                 this.setState({
