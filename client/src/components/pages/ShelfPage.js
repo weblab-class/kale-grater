@@ -19,7 +19,8 @@ class ShelfPage extends Component {
             userId: this.props.userId,
             userName: "",
             shelfView: "week",
-            weekOrbs: null
+            // currentWeekOrbs: null,
+            // currentWeekStart: prevMonday
         };
     }
 
@@ -96,7 +97,12 @@ class ShelfPage extends Component {
     //     console.log('RD', resultDate)
     //     return orb.timestamp.startsWith(resultDate)
     // }
-
+    
+    handleClick = (change) => {
+        // this.setState({
+        //     currentWeekStart: this.state.currentWeekStart
+        // })
+    }
     render() {
         if (!this.props.username) {
             navigate("/newuser")
@@ -207,8 +213,6 @@ class ShelfPage extends Component {
             // weekOrbs[i] = dayOrbs
         }
 
-        // console.log('WHOLE WEEK', weekOrbs)
-
         return (
             <>
             <button onClick={this.handleSwitch}>Switch View</button>
@@ -218,9 +222,14 @@ class ShelfPage extends Component {
                 {/* {this.props.creator_id && <ShelfPage addNewOrb={this.addNewOrb} />} */}
                 {orbsList}
             </div> :
+            <>
+                <button onClick={this.handleClick(-7)}>LAST WEEK</button>
+                <button onClick={this.handleClick(7)}>NEXT WEEK</button>
+            
             <div className="ShelfPage-week">
-                {weekOrbs.reverse()}
-            </div>}
+                {this.state.currentWeekOrbs ? this.state.currentWeekOrbs.reverse() : weekOrbs.reverse()}
+            </div>
+            </>}
             </>
         );
     }
