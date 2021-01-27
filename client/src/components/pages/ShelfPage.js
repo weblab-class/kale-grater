@@ -110,13 +110,13 @@ class ShelfPage extends Component {
     // }
     
     handleClick = (change) => {
-        var prevMonday = new Date()
+        let prevMonday = new Date()
         prevMonday.setDate(prevMonday.getDate() - (prevMonday.getDay() + 6) % 7);
-        var currentStart = this.state.currentWeekStart ? this.state.currentWeekStart : new Date(prevMonday)
+        let currentStart = this.state.currentWeekStart ? this.state.currentWeekStart : new Date(prevMonday)
 
         currentStart.setDate(currentStart.getDate() + change)
-        var dateToCheck = new Date(currentStart.getFullYear(), currentStart.getMonth(), currentStart.getDate())
-        var prevDateToCheck = new Date(prevMonday.getFullYear(), prevMonday.getMonth(), prevMonday.getDate())
+        let dateToCheck = new Date(currentStart.getFullYear(), currentStart.getMonth(), currentStart.getDate())
+        let prevDateToCheck = new Date(prevMonday.getFullYear(), prevMonday.getMonth(), prevMonday.getDate())
         // if (dateToCheck >= prevMonday) {
         if (dateToCheck >= prevDateToCheck) {
     
@@ -128,27 +128,27 @@ class ShelfPage extends Component {
             return;
         }
 
-        var month;
+        let month;
         if (currentStart.getMonth() + 1 < 10) {
           month = "0" + (currentStart.getMonth() + 1)
         } else {
           month = currentStart.getMonth() + 1
         }
 
-        var weekOrbs = []
+        let weekOrbs = []
         const weekDayNames = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
         
         for (let i = 0; i < 7; i++) {
-            var current_result = new Date(currentStart.getFullYear(), month - 1, currentStart.getDate())
+            let current_result = new Date(currentStart.getFullYear(), month - 1, currentStart.getDate())
             current_result.setDate(current_result.getDate() + i);
-            var resultMonth;
+            let resultMonth;
             if (current_result.getMonth() + 1 < 10) {
                 resultMonth = "0" + (current_result.getMonth() + 1)
             } else {
                 resultMonth = current_result.getMonth() + 1
             }
             
-            var resultDay;
+            let resultDay;
 
             if (current_result.getDate() < 10) {
                 resultDay = "0" + current_result.getDate()
@@ -163,18 +163,18 @@ class ShelfPage extends Component {
             const properResultDate = resultMonth + "-" + current_result.getDate() + "-" + current_result.getFullYear();
             
             const dayOrbs = this.state.orbs.filter(filterDay)
-            var dayEmotions = ""
-            var dayEmotionsList = []
-            var orbClass = "MultiOrb-"
-            var contentList = []
+            let dayEmotions = ""
+            let dayEmotionsList = []
+            let orbClass = "MultiOrb-"
+            let contentList = []
             for (let i = 0; i < dayOrbs.length; i++) {
                 const currentOrb = dayOrbs[i]
                 const currentEmotion = currentOrb.emotion
                 if (!dayEmotionsList.includes(currentEmotion)) {
-                    dayEmotions = dayEmotions + currentEmotion                  
+                    dayEmotions = dayEmotions + currentEmotion 
+                    dayEmotionsList = [currentEmotion].concat(dayEmotionsList)                 
                 }
-                contentList = [currentOrb.content].concat(contentList)
-                dayEmotionsList = [currentEmotion].concat(dayEmotionsList)
+                contentList = [currentOrb.content].concat(contentList) 
             }
             if (dayEmotionsList.length === 0) {
                 orbClass += "clear";
@@ -228,10 +228,10 @@ class ShelfPage extends Component {
             </div>
         }
 
-        var prevSunday = new Date();
+        let prevSunday = new Date();
         prevSunday.setDate(prevSunday.getDate() - (prevSunday.getDay() + 6) % 7);
 
-        var month;
+        let month;
         if (prevSunday.getMonth() + 1 < 10) {
           month = "0" + (prevSunday.getMonth() + 1)
         } else {
@@ -239,13 +239,13 @@ class ShelfPage extends Component {
         }
         const prevSundayDate = prevSunday.getFullYear() + "-" + month + "-" + prevSunday.getDate();
 
-        var weekOrbs = []
+        let weekOrbs = []
         const weekDayNames = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
         for (let i = 0; i < 7; i++) {
-            // var current_result = new Date(prevSundayDate);
-            var current_result = new Date(prevSunday.getFullYear(), month - 1, prevSunday.getDate())
+            // let current_result = new Date(prevSundayDate);
+            let current_result = new Date(prevSunday.getFullYear(), month - 1, prevSunday.getDate())
             current_result.setDate(current_result.getDate() + i);
-            var resultMonth;
+            let resultMonth;
             if (current_result.getMonth() + 1 < 10) {
                 resultMonth = "0" + (current_result.getMonth() + 1)
             } else {
@@ -260,10 +260,10 @@ class ShelfPage extends Component {
             const properResultDate = resultMonth + "-" + current_result.getDate() + "-" + current_result.getFullYear();
             
             const dayOrbs = this.state.orbs.filter(filterDay)
-            var dayEmotions = ""
-            var dayEmotionsList = []
-            var orbClass = "MultiOrb-"
-            var contentList = []
+            let dayEmotions = ""
+            let dayEmotionsList = []
+            let orbClass = "MultiOrb-"
+            let contentList = []
             for (let i = 0; i < dayOrbs.length; i++) {
                 const currentOrb = dayOrbs[i]
                 const currentEmotion = currentOrb.emotion
