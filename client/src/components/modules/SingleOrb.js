@@ -22,26 +22,27 @@ import "./SingleOrb.css";
         super(props);
         this.state = {
           showContent: false,
-          privacy: this.props.privacy
+          privacy: this.props.privacy,
+          image: "",
           
         }
     }
     
     componentDidMount() {
       // remember -- api calls go here!
-      if (this.props.userId) {
           this.loadImages();
-      }
     }
   
     // image handling
   
-    componentDidUpdate(prevProps) {
-        if (prevProps.userId !== this.props.userId && this.props.userId) {
-          // just logged in. reload images
-          this.loadImages();
-        }
-      }
+    // componentDidUpdate(prevProps) {
+    //   console.log("did update1");
+    //     if (prevProps.userId !== this.props.userId && this.props.userId) {
+    //       console.log("did update2")
+    //       // just logged in. reload images
+    //       this.loadImages();
+    //     }
+    //   }
 
     handleClick = () => {
       if (this.state.showContent === false) {
@@ -56,8 +57,9 @@ import "./SingleOrb.css";
     };
 
     loadImages = () => {
-      get("/api/image").then(images => {
-          this.setState({ images: images });
+      console.log("test loadImages");
+      get("/api/image", {imageName: this.props.imageName}).then(result => {
+          this.setState({ image: result.image });
       });
       };
 
@@ -86,8 +88,7 @@ import "./SingleOrb.css";
                   privacy={this.props.privacy}
                   handleClick={this.handleClick.bind(this)}
                   deleteMemory={this.props.delete}
-                  loadImage={this.props.loadImage}
-                  image={this.props.image}
+                  image={this.state.image}
                   object={this.props.object}
                   view={this.props.view}
                   />

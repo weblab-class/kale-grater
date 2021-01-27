@@ -24,25 +24,33 @@ class OrbContent extends Component {
 
   render() {
     const dateString = this.props.timestamp;
+<<<<<<< HEAD
     // const currentDate = new Date(dateString);
     const officialDate = dateString.substring(5, 10) + "-" + dateString.substring(0, 4)
     // const officialDate = (currentDate.getMonth() + 1) + "-" + currentDate.getDate() + "-" + currentDate.getFullYear();
     // const officialDate = resultMonth + "-" + current_result.getDate() + "-" + current_result.getFullYear();
     
+=======
+    const currentDate = new Date(dateString);
+    const officialDate = (currentDate.getMonth() + 1) + "-" + currentDate.getDate() + "-" + currentDate.getFullYear();
+    console.log(this.props.image);
+
+>>>>>>> dc120aec57694feefbe1986fd4cba446d37d6bf9
     return (
       <>
       <div className="orbContent-container">
         <div className="orbContent-date">{officialDate}</div>
-        <div className="orbContent-text">{this.props.content}</div>
-        {/* <div> {this.props.loadImage}
+        <div className="orbContent-text">{this.props.content}</div>  
           <div className="orbContent-images">
-            {
-              this.state.images.map((image, index) => (
-                <img src={image} key={index} />
-              ))
+            { this.props.image !== ""
+            ? 
+              // this.props.image.map((image, index) => (
+                <img src={this.props.image} />
+              // ))
+            : <img src={"client/img/logo.png"} />
             }
           </div>
-        </div> */}
+       
         <div className="orbContent-buttons">
           {this.props.view === "self" ?
           <div className="orbContent-delete">

@@ -12,7 +12,7 @@
     margin-left: 8vw;
     margin-top: 5px;
     padding-top: 10px;
-    font-size: 50px;
+    font-size: 45px;
     font-weight: normal;
 }
 
@@ -51,7 +51,7 @@ a:link {
 
     animation-name: AboutPage-floating; 
     animation-duration: 3s; 
-    animation-iteration-count: infinite; 
+    animation-iteration-count: infinite;
     animation-timing-function: ease-in-out; 
 } 
   

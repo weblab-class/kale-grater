@@ -41,21 +41,40 @@ class HomePage extends Component {
         }
         return (
             <>
-            <div id="HomePage-wrap">
+            <div className="HomePage-wrap">
                 <div className="HomePage-block">
                     <div className="HomePage-outer">
-                        <div className="HomePage-ball">
+                        {/* <div className="HomePage-ball">
                             <span className="HomePage-shadow"></span>
+                        </div> */}
+                        <div className="HomePage-orbContainer">
+                            <figure className="HomePage-anger HomePage-Orb HomePage-shadow"></figure>
+                            <figure className="HomePage-fear HomePage-Orb HomePage-shadow"></figure>
+                            <figure className="HomePage-joy HomePage-Orb HomePage-shadow"></figure>
+                            <figure className="HomePage-disgust HomePage-Orb HomePage-shadow"></figure>
+                            <figure className="HomePage-sadness HomePage-Orb HomePage-shadow"></figure>
                         </div>
                     </div>
 
-                    <div className="HomePage-textContainer">
-                        <h1 className="HomePage-header">Welcome {this.props.username}!</h1>
-                        <div className="HomePage-description">We tag ourselves in photos and comments nearly everyday, but how often do we take the time to tag and reflect on our emotions?</div>
+                    {/* <div className="HomePage-textContainer"> */}
+                    <div className="HomePage-headerbox">
+                        <p className="HomePage-header">Welcome, {this.props.username}!</p>
+                    </div>
+                    <div className="HomePage-emotionsbox">
+                        <p className="HomePage-emotions"> Meet&nbsp;</p>
+                        <p className="HomePage-emotions HomePage-letter">anger,&nbsp;</p>
+                        <p className="HomePage-emotions HomePage-letter"> fear,&nbsp;</p>
+                        <p className="HomePage-emotions HomePage-letter"> joy,&nbsp;</p>
+                        <p className="HomePage-emotions HomePage-letter"> disgust,&nbsp;</p>
+                        <p className="HomePage-emotions HomePage-letter"> and sadness...&nbsp;</p>
+                    </div>
+                        {/* <div className="HomePage-description">We tag ourselves in photos and comments nearly everyday, but how often do we take the time to tag and reflect on our emotions?</div>
                         <div className="HomePage-description">Joy, sadness, anger, fear, disgust... without one we wouldn't know the feeling of the others. They're all worth celebrating. </div>
-                        <div className="HomePage-description">The premise of our project allows you to tag, quantify, and archive your emotions in the form of memory orbs so you'll never forget them.</div>
+                        <div className="HomePage-description">The premise of our project allows you to tag, quantify, and archive your emotions in the form of memory orbs so you'll never forget them.</div> */}
+                    <div className="HomePage-buttonbox">
                         <button onClick={this.handleOnClick} className="HomePage-button">Get Started!</button>
                     </div>
+                    {/* </div> */}
                 </div>
                 
                 <div ref={this.divToNew} className="HomePage-memory">
