@@ -172,7 +172,10 @@ router.post("/newmemory", (req, res) => {
     imageFileName: imageName,
   });
     return newOrb.save();
-  }).then((orb) => res.send(orb));
+  }).then((orb) => res.send(orb)).catch(() => {
+    // res.send({message: 'IMAGE TOO BIG!'})
+    res.send({ msg: "IMAGE TOO BIG!" })
+  });
 } else {
   const newOrb = new Orb({
     creator_id: req.body.userId,
