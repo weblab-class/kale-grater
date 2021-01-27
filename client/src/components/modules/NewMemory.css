@@ -23,7 +23,7 @@ section {
 .NewMemory-container .NewMemory-card {
     position: relative;
     width: 80vw;
-    height: 98vh;
+    height: 75vh;
     background: #000000; /*old color is #232323 if you need */
     /* border-radius: 20px; */
     margin-left: 67vw;
@@ -31,6 +31,7 @@ section {
     overflow-x: hidden;
     border: 3px solid white;
     border-radius: 15px;
+    margin-top: -20vh;
 }
 
 .NewMemory-container .NewMemory-card .NewMemory-imgBx {
@@ -161,8 +162,15 @@ section {
 }
 
 .NewMemory-line {
-    width: 850px; 
+    width: 66vw; 
     margin: auto;
+    margin-bottom: 10px;
+}
+
+.NewMemory-linetwo {
+    width: 20vw;
+    margin-top: 10px;
+    margin-left: 7vw;
 }
 
 textarea {
@@ -188,12 +196,20 @@ textarea {
     left: 15px;
 }
 
+.NewMemory-options {
+    display: flex;
+    flex-flow: row;
+    margin-left: 7.5vw;
+}
+
 .image-upload > input {
     display: none;
 }
 
 .image-upload img {
-    margin-left: -62vw;
+    /* margin-left: -62vw; */
+    margin-top: 1vh;
+    width: 50px;
     cursor: pointer;
 }
 
@@ -279,45 +295,47 @@ textarea {
 }
 
 .dropbtn {
-    background-color: #4CAF50;
+    background-color: #000000;
     color: white;
-    padding: 16px;
+    padding: 5px;
     font-size: 16px;
+    width: 180px;
     border: none;
     cursor: pointer;
 }
+
+.dropbtn {background-color: #555555;}
   
   /* The container <div> - needed to position the dropdown content */
   .dropdown {
     position: relative;
     display: inline-block;
-    margin-top: 15px;
+    margin-left: 10px;
+    width: 180px;
+    /* margin-top: -20vh;
+    margin-left: -35vw; */
   }
   
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 180px;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
     z-index: 1;
   }
   
   /* Links inside the dropdown */
   .dropdown-content a {
     color: black;
-    padding: 12px 16px;
     text-decoration: none;
-    display: block;
   }
 
   .dropdown-setting {
-      float: left;
       justify-content: center;
-      width: 160px;
+      width: 180px;
       height: 40px;
-      border-radius: 10px;
+      border-radius: 20px;
   }
 
 .dropdown-setting:hover {
@@ -330,15 +348,19 @@ textarea {
       text-align: center;
   }
   
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #969696}
-  
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {
     display: block;
   }
-  
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-  }
+
+.createOrb {
+    margin-left: 32vw;
+    justify-content: center;
+    width: 180px;
+    height: 50px;
+    border-radius: 20px;
+    border: transparent;
+    padding: 5px;
+    font-size: 16px;
+    width: 180px;
+}

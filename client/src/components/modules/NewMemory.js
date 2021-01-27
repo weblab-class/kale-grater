@@ -169,34 +169,32 @@ class NewMemory extends React.Component {
                                     rows="5" cols="50" 
                                     onChange={this.handleChange}></textarea>
                                     <hr className="NewMemory-line"></hr>
+                                
+                                <div className="NewMemory-options">
+                                    <div className="image-upload">
+                                        <label for="fileInput">
+                                            <img src="https://img.icons8.com/plasticine/50/000000/image.png"/>
+                                        </label>        
 
-                                <div className="image-upload">
-                                    <label for="fileInput">
-                                        <img src="https://img.icons8.com/plasticine/50/000000/image.png"/>
-                                    </label>        
-
-                                        <input className="NewMemory-attach" id="fileInput" type="file" name="files[]" accept="image/*" onChange={this.readImage} />
-                                    {this.state.message ? <div>{this.state.message}</div> : null}
-                                </div>  
+                                            <input className="NewMemory-attach" id="fileInput" type="file" name="files[]" accept="image/*" onChange={this.readImage} />
+                                        {this.state.message ? <div>{this.state.message}</div> : null}
+                                    </div>
+                                    
+                                    <div className="dropdown">
+                                    <button className="dropbtn">Privacy Option &nbsp;↓</button>
+                                    <div className="dropdown-content">
+                                        <a href="#" className="dropdown-setting" onClick={() => this.setPrivacy('public')}>Public</a>
+                                        {/* <p className="dropdown-description"> *orb, content visible</p> */}
+                                        <a href="#" className="dropdown-setting" onClick={() => this.setPrivacy('private')}>Private</a>
+                                        {/* <p className="dropdown-description"> *completely hidden</p> */}
+                                    </div>
+                                    <div className="NewMemory-box">{this.state.privacy}</div>
+                                    </div>
+                                    <button className="createOrb" onClick={this.handleSubmit}>Create Orb!</button> 
+                                </div>
 
                             </div>
-                            <div className="dropdown">
-                            <button className="dropbtn">Privacy Option</button>
-                            <div className="dropdown-content">
-                                <a href="#" className="dropdown-setting" onClick={() => this.setPrivacy('public')}>Public</a>
-                                <p className="dropdown-description"> *orb and content visible to others</p>
-                                <a href="#" className="dropdown-setting" onClick={() => this.setPrivacy('semi-private')}>Semi-Private:</a>
-                                <p className="dropdown-description"> *only orb visible to others</p>
-                                <a href="#" className="dropdown-setting" onClick={() => this.setPrivacy('private')}>Private:</a>
-                                <p className="dropdown-description"> *completely hidden</p>
-                            </div>
-                            <div className="NewMemory-box">{this.state.privacy}</div>
-                            </div>    
                             <a className="cancel-memory" id="cancelMemory" href="/home" >X</a>
-
-                            <div className="NewMemory-buttons">
-                                <button onClick={this.handleSubmit}>Add Memory</button> 
-                            </div>
                         </div>
                     </div>
                 </div>
