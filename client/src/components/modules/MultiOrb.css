@@ -24,6 +24,10 @@
     margin-top: 15vh;
 }
 
+.MultiOrb-Container {
+    height: 30vw;
+
+}
 .MultiOrb-orb {
     width: 26vw;
     height: 26vw;
