@@ -31,6 +31,8 @@
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: 1fr 1fr;
     margin-top: 5vh;
+    height: 50vh;
+
 }
 
 .prev {
@@ -59,4 +61,5 @@
 
 .ShelfPage-arrow {
     color: white;
+    margin-left: 0px;
 }

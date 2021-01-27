@@ -201,7 +201,7 @@ class ShelfPage extends Component {
         }
         // console.log('START', currentStart)
         this.setState({
-            currentWeekOrbs: weekOrbs,
+            currentWeekOrbs: weekOrbs.reverse(),
             currentWeekStart: currentStart,
             mostRecentWeek: false
         })
@@ -320,6 +320,7 @@ class ShelfPage extends Component {
         }
 
         return (
+            // console.log(this.state.)
             <>
             <button onClick={this.handleSwitch}>Switch View</button>
             {this.state.view === "self" ? null : <h2 className="Shelf-title">{this.state.userName}'s Orbs</h2>}
@@ -330,27 +331,23 @@ class ShelfPage extends Component {
             </div> :
             <>
             <div className="ShelfPage-week">
-                {this.state.currentWeekOrbs ? this.state.currentWeekOrbs.reverse() : weekOrbs.reverse()}
+                {this.state.currentWeekOrbs ? this.state.currentWeekOrbs : weekOrbs.reverse()}
                 <div className="prev" onClick={() => {this.handleClick(-7)}}>
                 </div>
-                <div className="ShelfPage-arrow">
+                {/* <div className="ShelfPage-arrow">
                     PREVIOUS WEEK
-                </div>
+                </div> */}
                 {/* </br></br> */}
                 {this.state.mostRecentWeek ? null : 
-                <>
+                // <>
                 <div className="next" onClick={() => {this.handleClick(7)}}>
-                </div>
-                <div className="ShelfPage-arrow">
-                    NEXT WEEK
-                </div>
-                </>
-    }
+                </div>}
 
 
                 {/* {weekOrbs.reverse()} */}
             </div>
-            </>}
+            </>
+            }
             {/* <div className="next" onClick={() => {this.handleClick(-7)}}>NEXT WEEK
             </div>
             {/* </br></br> */}
