@@ -1,18 +1,17 @@
 .MultiOrb-week {
     color: white;
-    width: 70px;
+    width: 7.5vw;
     position: relative;
-    justify-self: center;
-    left: 20px;
+    left: .75vw;
 }
 
 .MultiOrb-date {
     color: white;
-    width: 70px;
+    width: 7.5vw;
     position: relative;
     justify-self: center;
     font-size: 12px;
-    left: 7px;
+    left: .5vw;
 }
 
 .MultiOrb-weekContainer {
