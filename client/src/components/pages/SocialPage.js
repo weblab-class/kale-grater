@@ -25,11 +25,14 @@ class SocialPage extends Component {
 
     get("/api/checkusername").then((result) => {
       if (result.message === "no username") {
+        console.log("no username")
         navigate("/newuser")
-      }
+      } else {
+        console.log("in else")
      this.setState({
        loaded: "true"
      }) 
+    };
     })
   };
 

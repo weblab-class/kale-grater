@@ -294,11 +294,14 @@ router.get("/user", auth.ensureLoggedIn, (req, res) => {
 });
 
 router.get("/checkusername", (req, res) => {
-  if (!req.user.username) {
+  User.findById(req.user._id).then((user) => {
+    console.log(user);
+  if (!user.username) {
     res.send({message: "no username"})
   } else {
     res.send({message: "username"})
   }
+});
 });
 
 router.get("/getusername", (req, res) => {
