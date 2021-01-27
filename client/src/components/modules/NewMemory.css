@@ -33,7 +33,7 @@ section {
 
 .NewMemory-container .NewMemory-card .NewMemory-imgBx {
     position: absolute;
-    top: 50%;
+    /* top: 50%; */
     transform: translateY(-50%);
     z-index: 9;
     /* width: 100vw; */
@@ -56,7 +56,7 @@ section {
 
 .NewMemory-container .NewMemory-card .NewMemory-contentBx {
     position: absolute;
-    top: 10vh;
+    top: 5vh;
     bottom: 0;
     width: 100%;
     height: 15vh;

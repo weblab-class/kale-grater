@@ -27,9 +27,36 @@
 }
 
 .ShelfPage-week {
-    display: flex;
-    flex-flow: row;
-    width: 100vw;
-    flex-wrap: wrap;
-    margin-left: 6vw;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr 1fr;
+    margin-top: 5vh;
+}
+
+.prev {
+    content: " ";
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    width: 40px;
+    height: 40px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    display: block;
+    margin-left: 10vh;
+}
+
+.next {
+    content: " ";
+    border-right: 2px solid #fff;
+    border-top: 2px solid #fff;
+    width: 40px;
+    height: 40px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    display: block;
+
+}
+
+.ShelfPage-arrow {
+    color: white;
 }

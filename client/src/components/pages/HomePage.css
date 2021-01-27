@@ -24,6 +24,9 @@
     -moz-animation: spin 400ms linear 3.3, moveLeftToRight 5s linear 1;
     -ms-animation: spin 800ms linear 3.3, moveLeftToRight 5s linear 1;
     animation: spin 1500ms linear 3.3, moveLeftToRight 5s linear 1;
+    /* animation-direction: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards; */
     
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
@@ -136,7 +139,7 @@
     width: 90%;
     height: 100vh;
     margin-top: 80px;
-    margin-bottom: 80px;
+    /* margin-bottom: 80px; */
 }
 
 .HomePage-header {
