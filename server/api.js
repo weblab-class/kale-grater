@@ -167,7 +167,7 @@ router.post("/newmemory", (req, res) => {
     privacy: req.body.privacy,
     imageFileName: imageName,
   });
-    newOrb.save();
+    return newOrb.save();
   }).then((orb) => res.send(orb));
 });
 

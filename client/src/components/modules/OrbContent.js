@@ -31,16 +31,17 @@ class OrbContent extends Component {
       <>
       <div className="orbContent-container">
         <div className="orbContent-date">{officialDate}</div>
-        <div className="orbContent-text">{this.props.content}</div>
-        {/* <div> {this.props.loadImage}
+        <div className="orbContent-text">{this.props.content}</div>  
           <div className="orbContent-images">
-            {
-              this.state.images.map((image, index) => (
+            { this.props.image.startsWith("data:image/") 
+            ? 
+              this.props.image.map((image, index) => (
                 <img src={image} key={index} />
               ))
+            : undefined 
             }
           </div>
-        </div> */}
+       
         <div className="orbContent-buttons">
           {this.props.view === "self" ?
           <div className="orbContent-delete">

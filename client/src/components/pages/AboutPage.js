@@ -70,8 +70,12 @@ class AboutPage extends Component {
             <div className="AboutPage-text">
                 <h2 className="AboutPage-header">How to use this site / FAQs</h2>
                 <div>
-                    <div className="AboutPage-description">For users who haven't added anything, it might look bare or confusing. Talk about adding a memory and the different features,
-                    how many memories you can add, different views on the shelf, Bing Bong feature, social feature </div>
+                    <div className="AboutPage-description">For users who haven't added any memories yet, the site might look a little bare. To start
+                    populating your shelf, go to the Memorble home page and scroll down to the entry box.
+
+                    Each memory contains several features: a space to log a <strong>text description</strong>, an <strong>emotion</strong> to assign
+                    to the memory, as well as an option to upload an <strong>image</strong>. Each of the five emotions corresponds to those in <em>Inside Out</em>
+                    </div>
 
                     <div className="AboutPage-description">
                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 

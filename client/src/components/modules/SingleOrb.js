@@ -22,7 +22,8 @@ import "./SingleOrb.css";
         super(props);
         this.state = {
           showContent: false,
-          privacy: this.props.privacy
+          privacy: this.props.privacy,
+          image: "",
           
         }
     }
@@ -56,8 +57,8 @@ import "./SingleOrb.css";
     };
 
     loadImages = () => {
-      get("/api/image").then(images => {
-          this.setState({ images: images });
+      get("/api/image").then(image => {
+          this.setState({ image: image });
       });
       };
 
@@ -86,7 +87,6 @@ import "./SingleOrb.css";
                   privacy={this.props.privacy}
                   handleClick={this.handleClick.bind(this)}
                   deleteMemory={this.props.delete}
-                  loadImage={this.props.loadImage}
                   image={this.props.image}
                   object={this.props.object}
                   view={this.props.view}
