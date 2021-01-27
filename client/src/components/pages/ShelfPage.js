@@ -107,9 +107,9 @@ class ShelfPage extends Component {
         // console.log('AFTER', prevSunday)
         // console.
         // var currentStart = 
+        currentStart.setDate(currentStart.getDate() + change)
 
 
-        
         var month;
         if (currentStart.getMonth() + 1 < 10) {
           month = "0" + (currentStart.getMonth() + 1)
