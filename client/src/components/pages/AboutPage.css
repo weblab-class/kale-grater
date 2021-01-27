@@ -31,9 +31,13 @@ a:link {
 }
 
 .AboutPage-orbContainer {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 15vw;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1;
+    position: relative;
+    width: 100vw;
+    margin-left: -1vw;
+    /* margin-right: 15vw; */
 }
 
 .AboutPage-Orb {
@@ -63,22 +67,22 @@ a:link {
 }
 
 .AboutPage-Orb:nth-child(2) {
-    left: 1vw;
+    margin-left: -1vw;
     animation-delay: 1s;
 }
 
 .AboutPage-Orb:nth-child(3) {
-    left: 2vw;
+    margin-left: -1vw;
     animation-delay: 1.5s;
 }
 
 .AboutPage-Orb:nth-child(4) {
-    left: 3vw;
+    margin-left: -1vw;
     animation-delay: 2s;
 }
 
 .AboutPage-Orb:nth-child(5) {
-    left: 4vw;
+    margin-left: -1vw;
     animation-delay: 2.5s;
 }
 
