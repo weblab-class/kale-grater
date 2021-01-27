@@ -13,7 +13,6 @@ section {
     align-items: center;
     min-height: 100vh;
     background: #131313;
-    margin-top: 10vh;
 }
 
 .NewMemory-container:active {
