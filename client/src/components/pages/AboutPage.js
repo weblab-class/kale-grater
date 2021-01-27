@@ -33,9 +33,9 @@ class AboutPage extends Component {
         // if (!this.state.userId) {
         //     return <div>Loading!</div>
     // }
-         if (!this.props.username) {
-            navigate("/newuser");
-        }
+        //  if (!this.props.username) {
+        //     navigate("/newuser");
+        // }
         return (
             <>
             <div className="AboutPage-body">

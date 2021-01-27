@@ -199,9 +199,9 @@ class ShelfPage extends Component {
     }
 
     render() {
-        if (!this.props.username) {
-            navigate("/newuser")
-        }
+        // if (!this.props.username) {
+        //     navigate("/newuser")
+        // }
         if (!this.state.view || !this.state.loaded || !this.state.userName) {
             return <div>Loading!</div>;
         }

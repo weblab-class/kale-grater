@@ -110,9 +110,9 @@ class SocialPage extends Component {
 
   
   render() {
-    if (!this.props.username) {
-      navigate("/newuser")
-  }
+  //   if (!this.props.username) {
+  //     navigate("/newuser")
+  // }
     if (!this.state.loaded) {
       return <div>Loading!</div>
     }
