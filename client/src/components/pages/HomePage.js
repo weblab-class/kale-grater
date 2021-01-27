@@ -17,11 +17,12 @@ class HomePage extends Component {
     componentDidMount() {
         document.title = "Home | Memorble";
         
-        // get("/api/getusername", {userId: this.props.userId}).then((result) => {
-        //     this.setState({
-        //         username: result.username
-        //     })
-        // })
+        get("/api/getusername", {userId: this.props.userId}).then((result) => {
+            console.log(this.state)
+            this.setState({
+                username: result.username
+            })
+        })
     }
 
     handleOnClick = (event) => {
@@ -36,9 +37,9 @@ class HomePage extends Component {
 
     render() {
         // if (!this.state.username) {
-        if (!this.props.username) {
-            navigate("/newuser")
-        }
+        // if (!this.state.username) {
+        //     navigate("/newuser")
+        // }
         return (
             <>
             <div className="HomePage-wrap">
@@ -58,7 +59,7 @@ class HomePage extends Component {
 
                     {/* <div className="HomePage-textContainer"> */}
                     <div className="HomePage-headerbox">
-                        <p className="HomePage-header">Welcome, {this.props.username}!</p>
+                        <p className="HomePage-header">Welcome, {this.state.username}!</p>
                     </div>
                     <div className="HomePage-emotionsbox">
                         <p className="HomePage-emotions"> Meet&nbsp;</p>
