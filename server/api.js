@@ -151,13 +151,17 @@ router.get("/weekshelves", (req, res) => {
 })
 
 router.get("/image", (req, res) => {
+  if (req.query.imageName) {
   downloadImagePromise(req.query.imageName).then(image=> {
     res.send({image: image});
   }).catch(err => console.log(err)
-  )
+  )} else {
+    res.send({image: ""});
+  }
 });
 
 router.post("/newmemory", (req, res) => {
+  if (req.body.imageName) {
   uploadImagePromise(req.body.image).then(imageName => {
   const newOrb = new Orb({
     creator_id: req.body.userId,
@@ -169,6 +173,17 @@ router.post("/newmemory", (req, res) => {
   });
     return newOrb.save();
   }).then((orb) => res.send(orb));
+} else {
+  const newOrb = new Orb({
+    creator_id: req.body.userId,
+    emotion: req.body.emotion,
+    content: req.body.content,
+    timestamp: Date.now(),
+    privacy: req.body.privacy,
+    imageFileName: "",
+  });
+  return newOrb.save().then((orb) => res.send(orb))
+}
 });
 
 router.post("/deletememory", (req, res) => {
@@ -261,13 +276,13 @@ router.post("/addfriend", auth.ensureLoggedIn, (req, res) => {
   // })
 });
 
-router.post("/social/shelves", (req, res) => {
+router.post("/social/shelves", auth.ensureLoggedIn, (req, res) => {
   User.findOne({username: req.body.username}).then((user) => {
     res.send({friend: user});
   });
 });
 
-router.get("/user", (req, res) => {
+router.get("/user", auth.ensureLoggedIn, (req, res) => {
   if (req.user._id === req.query.userId) {
     res.send({message: "self"})
   } else {

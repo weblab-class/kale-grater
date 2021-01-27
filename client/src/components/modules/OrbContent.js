@@ -1,6 +1,7 @@
 import { navigate } from "@reach/router";
 import React, { Component } from "react";
 import { post } from "../../utilities";
+import Logo from "../../../img/small_clear_orb.png";
 
 import "./OrbContent.css";
 
@@ -29,12 +30,9 @@ class OrbContent extends Component {
     // const officialDate = (currentDate.getMonth() + 1) + "-" + currentDate.getDate() + "-" + currentDate.getFullYear();
     // const officialDate = resultMonth + "-" + current_result.getDate() + "-" + current_result.getFullYear();
     
-<<<<<<< HEAD
     const currentDate = new Date(dateString);
     // const officialDate = (currentDate.getMonth() + 1) + "-" + currentDate.getDate() + "-" + currentDate.getFullYear();
 
-=======
->>>>>>> d5d54a83229135865f471833d132e9d490b7b4b1
     return (
       <>
       <div className="orbContent-container">
@@ -46,7 +44,7 @@ class OrbContent extends Component {
               // this.props.image.map((image, index) => (
                 <img src={this.props.image} />
               // ))
-            : <img src={"client/img/logo.png"} />
+            : <img src={ Logo } />
             }
           </div>
        
