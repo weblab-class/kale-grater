@@ -32,6 +32,7 @@
     grid-template-rows: 1fr 1fr;
     margin-top: 5vh;
     height: 50vh;
+    /* height: 40vh; */
 
 }
 
@@ -43,8 +44,9 @@
     height: 40px;
     transform: rotate(45deg);
     cursor: pointer;
-    display: block;
-    margin-left: 10vh;
+    margin-left: -35vh;
+    display: inline-block;
+    position: absolute;
 }
 
 .next {
@@ -55,13 +57,19 @@
     height: 40px;
     transform: rotate(45deg);
     cursor: pointer;
-    display: block;
+    display: inline-block;
+    margin-left: 28vh;
+    position: absolute;
 
 }
 
 .ShelfPage-arrow {
-    color: white;
-    margin-left: 0px;
+    /* color: white;
+    margin-left: 0px; */
+    margin-top: 80px;
+    text-align: center;
+    width: 220vh;
+    /* height: 30vh; */
 }
 
 .Error-text {
