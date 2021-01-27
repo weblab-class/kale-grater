@@ -28,10 +28,13 @@ class OrbContent extends Component {
     return (
       <>
       <div className="orbContent-container">
-        <div>MEMORIES:</div>
+        <div className="orbContent-title">MEMORIES:</div>
+        {this.props.content.length === 0 ? 
+          <div>None today!</div> :
         <div className="orbContent-text">{this.props.content.map((item) => (
-            <div>{item}</div>
-        ))}</div>
+            <div>→{item}</div>
+          ))}
+        </div>}
         <div className="orbContent-buttons">
           {/* <div className="orbContent-delete">
             <button onClick={() => this.props.deleteMemory(this.props.object)}>Delete</button>

@@ -39,7 +39,7 @@ import "./MultiOrb.css";
         // console.log('classname', this.props.className)
         return (
             // <>
-            <div className="MultiOrb-Container" onClick={this.handleClick}>
+            <div className="MultiOrb-Container">
             <div className="MultiOrb-weekContainer">
               <h2 className="MultiOrb-week">{this.props.day}</h2>
               <h3 className="MultiOrb-date">{this.props.date}</h3>
@@ -48,13 +48,14 @@ import "./MultiOrb.css";
             <MultiOrbContent 
               content={this.props.content}
               emotions={this.props.emotions}
+              handleClick={this.handleClick.bind(this)}
             /> :
             <>
             {/* <div className="MultiOrb-weekContainer">
               <div className="MultiOrb-week">{this.props.day}</div>
               <div className="MultiOrb-date">{this.props.date}</div>
             </div>  */}
-              <figure className={this.props.className}>
+              <figure className={this.props.className} onClick={this.handleClick}>
                 <span className="MultiOrb-shadow"></span>
               </figure>
               </>}
