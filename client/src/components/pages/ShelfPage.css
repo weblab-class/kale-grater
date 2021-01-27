@@ -7,18 +7,33 @@
     font-family: "Poppins", sans-serif;
 }
 
+.ShelfPage-toggle {
+    background-color: #fff;
+    box-shadow: 0 0 20px #fff;
+    border-radius: 1em;
+    padding: 5px;
+    position: absolute;
+    margin-top: 0.5vh;
+    margin-left: 46.5vw;
+    cursor: pointer;
+    margin-bottom: 5vh;
+}
+
 .ShelfPage-row {
     display: grid;
+    position: absolute;
     grid-template-columns: repeat(16,1fr);
     grid-template-rows: repeat(4,1fr) 400px;
     flex-direction: row-reverse;
     flex-wrap: wrap;
     width: 100vw;
     height: calc(100vh - 65px);
+    margin-top: 3vh;
     /* margin: 20px; */
     overflow-y: scroll;
     row-gap: 10px;
     /* margin-left: 15px; */
+    margin-top: 5vh;
 }
 
 .Shelf-title {
@@ -32,6 +47,7 @@
     grid-template-rows: 1fr 1fr;
     margin-top: 5vh;
     height: 50vh;
+    /* height: 40vh; */
 
 }
 
@@ -43,8 +59,9 @@
     height: 40px;
     transform: rotate(45deg);
     cursor: pointer;
-    display: block;
-    margin-left: 10vh;
+    margin-left: -35vh;
+    display: inline-block;
+    position: absolute;
 }
 
 .next {
@@ -55,11 +72,23 @@
     height: 40px;
     transform: rotate(45deg);
     cursor: pointer;
-    display: block;
+    display: inline-block;
+    margin-left: 28vh;
+    position: absolute;
 
 }
 
 .ShelfPage-arrow {
+    /* color: white;
+    margin-left: 0px; */
+    margin-top: 80px;
+    text-align: center;
+    width: 220vh;
+    /* height: 30vh; */
+}
+
+.Error-text {
     color: white;
-    margin-left: 0px;
+    text-align: center;
+    font-size: 20px;
 }

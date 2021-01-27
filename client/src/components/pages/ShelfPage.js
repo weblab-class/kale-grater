@@ -112,14 +112,9 @@ class ShelfPage extends Component {
     handleClick = (change) => {
         var prevMonday = new Date()
         prevMonday.setDate(prevMonday.getDate() - (prevMonday.getDay() + 6) % 7);
-        // console.log('PREVPREV', prevMonday)
         var currentStart = this.state.currentWeekStart ? this.state.currentWeekStart : new Date(prevMonday)
 
         currentStart.setDate(currentStart.getDate() + change)
-        console.log('currstart', currentStart, 'PREV', prevMonday)
-
-        // var dateToCheck = new Date()
-        // dateToCheck.setDate(currentStart.getDate() + 1)
         var dateToCheck = new Date(currentStart.getFullYear(), currentStart.getMonth(), currentStart.getDate())
         var prevDateToCheck = new Date(prevMonday.getFullYear(), prevMonday.getMonth(), prevMonday.getDate())
         // if (dateToCheck >= prevMonday) {
@@ -130,7 +125,6 @@ class ShelfPage extends Component {
                 currentWeekStart: null,
                 mostRecentWeek: true
             })
-            console.log('rec', this.state.mostRecentWeek)
             return;
         }
 
@@ -166,7 +160,6 @@ class ShelfPage extends Component {
                 return orb.timestamp.startsWith(resultDate)
             }
             
-            // const properResultDate = resultMonth + "-" + resultDay + "-" + current_result.getFullYear();
             const properResultDate = resultMonth + "-" + current_result.getDate() + "-" + current_result.getFullYear();
             
             const dayOrbs = this.state.orbs.filter(filterDay)
@@ -190,7 +183,6 @@ class ShelfPage extends Component {
             } else {
                 orbClass += dayEmotions;
             }
-            // console.log('proper', properResultDate)
             weekOrbs = [<MultiOrb className={`MultiOrb-orb ${orbClass}`}
             emotions={dayEmotionsList}
             content={contentList}
@@ -199,17 +191,14 @@ class ShelfPage extends Component {
             view={this.state.view}
             />].concat(weekOrbs)
         }
-        // console.log('START', currentStart)
         this.setState({
             currentWeekOrbs: weekOrbs.reverse(),
             currentWeekStart: currentStart,
             mostRecentWeek: false
         })
-        console.log('rec', this.state.mostRecentWeek)
     }
 
     render() {
-        console.log('B4RENDER', this.state.mostRecentWeek)
         if (!this.props.username) {
             navigate("/newuser")
         }
@@ -234,14 +223,14 @@ class ShelfPage extends Component {
                 />
             ));
         } else {
-            orbsList = <div>No stories!</div>
+            return <div className="Error-text">Oh no, you don't have any orbs yet! 
+            Create your first memory orb by going to the home page.
+            </div>
         }
 
         var prevSunday = new Date();
-        // console.log('B5', prevSunday)
         prevSunday.setDate(prevSunday.getDate() - (prevSunday.getDay() + 6) % 7);
-        // console.log('AFTER', prevSunday)
-        // console.
+
         var month;
         if (prevSunday.getMonth() + 1 < 10) {
           month = "0" + (prevSunday.getMonth() + 1)
@@ -249,10 +238,7 @@ class ShelfPage extends Component {
           month = prevSunday.getMonth() + 1
         }
         const prevSundayDate = prevSunday.getFullYear() + "-" + month + "-" + prevSunday.getDate();
-        // console.log('OIDSJFA', prevSundayDate)
-        // console.log('bruh', Date(prevSundayDate))
-        // var weekOrbs = {}
-        var allDayOrbs = []
+
         var weekOrbs = []
         const weekDayNames = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
         for (let i = 0; i < 7; i++) {
@@ -267,7 +253,6 @@ class ShelfPage extends Component {
             }
           
             const resultDate = current_result.getFullYear() + "-" + resultMonth + "-" + current_result.getDate()
-            // console.log(resultDate)
             function filterDay(orb) {
                 return orb.timestamp.startsWith(resultDate)
             }
@@ -282,10 +267,8 @@ class ShelfPage extends Component {
             for (let i = 0; i < dayOrbs.length; i++) {
                 const currentOrb = dayOrbs[i]
                 const currentEmotion = currentOrb.emotion
-                // if (!dayEmotions.startsWith(currentEmotion)) {
                 if (!dayEmotionsList.includes(currentEmotion)) {
                     dayEmotions = dayEmotions + currentEmotion
-                    // numEmotions += 1
                     
                 }
                 contentList = [currentOrb.content].concat(contentList)
@@ -298,9 +281,6 @@ class ShelfPage extends Component {
             } else {
                 orbClass += dayEmotions;
             }
-            
-            // console.log(numEmotions)
-            // console.log('ORBCLASS', orbClass)
             
             // weekOrbs = 
             weekOrbs = [<MultiOrb className={`MultiOrb-orb ${orbClass}`}
@@ -321,9 +301,8 @@ class ShelfPage extends Component {
         }
 
         return (
-            // console.log(this.state.)
             <>
-            <button onClick={this.handleSwitch}>Switch View</button>
+            <button className="ShelfPage-toggle" onClick={this.handleSwitch}>Switch View</button>
             {this.state.view === "self" ? null : <h2 className="Shelf-title">{this.state.userName}'s Orbs</h2>}
             {this.state.shelfView === "all" ? 
             <div className="ShelfPage-row">
@@ -333,16 +312,20 @@ class ShelfPage extends Component {
             <>
             <div className="ShelfPage-week">
                 {this.state.currentWeekOrbs ? this.state.currentWeekOrbs : weekOrbs.reverse()}
-                <div className="prev" onClick={() => {this.handleClick(-7)}}>
-                </div>
-                {/* <div className="ShelfPage-arrow">
-                    PREVIOUS WEEK
-                </div> */}
-                {/* </br></br> */}
-                {this.state.mostRecentWeek ? null : 
-                // <>
-                <div className="next" onClick={() => {this.handleClick(7)}}>
-                </div>}
+            </div>
+                <div className="ShelfPage-arrow">
+                    <div className="prev" onClick={() => {this.handleClick(-7)}}>
+                    </div>
+                    {/* <div className="ShelfPage-arrow">
+                        PREVIOUS WEEK
+                    </div> */}
+                    {/* </br></br> */}
+                    {this.state.mostRecentWeek ? null : 
+                    // <>
+                    <div className="next" onClick={() => {this.handleClick(7)}}>
+                    </div>}
+                {/* </div> */}
+                {/* </> */}
 
 
                 {/* {weekOrbs.reverse()} */}
