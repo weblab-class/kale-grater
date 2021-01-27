@@ -165,36 +165,40 @@ class SocialPage extends Component {
 	    "retina_detect": true
 	}}/>
     </div>
-    <div className="SocialPage-body">
-      <div className="flex-child a">
-      <div>
-        <p className="Search-message">Search for a User Here:</p>   
-        <input className="Search-container" value={this.state.friend} onChange={this.handleChange}></input>
-        <button className="Search-popup" onClick={this.handleSubmit}>Search</button>
-        {this.state.error ? <div className="Text-message">{this.state.error}</div> : null}
-      </div>
-      <div>
-        {this.state.success ? 
-        <>
-          <div className="Text-message">{this.state.success}</div>
-          <button className="Search-popup" onClick={this.addFriend}>Add {this.state.friend}</button>
-        </>
-         : null}
-      </div>
+      <div className="SocialPage-body">
+        <div className="Social-Page-search">
+            <p className="Search-message">Search for a User Here:</p>   
+            <input className="Search-container" value={this.state.friend} onChange={this.handleChange}></input>
+            <button className="Search-popup" onClick={this.handleSubmit}>Search</button>
+            {this.state.error ? <div className="Text-message">{this.state.error}</div> : null}
+        </div>
 
       <div>
-        <p className="Text-message">Your Friends:</p>
-        {this.state.friends.map(friend => (
-          <div className="Text-message">
-            <button className="SocialPage-friends" onClick={() => {this.handleClick(friend)}}>{friend}</button>
-          </div>))}
-      </div>  
+          <div className="SocialPage-column1">
+            {this.state.success ? 
+            <>
+              <div className="Text-message">{this.state.success}</div>
+              <button className="Search-popup" onClick={this.addFriend}>Add {this.state.friend}</button>
+            </>
+            : null}
+
+              <div> 
+              <p className="Text-message">Your Friends:</p>
+              {this.state.friends.map(friend => (
+                <div className="Text-message">
+                  <button className="SocialPage-friends" onClick={() => {this.handleClick(friend)}}>{friend}</button>
+                </div>))}
+              </div>
+          </div>
+          
+          <div className="SocialPage-column2">
+            Welcome to the social page! Here, you can search for users by their username
+          and add them to your list of friends seen on the left. Click on a friend's name to visit their shelves and see
+          their orbs. Enjoy!
+          </div>
       </div>
     
-      
-      <div className="flex-child b">Welcome to the social page! Here, you can search for users by their username
-      and add them to your list of friends seen on the left. Click on a friend's name to visit their shelves and see
-      their orbs. Enjoy!</div>
+    
     </div>
     </div>
     </>

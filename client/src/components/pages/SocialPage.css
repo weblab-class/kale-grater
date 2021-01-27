@@ -9,12 +9,10 @@
 
 
 .SocialPage-body {
-    /* margin-top: 6vh;
-    margin-left: 6vw; */
     height: calc(100vh - 65px);
     overflow-y: scroll;
     overflow-x: hidden;
-    display: flex;
+    text-align: center;
 }
 
 .SocialPage-wrap {
@@ -32,7 +30,7 @@
 .Search-container {
     color: gray;
     padding: 3px;
-    width: 20vw;;
+    width: 30vw;;
 }
 
 .Search-popup {
@@ -54,21 +52,21 @@
     cursor: pointer;
 }
 
-.flex-container {
-    display: flex;
+.SocialPage-search{
+    padding: 10px;
+    margin-top: 5vh;
 }
 
-.flex-child:nth-child(1) {
-    flex: 1;
+.SocialPage-column2{
     color: white;
-    margin-right: 20px;
-}  
+    font-size: 22px;
+    text-align: left;
+}
 
-.flex-child:nth-child(2) {
-    flex: 1;
-    color: white;
-    margin-top: 20vh;
-    font-size: 24px;
-    margin-right: 30vh;
-    
-} 
+.SocialPage-column1, .SocialPage-column2 {
+    float: left;
+    margin: 10px;
+    width: 350px;
+    padding: 5px;
+}
+
