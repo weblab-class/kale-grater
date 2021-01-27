@@ -118,6 +118,7 @@ class SocialPage extends Component {
     return (
     <>
     <div className="SocialPage-body">
+      <div className="flex-child a">
       <div>
         <h1 className="Search-message">Search for a user here:</h1>   
         <input className="Search-container" value={this.state.friend} onChange={this.handleChange}></input>
@@ -140,6 +141,12 @@ class SocialPage extends Component {
             <button className="SocialPage-friends" onClick={() => {this.handleClick(friend)}}>{friend}</button>
           </div>))};
       </div>  
+      </div>
+    
+      
+      <div className="flex-child b">Welcome to the social page! Here, you can search for users by their username
+      and add them to your list of friends seen on the left. Click on a friend's name to visit their shelves and see
+      their orbs. Enjoy!</div>
     </div>
     </>
     );
