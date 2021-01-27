@@ -161,7 +161,7 @@ router.get("/image", (req, res) => {
 });
 
 router.post("/newmemory", (req, res) => {
-  if (req.body.imageName) {
+  if (req.body.image) {
   uploadImagePromise(req.body.image).then(imageName => {
   const newOrb = new Orb({
     creator_id: req.body.userId,

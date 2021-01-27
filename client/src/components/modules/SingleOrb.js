@@ -57,10 +57,15 @@ import "./SingleOrb.css";
     };
 
     loadImages = () => {
-      console.log("test loadImages");
+      if (this.props.imageName) {
       get("/api/image", {imageName: this.props.imageName}).then(result => {
+        console.log("request worked??" + this.props.imageName);
+        console.log(result)
           this.setState({ image: result.image });
       });
+    } else {
+      this.setState({image: ""})
+    }
       };
 
     render () {
