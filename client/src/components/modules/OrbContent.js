@@ -37,7 +37,8 @@ class OrbContent extends Component {
       <>
       <div className="orbContent-container">
         <div className="orbContent-date">{officialDate}</div>
-        <div className="orbContent-text">{this.props.content}</div>  
+        <div className="orbContent-content">
+          <div className="orbContent-text">{this.props.content}</div>  
           <div className="orbContent-images">
             { this.props.image !== ""
             ? 
@@ -50,6 +51,7 @@ class OrbContent extends Component {
               </>
             }
           </div>
+        </div>
        
         <div className="orbContent-buttons">
           {this.props.view === "self" ?
