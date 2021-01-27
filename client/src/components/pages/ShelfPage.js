@@ -302,7 +302,7 @@ class ShelfPage extends Component {
 
         return (
             <>
-            <button className="ShelfPage-toggle" onClick={this.handleSwitch}>Current View: {this.state.shelfView} Orbs</button>
+            <button className="ShelfPage-toggle" onClick={this.handleSwitch}>{this.state.shelfView} Orbs</button>
             {this.state.view === "self" ? null : <h2 className="Shelf-title">{this.state.userName}'s Orbs</h2>}
             {this.state.shelfView === "All" ? 
             <div className="ShelfPage-row">
