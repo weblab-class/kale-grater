@@ -76,3 +76,8 @@
     transform: translateY(0px);
     transition-delay: 0.75s;
 }
+
+.NoImage-text {
+    position: absolute;
+    margin-left: -1vw;
+}
