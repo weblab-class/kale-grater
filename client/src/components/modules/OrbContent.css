@@ -38,6 +38,8 @@
     position: relative;
     font-size:18px;
     margin: 40px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .orbContent-images {
