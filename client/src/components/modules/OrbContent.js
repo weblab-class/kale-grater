@@ -24,8 +24,10 @@ class OrbContent extends Component {
 
   render() {
     const dateString = this.props.timestamp;
-    const currentDate = new Date(dateString);
-    const officialDate = (currentDate.getMonth() + 1) + "-" + currentDate.getDate() + "-" + currentDate.getFullYear();
+    // const currentDate = new Date(dateString);
+    const officialDate = dateString.substring(5, 10) + "-" + dateString.substring(0, 4)
+    // const officialDate = (currentDate.getMonth() + 1) + "-" + currentDate.getDate() + "-" + currentDate.getFullYear();
+    // const officialDate = resultMonth + "-" + current_result.getDate() + "-" + current_result.getFullYear();
     
     return (
       <>

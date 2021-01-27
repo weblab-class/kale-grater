@@ -67,7 +67,7 @@ import "./SingleOrb.css";
           <>
           {this.props.privacy === "private" && this.props.view !== "self" ? null :
         // return (
-            <div className="SingleOrb-container" onClick={this.handleClick}>
+            <div className="SingleOrb-container">
               {this.state.showContent && (this.state.privacy === "public" || !this.state.privacy || this.props.view === "self") ? 
               // <ReactCSSTransitionGroup
               //   transitionName="fade"
@@ -92,7 +92,7 @@ import "./SingleOrb.css";
                   view={this.props.view}
                   />
                   // </ReactCSSTransitionGroup>
-                : <figure className={`${orbColor} SingleOrb-ball`}>
+                : <figure className={`${orbColor} SingleOrb-ball`} onClick={this.handleClick}>
                     <span className="SingleOrb-shadow"></span>
                   </figure>
               }
