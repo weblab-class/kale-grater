@@ -42,7 +42,7 @@ class OrbContent extends Component {
             { this.props.image !== ""
             ? 
               // this.props.image.map((image, index) => (
-                <img src={this.props.image} />
+                <img src={this.props.image} className="Resize-image"/>
               // ))
             : <>
                 <img src={ Logo } />
