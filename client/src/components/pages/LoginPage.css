@@ -22,24 +22,23 @@ section {
     position: relative;
 }
 
+.Login-title {
+    font-family: "Poppins";
+    color: lightgrey;
+    font-size: 100px;
+}
+
+.Login-text {
+    text-align: center;
+    color: rgb(146, 146, 146);
+}
 
 .Login-googleButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
     z-index: 500;
 }
-
-/* section .Login-color {
-    animation: animate 10s linear infinite;
-    z-index: 11;
-}
-
-@keyframes animate {
-    0% {
-        filter: hue-rotate(0deg);
-    }
-    100% {
-        filter: hue-rotate(360deg);
-    }
-} */
 
 section .Login-color {
     position: absolute;
@@ -104,35 +103,35 @@ section .Login-color:nth-child(3) {
 
 .Login-ornaments .Login-circle:nth-child(1) {
     top: -200px;
-    right: -400px;
+    right: -700px;
     width: 100px;
     height: 100px;
 }
 
 .Login-ornaments .Login-circle:nth-child(2) {
     top: 0px;
-    right: 400px;
+    right: 200px;
     width: 120px;
     height: 120px;
 }
 
 .Login-ornaments .Login-circle:nth-child(3) {
     top: 150px;
-    right: -400px;
+    right: -700px;
     width: 80px;
     height: 80px;
 }
 
 .Login-ornaments .Login-circle:nth-child(4) {
     top: 250px;
-    right: 130px;
+    right: -70px;
     width: 50px;
     height: 50px;
 }
 
 .Login-ornaments .Login-circle:nth-child(5) {
     top: -250px;
-    right: 50px;
+    right: -150px;
     width: 60px;
     height: 60px;
 }
