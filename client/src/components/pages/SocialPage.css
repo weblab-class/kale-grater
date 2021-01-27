@@ -1,4 +1,11 @@
 
+#particles-js {
+    position: absolute !important;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+}
+
 
 .SocialPage-body {
     margin-top: 6vh;
@@ -21,6 +28,7 @@
 .Search-container {
     color: gray;
     padding: 3px;
+    width: 20vw;;
 }
 
 .Search-popup {

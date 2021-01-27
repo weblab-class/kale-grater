@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { post, get } from "../../utilities";
 import ShelfPage from "./ShelfPage.js";
 import {navigate, Link} from "@reach/router";
+import Particles from 'react-particles-js';
 
 import "./SocialPage.css";
 
@@ -117,6 +118,10 @@ class SocialPage extends Component {
     }
     return (
     <>
+    <div>
+    <div id="particles-js">
+     <Particles />
+    </div>
     <div className="SocialPage-body">
       <div className="flex-child a">
       <div>
@@ -147,6 +152,7 @@ class SocialPage extends Component {
       <div className="flex-child b">Welcome to the social page! Here, you can search for users by their username
       and add them to your list of friends seen on the left. Click on a friend's name to visit their shelves and see
       their orbs. Enjoy!</div>
+    </div>
     </div>
     </>
     );
