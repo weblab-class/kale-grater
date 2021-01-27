@@ -2,6 +2,7 @@
     top: 65px;
     width: 100vw;
     height: calc(100vh - 65px);
+    overflow-y: scroll;
 }
 
 .AboutPage-header {
@@ -27,7 +28,7 @@
 }
 
 .AboutPage-Orb {
-    position: absolute;
+    position: relative;
     top: 0;
     width: 300px;
     height: 300px;
