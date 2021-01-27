@@ -89,8 +89,15 @@ class NewMemory extends React.Component {
         if (orb.content === "" || orb.emotion === "" || orb.privacy === "") {
             return alert("Please fill out memory, emotion, AND privacy!");
         } else {
-            post("/api/newmemory", orb).then(() => {
+            post("/api/newmemory", orb).then((result) => {
+                this.setState({
+                    message: ""
+                })
                 navigate(`/shelves/${this.props.userId}`);
+            }).catch((err) => {
+                this.setState({
+                    message: "Sorry, your image was too big to attach. Try attaching a smaller image or press Cancel and start a new orb!"
+                })
             });
         }};
 
@@ -164,6 +171,7 @@ class NewMemory extends React.Component {
 
                                 <div>                                  
                                     <input id="fileInput" type="file" name="files[]" accept="image/*" onChange={this.readImage} />
+                                    {this.state.message ? <div>{this.state.message}</div> : null}
                                 </div>  
 
                             </div>
