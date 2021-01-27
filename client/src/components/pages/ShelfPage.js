@@ -141,7 +141,7 @@ class ShelfPage extends Component {
         // var weekOrbs = {}
         var allDayOrbs = []
         var weekOrbs = []
-        const weekDayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+        const weekDayNames = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
         for (let i = 0; i < 7; i++) {
             // var current_result = new Date(prevSundayDate);
             var current_result = new Date(prevSunday.getFullYear(), month - 1, prevSunday.getDate())

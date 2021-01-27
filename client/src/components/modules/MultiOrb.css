@@ -3,9 +3,7 @@
     width: 70px;
     position: relative;
     justify-self: center;
-    /* left: 0px;
-    top: 0px; */
-    /* padding: 20px; */
+    left: 20px;
 }
 
 .MultiOrb-date {
@@ -13,17 +11,18 @@
     width: 70px;
     position: relative;
     justify-self: center;
-    /* left: 50%;
-    top: 0px; */
-    font-size: 12px; 
+    font-size: 12px;
+    left: 7px;
 }
 
 .MultiOrb-weekContainer {
     display: grid;
-    margin-left: 2vw;
+    margin-left: 4.75vw;
     margin-right: 4vw;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+    position: absolute;
+    margin-top: 15vh;
 }
 
 .MultiOrb-orb {
