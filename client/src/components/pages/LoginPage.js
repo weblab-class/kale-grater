@@ -38,6 +38,10 @@ class LoginPage extends Component {
                     <div className='Login-circle' style={{"--i":3}}></div>
                     <div className='Login-circle' style={{"--i":4}}></div>
                 </div>
+                <div className="Login-text">
+                    <div className="Login-title">Memorble</div>
+                    <div>A place to store and tag your emotions in memory orbs.</div>
+                </div>
                 <div className="Login-googleButton">
                 {this.props.userId ? (
                     <GoogleLogout
