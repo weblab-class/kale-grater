@@ -30,22 +30,19 @@ import "./SingleOrb.css";
     
     componentDidMount() {
       // remember -- api calls go here!
-      if (this.props.userId) {
-        console.log("did mount")
           this.loadImages();
-      }
     }
   
     // image handling
   
-    componentDidUpdate(prevProps) {
-      console.log("did update1");
-        if (prevProps.userId !== this.props.userId && this.props.userId) {
-          console.log("did update2")
-          // just logged in. reload images
-          this.loadImages();
-        }
-      }
+    // componentDidUpdate(prevProps) {
+    //   console.log("did update1");
+    //     if (prevProps.userId !== this.props.userId && this.props.userId) {
+    //       console.log("did update2")
+    //       // just logged in. reload images
+    //       this.loadImages();
+    //     }
+    //   }
 
     handleClick = () => {
       if (this.state.showContent === false) {
@@ -61,8 +58,8 @@ import "./SingleOrb.css";
 
     loadImages = () => {
       console.log("test loadImages");
-      get("/api/image").then(image => {
-          this.setState({ image: image });
+      get("/api/image", {imageName: this.props.imageName}).then(result => {
+          this.setState({ image: result.image });
       });
       };
 

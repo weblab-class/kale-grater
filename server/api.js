@@ -152,7 +152,7 @@ router.get("/weekshelves", (req, res) => {
 
 router.get("/image", (req, res) => {
   downloadImagePromise(req.query.imageName).then(image=> {
-    res.send(image);
+    res.send({image: image});
   }).catch(err => console.log(err)
   )
 });

@@ -216,6 +216,7 @@ class ShelfPage extends Component {
                 privacy={orbObj.privacy}
                 view={this.state.view}
                 delete={this.deleteMemory}
+                imageName={orbObj.imageFileName}
                 object={orbObj}
                 />
             ));
