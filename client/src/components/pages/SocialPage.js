@@ -120,12 +120,55 @@ class SocialPage extends Component {
     <>
     <div>
     <div id="particles-js">
-     <Particles />
+     <Particles 
+    params={{
+	    "particles": {
+	        "number": {
+	            "value": 90,
+	            "density": {
+	                "enable": true,
+	                "value_area": 1500
+	            }
+	        },
+	        "line_linked": {
+	            "enable": true,
+	            "opacity": 0.02
+	        },
+	        "move": {
+	            "direction": "right",
+	            "speed": 0.05
+	        },
+	        "size": {
+	            "value": 1
+	        },
+	        "opacity": {
+	            "anim": {
+	                "enable": true,
+	                "speed": 1,
+	                "opacity_min": 0.05
+	            }
+	        }
+	    },
+	    "interactivity": {
+	        "events": {
+	            "onclick": {
+	                "enable": true,
+	                "mode": "push"
+	            }
+	        },
+	        "modes": {
+	            "push": {
+	                "particles_nb": 1
+	            }
+	        }
+	    },
+	    "retina_detect": true
+	}}/>
     </div>
     <div className="SocialPage-body">
       <div className="flex-child a">
       <div>
-        <h1 className="Search-message">Search for a user here:</h1>   
+        <p className="Search-message">Search for a User Here:</p>   
         <input className="Search-container" value={this.state.friend} onChange={this.handleChange}></input>
         <button className="Search-popup" onClick={this.handleSubmit}>Search</button>
         {this.state.error ? <div className="Text-message">{this.state.error}</div> : null}
@@ -140,7 +183,7 @@ class SocialPage extends Component {
       </div>
 
       <div>
-        <h2 className="Text-message">Your Friends:</h2>
+        <p className="Text-message">Your Friends:</p>
         {this.state.friends.map(friend => (
           <div className="Text-message">
             <button className="SocialPage-friends" onClick={() => {this.handleClick(friend)}}>{friend}</button>

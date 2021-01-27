@@ -4,12 +4,13 @@
     height: 100vh;
     width: 100vw;
     z-index: -1;
+    background-color: rgb(0, 0, 14);
 }
 
 
 .SocialPage-body {
-    margin-top: 6vh;
-    margin-left: 6vw;
+    /* margin-top: 6vh;
+    margin-left: 6vw; */
     height: calc(100vh - 65px);
     overflow-y: scroll;
     overflow-x: hidden;
@@ -23,6 +24,9 @@
 }
 .Search-message {
     color: white;
+    font-size: 48px;
+    width: 700px;
+    text-shadow: 0 0 20px #fff, 0 0 40px #2b4ebe, 0 0 50px #4276e6;
 }
 
 .Search-container {
@@ -39,6 +43,8 @@
 
 .Text-message {
     color: white;
+    font-size: 28px;
+    text-shadow:1px 1px 5px #fff, 1px 1px 10px #fff;
 }
 
 .SocialPage-friends {
