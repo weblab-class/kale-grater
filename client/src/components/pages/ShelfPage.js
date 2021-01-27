@@ -125,7 +125,7 @@ class ShelfPage extends Component {
             if (current_result.getMonth() + 1 < 10) {
                 resultMonth = "0" + (current_result.getMonth() + 1)
             } else {
-                resultMonth = result.getMonth() + 1
+                resultMonth = current_result.getMonth() + 1
             }
           
             const resultDate = current_result.getFullYear() + "-" + resultMonth + "-" + current_result.getDate()
