@@ -13,8 +13,8 @@
     border-radius: 1em;
     padding: 5px;
     position: absolute;
-    margin-top: 1vh;
-    margin-left: 47.2vw;
+    margin-top: 2vh;
+    margin-left: 92vw;
     cursor: pointer;
     margin-bottom: 5vh;
 }
@@ -38,7 +38,8 @@
 
 .Shelf-title {
     text-align: center;
-    color: white
+    color: white;
+    margin-top: 3vh;
 }
 
 .ShelfPage-week {
