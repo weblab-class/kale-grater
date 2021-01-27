@@ -124,7 +124,7 @@ class SocialPage extends Component {
     params={{
 	    "particles": {
 	        "number": {
-	            "value": 90,
+	            "value": 100,
 	            "density": {
 	                "enable": true,
 	                "value_area": 1500
@@ -139,13 +139,13 @@ class SocialPage extends Component {
 	            "speed": 0.05
 	        },
 	        "size": {
-	            "value": 1
+	            "value": 1.5
 	        },
 	        "opacity": {
 	            "anim": {
 	                "enable": true,
-	                "speed": 1,
-	                "opacity_min": 0.05
+	                "speed": 1.5,
+	                "opacity_min": 0.09
 	            }
 	        }
 	    },
